@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "republican-party-logo",
+      "title": "Republican Party logo",
+      "sourcePath": "assets/originals/a4cfeaf17e-Republican-Party-Logo.jpg",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/dbc31925-8603-478e-b87c-652068af1fa5/Republican-Party-Logo.jpg",
+      "sourceSha256": "21d22d060afa645e8c9464a2dec1f682a7c75aa4cc1331fea5da19951738a1a1",
+      "webPath": "assets/web/brand/republican-party-logo.webp",
+      "legacyWebPath": "assets/web/a4cfeaf17e-Republican-Party-Logo.webp"
+    },
+    {
+      "id": "eagle-american-flag",
+      "title": "Eagle and American flag artwork",
+      "sourcePath": "assets/originals/49da9a9d1a-unsplash-image-SHtNHN7TgJw.jpg",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/1757281526592-MFAFO9UP0XBN8148CEYC/unsplash-image-SHtNHN7TgJw.jpg",
+      "sourceSha256": "49f1a62f9411870ca413c4111ce4d60e8f2d10c81d1cae5daf94affb5a50f5d7",
+      "webPath": "assets/web/archive/eagle-american-flag.webp",
+      "legacyWebPath": "assets/web/49da9a9d1a-unsplash-image-SHtNHN7TgJw.webp"
+    },
+    {
+      "id": "republican-letter-r-artwork",
+      "title": "Republican letter R artwork",
+      "sourcePath": "assets/originals/24651cfa1e-R-for-republican.png",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/dda7ab74-d0fa-4db2-97c4-437f8c8cb1b9/R+for+republican.png",
+      "sourceSha256": "439793c99e54d0443a4942d7ced5d3adc41083cec02318fff59052c79da06cde",
+      "webPath": "assets/web/archive/republican-letter-r-artwork.webp",
+      "legacyWebPath": "assets/web/24651cfa1e-R-for-republican.webp"
+    },
+    {
+      "id": "venmo-qr-code",
+      "title": "Legacy Venmo QR image; recipient unverified",
+      "sourcePath": "assets/originals/7934b6d94e-venmogop.jpg",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/23875768-8350-4bad-8fef-2ac04bf4df6d/venmogop.jpg",
+      "sourceSha256": "2bac104e14ec803c21404c9212592165eea7c1c48f4576205f7aa467e5106097",
+      "webPath": "assets/web/archive/venmo-qr-code.webp",
+      "legacyWebPath": "assets/web/7934b6d94e-venmogop.webp"
+    },
+    {
+      "id": "gage-county-courthouse-illustration",
+      "title": "Gage County courthouse illustration",
+      "sourcePath": "assets/originals/66fc6188b4-Gage-county-Courthouse-animated.png",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/bb0839e6-86da-425e-816b-b86b0543c3ef/Gage+county+Courthouse+animated.png",
+      "sourceSha256": "d7e0dd3d975cd5b0f167de74a2dd3d834516cb034f1414fe48e0836fc5370c0c",
+      "webPath": "assets/web/brand/gage-county-courthouse-illustration.webp",
+      "legacyWebPath": "assets/web/66fc6188b4-Gage-county-Courthouse-animated.webp"
+    },
+    {
+      "id": "gage-county-courthouse-beatrice",
+      "title": "Gage County Courthouse, Beatrice, Nebraska",
+      "sourcePath": "assets/originals/17648eacaa-courthouse-photo.jpg",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/99fae074-3ce8-4d87-b66c-5b6ed322758e/courthouse+photo.jpg",
+      "sourceSha256": "2dc2c8f4759408547ff98085cd39fdc9d82e59091d5c6e9aa3e7b5631be64638",
+      "webPath": "assets/web/places/gage-county-courthouse-beatrice.webp",
+      "legacyWebPath": "assets/web/17648eacaa-courthouse-photo.webp"
+    },
+    {
+      "id": "dennis-applegarth-headshot",
+      "title": "Dennis Applegarth, Chair, Gage County GOP",
+      "sourcePath": "assets/originals/bb746b7284-DennisApplegarth_Gallery_no_hat.png",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/8fb75b8e-8e71-4801-a4ec-e46460d91725/DennisApplegarth_Gallery_no_hat.png",
+      "sourceSha256": "05a3fe55eaac2b7d6f43a59d3b29b13fe5b082786309a81396054f4b7e6aa32d",
+      "webPath": "assets/web/people/dennis-applegarth-headshot.webp",
+      "legacyWebPath": "assets/web/bb746b7284-DennisApplegarth_Gallery_no_hat.webp"
+    },
+    {
+      "id": "max-quattromani-headshot-previous",
+      "title": "Max Quattromani, previous website portrait",
+      "sourcePath": "assets/originals/a2bb5fb516-Max_Quattromani.jpg",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/0b0922f2-aacd-4f8d-b251-3a06f397a775/Max_Quattromani",
+      "sourceSha256": "d88b69a103c2f6e6a10df4053a773f7325116e953a4b7f2d59ea81fd022e2263",
+      "webPath": "assets/web/archive/max-quattromani-headshot-previous.webp",
+      "legacyWebPath": "assets/web/a2bb5fb516-Max_Quattromani.webp"
+    },
+    {
+      "id": "lorrie-sierwalt-headshot",
+      "title": "Lorrie Sierwalt, Secretary, Gage County GOP",
+      "sourcePath": "assets/originals/768a8f9806-LORRIE-pic.png",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/4e443fb7-a38d-4f74-a739-5a7c566966d0/LORRIE+pic.png",
+      "sourceSha256": "0d63eca6a35077f2bbc9e7da0fb2979f62459786158aeada9b96dd436af18b75",
+      "webPath": "assets/web/people/lorrie-sierwalt-headshot.webp",
+      "legacyWebPath": "assets/web/768a8f9806-LORRIE-pic.webp"
+    },
+    {
+      "id": "kayla-brewer-headshot",
+      "title": "Kayla Brewer, Treasurer, Gage County GOP",
+      "sourcePath": "assets/originals/d5b425dd17-Kayla-pic.png",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/44939d09-638b-4604-aef1-e4e3d747b0e2/Kayla+pic.png",
+      "sourceSha256": "a3a08f7f4478e7d8ab403e9e3b3f245b0e251247fb6e4dbaad21f20680a58d3b",
+      "webPath": "assets/web/people/kayla-brewer-headshot.webp",
+      "legacyWebPath": "assets/web/d5b425dd17-Kayla-pic.webp"
+    },
+    {
+      "id": "barbecue-fundraiser-artwork",
+      "title": "Barbecue fundraiser artwork",
+      "sourcePath": "assets/originals/03978b078d-BBQ-pic-2.jpg",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/0e1867ba-456a-401e-ab37-e69c8bc22cd9/BBQ+pic+2.jpg",
+      "sourceSha256": "fc837c591175d2e9e6a70cc8a44ed441fe85bb331015c9e99529396cb6bdec8e",
+      "webPath": "assets/web/events/barbecue-fundraiser-artwork.webp",
+      "legacyWebPath": "assets/web/03978b078d-BBQ-pic-2.webp"
+    },
+    {
+      "id": "2026-fundraiser-flyer",
+      "title": "2026 Gage County GOP fundraiser flyer",
+      "sourcePath": "assets/originals/aaff6705d3-Draft_7--1-.png",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/6b5baa09-4bd6-4a44-87c1-cad3a8a47c08/Draft_7+%281%29.png",
+      "sourceSha256": "c5493749534d2813338ca65e8d88a02e1fb545af4eeef6af35825fbd7ac0100d",
+      "webPath": "assets/web/events/2026-fundraiser-flyer.webp",
+      "legacyWebPath": "assets/web/aaff6705d3-Draft_7--1-.webp"
+    },
+    {
+      "id": "parade-gathering-01",
+      "title": "Parade gathering; date unconfirmed",
+      "sourcePath": "assets/originals/b71d6407ba-1000001812.jpeg",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/3e3e0c01-4e2d-44f6-bb4f-06c6293cd411/1000001812.jpeg",
+      "sourceSha256": "ab5a1ed510435ee8476c3ce25b36f32fb8f228b604ca903b7f24e12427e45e27",
+      "webPath": "assets/web/events/parade-gathering-01.webp",
+      "legacyWebPath": "assets/web/b71d6407ba-1000001812.webp"
+    },
+    {
+      "id": "parade-float-01",
+      "title": "Parade float; date unconfirmed",
+      "sourcePath": "assets/originals/1c1aab057b-1000001811.jpeg",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/88db2d24-1cee-4806-9880-e826093f8394/1000001811.jpeg",
+      "sourceSha256": "8a194f8c69850517b26d1a96609c8dd487538bdcfca66e47fb61d14b4a1d1c52",
+      "webPath": "assets/web/events/parade-float-01.webp",
+      "legacyWebPath": "assets/web/1c1aab057b-1000001811.webp"
+    },
+    {
+      "id": "2026-wilber-czech-festival-parade",
+      "title": "2026 Wilber Czech Festival parade",
+      "sourcePath": "assets/originals/a01937f2e5-2026-Wilber-Parade.jpg",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/c66e99d5-1fc6-4c61-b65a-b7c46a46d2de/2026+Wilber+Parade.jpg",
+      "sourceSha256": "0732aa63b1910ee59ede0fe8e06362ecd621cdc9e2bbdae17730640f18c6b758",
+      "webPath": "assets/web/events/2026-wilber-czech-festival-parade.webp",
+      "legacyWebPath": "assets/web/a01937f2e5-2026-Wilber-Parade.webp"
+    },
+    {
+      "id": "2026-county-convention-01",
+      "title": "2026 Gage County Republican convention, photo 1",
+      "sourcePath": "assets/originals/ac389f13ca-GOP-Convention-2026-pic2.png",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/68a21816-a8e9-419a-ac09-4db3b36e4ec5/GOP+Convention+2026+pic2.png",
+      "sourceSha256": "48aca10b5406767f4b89106568af0ee8dbd8dec8f9bbb0d50f38f2eecc4ddff2",
+      "webPath": "assets/web/events/2026-county-convention-01.webp",
+      "legacyWebPath": "assets/web/ac389f13ca-GOP-Convention-2026-pic2.webp"
+    },
+    {
+      "id": "2026-county-convention-02",
+      "title": "2026 Gage County Republican convention, photo 2",
+      "sourcePath": "assets/originals/273afe4736-GOP-Convention-2026-pic1.png",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/034bcc99-559c-45ad-847a-d226e0bad988/GOP+Convention+2026+pic1.png",
+      "sourceSha256": "da9d0632211a00da66fdebe6084813d109f4ab79aa7dc7be18154da2c808b629",
+      "webPath": "assets/web/events/2026-county-convention-02.webp",
+      "legacyWebPath": "assets/web/273afe4736-GOP-Convention-2026-pic1.webp"
+    },
+    {
+      "id": "2026-county-fair-booth",
+      "title": "2026 Gage County GOP fair booth",
+      "sourcePath": "assets/originals/acfb6db13a-2026-GOP-GAge-county-fair.jpg",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/c3a08bb7-f4a1-4ed2-b109-ee944cf02e4e/2026+GOP+GAge+county+fair.jpg",
+      "sourceSha256": "c82561d239239675d95447b9f7c528d742da5c3c7d46d6f4b9fe42446c34561c",
+      "webPath": "assets/web/events/2026-county-fair-booth.webp",
+      "legacyWebPath": "assets/web/acfb6db13a-2026-GOP-GAge-county-fair.webp"
+    },
+    {
+      "id": "community-display-01",
+      "title": "Community display; date unconfirmed",
+      "sourcePath": "assets/originals/96e06b9312-2024-pic-1.png",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/2ad0aecb-40ca-40d4-af06-5bc969de436e/2024+pic+1.png",
+      "sourceSha256": "028a0fdd6dbf00deeda87998a2f6d5f9f04c18756dd6ae8ffecf6c1e92b5f835",
+      "webPath": "assets/web/events/community-display-01.webp",
+      "legacyWebPath": "assets/web/96e06b9312-2024-pic-1.webp"
+    },
+    {
+      "id": "homestead-parade-01",
+      "title": "Homestead parade; year unconfirmed",
+      "sourcePath": "assets/originals/64c858cb01-2024-Homestead-parade.png",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/6b201801-4812-44d3-8819-95679f7ab833/2024+Homestead+parade.png",
+      "sourceSha256": "51b53c5a0032531d060b9f1dc423df1a1d9f69d8667dcf6a66d30bd217f5f6ae",
+      "webPath": "assets/web/events/homestead-parade-01.webp",
+      "legacyWebPath": "assets/web/64c858cb01-2024-Homestead-parade.webp"
+    },
+    {
+      "id": "2025-10-county-gop-meeting",
+      "title": "October 2025 Gage County GOP meeting",
+      "sourcePath": "assets/originals/809f82751a-GOP-mtg-October-2025.png",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/6c8e81d1-4d26-4284-826f-a3f02892e2de/GOP+mtg+October+2025.png",
+      "sourceSha256": "02c1090c7a1bf1094495ff3a6287ea08c6f268bb146a4b9752e82d6337c6e01d",
+      "webPath": "assets/web/events/2025-10-county-gop-meeting.webp",
+      "legacyWebPath": "assets/web/809f82751a-GOP-mtg-October-2025.webp"
+    },
+    {
+      "id": "community-event-01",
+      "title": "Community event; date unconfirmed",
+      "sourcePath": "assets/originals/679d132d03-2024-pic-3---Copy.png",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/8790b0ad-fc52-422d-abd4-114c2a0c8559/2024+pic+3+-+Copy.png",
+      "sourceSha256": "c1aaf3811c518126f191f8018d4a0d1091ff4c9d7144a46bf0c16153f64b84f3",
+      "webPath": "assets/web/events/community-event-01.webp",
+      "legacyWebPath": "assets/web/679d132d03-2024-pic-3---Copy.webp"
+    },
+    {
+      "id": "community-gathering-01",
+      "title": "Community gathering; date unconfirmed",
+      "sourcePath": "assets/originals/b6c7487e27-2024-pic-2---Copy.png",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/6a1063f2-459f-46b8-89f8-02def4006ef5/2024+pic+2+-+Copy.png",
+      "sourceSha256": "f58ef853d8540687313507b75723e556a69ebd4c89db760ea31c77343f8cd095",
+      "webPath": "assets/web/events/community-gathering-01.webp",
+      "legacyWebPath": "assets/web/b6c7487e27-2024-pic-2---Copy.webp"
+    },
+    {
+      "id": "community-celebration-01",
+      "title": "Community celebration; date unconfirmed",
+      "sourcePath": "assets/originals/69de06e2c1-2024-pic-4---Copy.png",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/4d8dc8d4-18c1-4e00-8057-1c48e058a315/2024+pic+4+-+Copy.png",
+      "sourceSha256": "11305e8b1b2ac24ea6b4d149c1c4353b3ea290d40c9c52837f1e46b18ca08b8e",
+      "webPath": "assets/web/events/community-celebration-01.webp",
+      "legacyWebPath": "assets/web/69de06e2c1-2024-pic-4---Copy.webp"
+    },
+    {
+      "id": "county-fair-dunk-tank-01",
+      "title": "County fair dunk tank, photo 1",
+      "sourcePath": "assets/originals/fe836098ec-2024-dunk-2---Copy.png",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/1082673e-6290-47c8-b7d7-68dc7374c8ca/2024+dunk+2+-+Copy.png",
+      "sourceSha256": "df4bad52176822fdc57c689a309e96bdcf8da21a063eeee5be70409b8b9c1f3b",
+      "webPath": "assets/web/events/county-fair-dunk-tank-01.webp",
+      "legacyWebPath": "assets/web/fe836098ec-2024-dunk-2---Copy.webp"
+    },
+    {
+      "id": "county-fair-dunk-tank-02",
+      "title": "County fair dunk tank, photo 2",
+      "sourcePath": "assets/originals/55d916a343-2024-dunk-1.png",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/31257d68-b2ab-4a8a-8382-45c0fb7f38e2/2024+dunk+1.png",
+      "sourceSha256": "eafe7282b2fb40f0970b05d7bf4fd37c70ffa5dbb80c21b965e375e11d8f8c77",
+      "webPath": "assets/web/events/county-fair-dunk-tank-02.webp",
+      "legacyWebPath": "assets/web/55d916a343-2024-dunk-1.webp"
+    },
+    {
+      "id": "county-gop-constitution-2026-page-01",
+      "title": "2026 County GOP constitution, page 1",
+      "sourcePath": "assets/originals/89b8552a8a-2026-Costitution-PG-1.png",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/17460a79-dfb0-4b2b-bb51-a846fa3dd418/2026+Costitution+PG+1.png",
+      "sourceSha256": "807cceeb98080b8bca9380d08a6d04e9b4d9cc748e108a0ce597ad548f9974ec",
+      "webPath": "assets/web/documents/county-gop-constitution-2026-page-01.webp",
+      "legacyWebPath": "assets/web/89b8552a8a-2026-Costitution-PG-1.webp"
+    },
+    {
+      "id": "county-gop-constitution-2026-page-02",
+      "title": "2026 County GOP constitution, page 2",
+      "sourcePath": "assets/originals/62dd31d8c6-2026-Costitution-PG-2.png",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/3ae7e4a6-6765-47f5-b66e-9e55d53a0498/2026+Costitution+PG+2.png",
+      "sourceSha256": "9bca653b9b057fc56736994693820f340c9de94ce7b6c2826a817c5387b5ec2d",
+      "webPath": "assets/web/documents/county-gop-constitution-2026-page-02.webp",
+      "legacyWebPath": "assets/web/62dd31d8c6-2026-Costitution-PG-2.webp"
+    },
+    {
+      "id": "county-gop-constitution-2026-page-03",
+      "title": "2026 County GOP constitution, page 3",
+      "sourcePath": "assets/originals/c13bcc87c6-2026-Costitution-PG-3.png",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/fe474149-9b18-4982-a0c4-a3bd8f80bdda/2026+Costitution+PG+3.png",
+      "sourceSha256": "654d3c1d53bc0576d1cf2f85933e589635c6f86c272c0954fbdf6fbe5dc1a673",
+      "webPath": "assets/web/documents/county-gop-constitution-2026-page-03.webp",
+      "legacyWebPath": "assets/web/c13bcc87c6-2026-Costitution-PG-3.webp"
+    },
+    {
+      "id": "county-gop-constitution-2026-page-04",
+      "title": "2026 County GOP constitution, page 4",
+      "sourcePath": "assets/originals/9a35092d62-2026-Costitution-PG-4.png",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/f1122761-8dff-4fa2-9f3e-4975bab84b64/2026+Costitution+PG+4.png",
+      "sourceSha256": "94bcc9417e42ad0f98d162c9591992a79ebd886ea0ca815d75a6fd504b46e9fa",
+      "webPath": "assets/web/documents/county-gop-constitution-2026-page-04.webp",
+      "legacyWebPath": "assets/web/9a35092d62-2026-Costitution-PG-4.webp"
+    },
+    {
+      "id": "county-gop-constitution-2026-page-05",
+      "title": "2026 County GOP constitution, page 5",
+      "sourcePath": "assets/originals/ad3a2e705d-2026-Costitution-PG-5.png",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/68bdf927f8b06e41342c50ba/8cab5d84-acc2-4fc9-82e4-d93768bfa8f6/2026+Costitution+PG+5.png",
+      "sourceSha256": "8e76ad03a18f12792b2e3e224c081c565b69c9a3cbf21eb8692f749add2e5742",
+      "webPath": "assets/web/documents/county-gop-constitution-2026-page-05.webp",
+      "legacyWebPath": "assets/web/ad3a2e705d-2026-Costitution-PG-5.webp"
+    },
+    {
+      "id": "donation-template-landscape-01",
+      "title": "Legacy donation template landscape 1",
+      "sourcePath": "assets/originals/06b5ef517d-image-asset--7-.jpeg",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5ec321c2af33de48734cc929/331534e5-0b42-4c09-b28f-68e3213c06c7/image-asset+%287%29.jpeg",
+      "sourceSha256": "0f6194e45a4208ff1f95c1363f588a7484f5d732060382629c45553194d22c35",
+      "webPath": "assets/web/archive/donation-template-landscape-01.webp",
+      "legacyWebPath": "assets/web/06b5ef517d-image-asset--7-.webp"
+    },
+    {
+      "id": "donation-template-landscape-02",
+      "title": "Legacy donation template landscape 2",
+      "sourcePath": "assets/originals/22851e820e-Aro-Ha_0010.jpg",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5ec321c2af33de48734cc929/1589847769565-EI9ZCTP3U9V7KOFYKAGL/Aro+Ha_0010.jpg",
+      "sourceSha256": "e1552ea14dff149bd01a83d1d42ed9280bbe6bc592862b57d26f7f846cd60405",
+      "webPath": "assets/web/archive/donation-template-landscape-02.webp",
+      "legacyWebPath": "assets/web/22851e820e-Aro-Ha_0010.webp"
+    },
+    {
+      "id": "donation-template-portrait-01",
+      "title": "Legacy donation template portrait 1",
+      "sourcePath": "assets/originals/671fd42b73-Rectangle-25.jpg",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5ec321c2af33de48734cc929/1615225322403-8M32U1NK41JYCCJQCWP7/Rectangle+25.jpg",
+      "sourceSha256": "25b0d6401b03305318ff8987e3a7e530a318104877fa3d1b20965c7e8bb06d5b",
+      "webPath": "assets/web/archive/donation-template-portrait-01.webp",
+      "legacyWebPath": "assets/web/671fd42b73-Rectangle-25.webp"
+    },
+    {
+      "id": "donation-template-portrait-02",
+      "title": "Legacy donation template portrait 2",
+      "sourcePath": "assets/originals/6f6eac75c0-Rectangle-26.jpg",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5ec321c2af33de48734cc929/1615225259531-0HK0SKZ3FR5VOEIG39FB/Rectangle+26.jpg",
+      "sourceSha256": "1746b2e1636f7284d913063e0e3fded944fc16a6b0ac052363162d1211e98af7",
+      "webPath": "assets/web/archive/donation-template-portrait-02.webp",
+      "legacyWebPath": "assets/web/6f6eac75c0-Rectangle-26.webp"
+    },
+    {
+      "id": "donation-template-portrait-03",
+      "title": "Legacy donation template portrait 3",
+      "sourcePath": "assets/originals/c86a38c052-Rectangle-27.jpg",
+      "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5ec321c2af33de48734cc929/1615225298850-6RK21Y7YG7VPMPS9NQT9/Rectangle+27.jpg",
+      "sourceSha256": "70f8741a506c35374d3a8a8e8693417c72eb951750b378b2f530a9b680a89740",
+      "webPath": "assets/web/archive/donation-template-portrait-03.webp",
+      "legacyWebPath": "assets/web/c86a38c052-Rectangle-27.webp"
+    },
+    {
+      "id": "max-quattromani-headshot",
+      "title": "Max Quattromani, Vice Chair, Gage County GOP",
+      "alt": "Max Quattromani, Gage County GOP vice chair",
+      "sourcePath": "assets/originals/user-supplied/max-quattromani-headshot.png",
+      "sourceFilename": "30D6068D-D28E-4746-8FAE-594A99B9B2EA.PNG",
+      "sourceSha256": "5ab3f5f581658934f760661b2a5f22aae3358357a4f22bb8bade1dc42c87c097",
+      "sourceType": "user-supplied",
+      "received": "2026-10-26",
+      "webPath": "assets/web/people/max-quattromani-headshot.webp"
+    }
+  ]
+}

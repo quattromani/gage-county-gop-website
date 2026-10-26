@@ -9,6 +9,13 @@ const data = JSON.parse(
 const content = JSON.parse(
   fs.readFileSync(path.join(root, "src/content.json")),
 );
+const { assets } = JSON.parse(
+  fs.readFileSync(path.join(root, "src/assets.json")),
+);
+const assetsById = new Map(assets.map((entry) => [entry.id, entry]));
+const assetsBySource = new Map(
+  assets.map((entry) => [entry.sourcePath, entry]),
+);
 const pages = new Map(data.pages.map((p) => [p.slug, p]));
 const h = (v) =>
   String(v)
@@ -17,14 +24,12 @@ const h = (v) =>
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;");
 const asset = (id) => {
-  const a = data.assets.find((a) => a.path?.includes(id));
+  const a = assetsById.get(id);
   if (!a) throw Error(`Missing asset ${id}`);
-  return (
-    "./assets/web/" + path.basename(a.path, path.extname(a.path)) + ".webp"
-  );
+  return "./" + a.webPath;
 };
 const img = (id, alt, cls = "", eager = false) =>
-  `<img src="${asset(id)}" alt="${h(alt)}" class="${cls}" loading="${eager ? "eager" : "lazy"}" decoding="async">`;
+  `<img src="${asset(id)}" alt="${h(assetsById.get(id)?.alt || alt)}" title="${h(assetsById.get(id)?.title || alt)}" class="${cls}" loading="${eager ? "eager" : "lazy"}" decoding="async">`;
 const arrow = '<span aria-hidden="true">↗</span>';
 const source = (slug) =>
   `<a class="source-link" href="./archive.html#${h(slug)}">Source record ${arrow}</a>`;
@@ -45,7 +50,7 @@ function layout(
   description = "Meetings, leadership, governing documents, and election resources from the Gage County Republican Party.",
 ) {
   const home = file === "index.html";
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>${h(title)} | Gage County GOP</title><meta name="description" content="${h(description)}"><meta name="theme-color" content="#142d36"><meta property="og:title" content="${h(title)} | Gage County GOP"><meta property="og:description" content="${h(description)}"><meta property="og:image" content="https://quattromani.github.io/gage-county-gop-website/${asset("17648eacaa").slice(2)}"><link rel="icon" href="./favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./style.css"><script src="./site.js" defer></script></head><body><a class="skip" href="#main">Skip to content</a><div class="preview-bar">Website redesign preview <span>Gage County, Nebraska</span><a href="https://www.gagecountygop.org/">Current website ${arrow}</a></div><header class="site-header"><a class="brand" href="./index.html" aria-label="Gage County GOP home"><span class="brand-icon" aria-hidden="true">G</span><span>GAGE COUNTY <b>REPUBLICAN PARTY</b></span></a><details class="mobile-nav"><summary>Menu <span aria-hidden="true">☰</span></summary><nav aria-label="Mobile navigation">${nav.map(([url, label]) => `<a href="${url.startsWith("https") ? url : "./" + url}">${label}</a>`).join("")}<a href="./contact.html">Contact</a></nav></details><nav class="desktop-nav" aria-label="Main navigation">${nav
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>${h(title)} | Gage County GOP</title><meta name="description" content="${h(description)}"><meta name="theme-color" content="#142d36"><meta property="og:title" content="${h(title)} | Gage County GOP"><meta property="og:description" content="${h(description)}"><meta property="og:image" content="https://quattromani.github.io/gage-county-gop-website/${asset("gage-county-courthouse-beatrice").slice(2)}"><link rel="icon" href="./favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./style.css"><script src="./site.js" defer></script></head><body><a class="skip" href="#main">Skip to content</a><div class="preview-bar">Website redesign preview <span>Gage County, Nebraska</span><a href="https://www.gagecountygop.org/">Current website ${arrow}</a></div><header class="site-header"><a class="brand" href="./index.html" aria-label="Gage County GOP home"><span class="brand-icon" aria-hidden="true">G</span><span>GAGE COUNTY <b>REPUBLICAN PARTY</b></span></a><details class="mobile-nav"><summary>Menu <span aria-hidden="true">☰</span></summary><nav aria-label="Mobile navigation">${nav.map(([url, label]) => `<a href="${url.startsWith("https") ? url : "./" + url}">${label}</a>`).join("")}<a href="./contact.html">Contact</a></nav></details><nav class="desktop-nav" aria-label="Main navigation">${nav
     .filter(([url]) => url !== "index.html")
     .map(
       ([url, label]) =>
@@ -58,7 +63,7 @@ function layout(
 const pageHero = (kicker, title, desc) =>
   `<section class="page-hero wrap"><p class="eyebrow">${kicker}</p><h1>${title}</h1><p class="lead">${desc}</p></section>`;
 const meeting = `<article class="meeting-card"><p class="eyebrow">Meeting notice</p><div class="meeting-date"><span>NOV</span><strong>10</strong></div><div><h3>County GOP meeting</h3><p>${content.meeting.time} <span aria-hidden="true">/</span> ${content.meeting.venue}<br>${content.meeting.city}</p></div><a class="text-link" href="./events.html#meeting">Meeting details <span aria-hidden="true">→</span></a><p class="meeting-caution">Source notice; confirm the date before attending.</p></article>`;
-const home = `<section class="hero"><div class="hero-copy"><p class="eyebrow"><span class="red-line"></span> Gage County, Nebraska</p><h1>Your county.<br>Your party.<br><em>Your connection.</em></h1><p>Find the people, meetings, and resources of the Gage County Republican Party.</p><div class="actions"><a class="button" href="./events.html">Meetings & events <span aria-hidden="true">→</span></a><a class="text-link" href="./about.html">Get to know us ${arrow}</a></div><div class="hero-note"><span aria-hidden="true">★</span> Local information. In one place.</div></div><figure class="hero-image">${img("17648eacaa", "The Gage County Courthouse in Beatrice, with American flags on the lawn.", "", true)}<figcaption>Gage County Courthouse <span>Beatrice, Nebraska</span></figcaption><div class="image-label" aria-hidden="true">GAGE<br>COUNTY<br><span>NEBRASKA</span></div></figure></section><section class="quick-strip" aria-label="Quick access"><a href="./vote-2026/"><span class="quick-number">01</span><span>2026 voter card<small>Candidates, dates & downloads</small></span>${arrow}</a><a href="${content.partyReveal}"><span class="quick-number">02</span><span>Party Reveal<small>Candidate evidence & sources</small></span>${arrow}</a><a href="./resources.html#constitution"><span class="quick-number">03</span><span>Party documents<small>Platform, constitution & organization</small></span>${arrow}</a></section><section class="wrap section home-intro"><div><p class="eyebrow">The county party</p><h2>A local organization.<br>A shared place to start.</h2><p class="body-copy">Learn about the party’s mission, meet its leadership, and see how the county organization works.</p><a class="text-link" href="./about.html">About the Gage County GOP ${arrow}</a></div>${meeting}</section><section class="election-band"><div class="wrap election-inner"><div><p class="eyebrow">Election resources / 2026</p><h2>Keep your voter card close.</h2><p>Browse the candidate reference, check voting dates, and save the card for offline use. Explore the underlying evidence through Party Reveal.</p><div class="actions"><a class="button light" href="./vote-2026/">Open the voter card <span aria-hidden="true">→</span></a><a class="text-link" href="${content.partyReveal}">Explore Party Reveal ${arrow}</a></div><p class="small">A party reference, not an official ballot. Inclusion does not imply endorsement.</p></div><a href="./vote-2026/" class="card-preview" aria-label="Open the 2026 Gage County GOP voter card"><div><span>GAGE COUNTY GOP</span><strong>2026</strong></div><h3>Candidate<br>reference card</h3><div class="sample-lines" aria-hidden="true"><i></i><i></i><i></i></div><span>Candidates · Voting dates · Downloads ${arrow}</span></a></div></section><section class="wrap section"><div class="section-heading"><div><p class="eyebrow">Around the county</p><h2>People. Places. Participation.</h2></div><a class="text-link" href="./events.html#gallery">Explore the event archive ${arrow}</a></div><div class="photo-grid"><a class="photo-story" href="./events.html#gallery">${img("a01937f2e5", "Gage County GOP float at the 2026 Wilber Czech Festival.")}<span>In the community <b>Parades & local events ${arrow}</b></span></a><a class="photo-story" href="./events.html#gallery">${img("273afe4736", "People gathered in a hall at the 2026 Gage County Republican convention.")}<span>At the table <b>Meetings & convention ${arrow}</b></span></a><a class="photo-story" href="./events.html#gallery">${img("acfb6db13a", "Gage County GOP display at the 2026 county fair.")}<span>Across Gage County <b>The county fair ${arrow}</b></span></a></div></section><section class="contact-band wrap"><div><p class="eyebrow">Questions or ideas?</p><h2>Start a conversation.</h2></div><a class="button" href="./contact.html">Contact the county party ${arrow}</a></section>`;
+const home = `<section class="hero"><div class="hero-copy"><p class="eyebrow"><span class="red-line"></span> Gage County, Nebraska</p><h1>Your county.<br>Your party.<br><em>Your connection.</em></h1><p>Find the people, meetings, and resources of the Gage County Republican Party.</p><div class="actions"><a class="button" href="./events.html">Meetings & events <span aria-hidden="true">→</span></a><a class="text-link" href="./about.html">Get to know us ${arrow}</a></div><div class="hero-note"><span aria-hidden="true">★</span> Local information. In one place.</div></div><figure class="hero-image">${img("gage-county-courthouse-beatrice", "The Gage County Courthouse in Beatrice, with American flags on the lawn.", "", true)}<figcaption>Gage County Courthouse <span>Beatrice, Nebraska</span></figcaption><div class="image-label" aria-hidden="true">GAGE<br>COUNTY<br><span>NEBRASKA</span></div></figure></section><section class="quick-strip" aria-label="Quick access"><a href="./vote-2026/"><span class="quick-number">01</span><span>2026 voter card<small>Candidates, dates & downloads</small></span>${arrow}</a><a href="${content.partyReveal}"><span class="quick-number">02</span><span>Party Reveal<small>Candidate evidence & sources</small></span>${arrow}</a><a href="./resources.html#constitution"><span class="quick-number">03</span><span>Party documents<small>Platform, constitution & organization</small></span>${arrow}</a></section><section class="wrap section home-intro"><div><p class="eyebrow">The county party</p><h2>A local organization.<br>A shared place to start.</h2><p class="body-copy">Learn about the party’s mission, meet its leadership, and see how the county organization works.</p><a class="text-link" href="./about.html">About the Gage County GOP ${arrow}</a></div>${meeting}</section><section class="election-band"><div class="wrap election-inner"><div><p class="eyebrow">Election resources / 2026</p><h2>Keep your voter card close.</h2><p>Browse the candidate reference, check voting dates, and save the card for offline use. Explore the underlying evidence through Party Reveal.</p><div class="actions"><a class="button light" href="./vote-2026/">Open the voter card <span aria-hidden="true">→</span></a><a class="text-link" href="${content.partyReveal}">Explore Party Reveal ${arrow}</a></div><p class="small">A party reference, not an official ballot. Inclusion does not imply endorsement.</p></div><a href="./vote-2026/" class="card-preview" aria-label="Open the 2026 Gage County GOP voter card"><div><span>GAGE COUNTY GOP</span><strong>2026</strong></div><h3>Candidate<br>reference card</h3><div class="sample-lines" aria-hidden="true"><i></i><i></i><i></i></div><span>Candidates · Voting dates · Downloads ${arrow}</span></a></div></section><section class="wrap section"><div class="section-heading"><div><p class="eyebrow">Around the county</p><h2>People. Places. Participation.</h2></div><a class="text-link" href="./events.html#gallery">Explore the event archive ${arrow}</a></div><div class="photo-grid"><a class="photo-story" href="./events.html#gallery">${img("2026-wilber-czech-festival-parade", "Gage County GOP float at the 2026 Wilber Czech Festival.")}<span>In the community <b>Parades & local events ${arrow}</b></span></a><a class="photo-story" href="./events.html#gallery">${img("2026-county-convention-02", "People gathered in a hall at the 2026 Gage County Republican convention.")}<span>At the table <b>Meetings & convention ${arrow}</b></span></a><a class="photo-story" href="./events.html#gallery">${img("2026-county-fair-booth", "Gage County GOP display at the 2026 county fair.")}<span>Across Gage County <b>The county fair ${arrow}</b></span></a></div></section><section class="contact-band wrap"><div><p class="eyebrow">Questions or ideas?</p><h2>Start a conversation.</h2></div><a class="button" href="./contact.html">Contact the county party ${arrow}</a></section>`;
 const leaders = content.leaders
   .map(
     (l) =>
@@ -73,22 +78,22 @@ const about =
   ) +
   `<section class="wrap section prose-grid"><div><p class="eyebrow">Our mission</p><h2>What the party is here to do.</h2></div><div class="prose">${paragraphs("vision")}${source("vision")}</div></section><section class="wrap section" id="leadership"><div class="section-heading"><div><p class="eyebrow">Leadership</p><h2>Meet the executive officers.</h2></div>${source("leadership")}</div><div class="leader-grid">${leaders}</div><p class="small">Officers as listed on the source leadership page, captured October 26, 2026.</p></section><section class="soft-section"><div class="wrap section prose-grid"><div><p class="eyebrow">Our history</p><h2>Re-established in 2022.</h2></div><div class="prose">${paragraphs("history")}${source("history")}</div></div></section><section class="wrap section"><p class="eyebrow">How the party works</p><h2>Organization & governing documents.</h2><div class="resource-grid"><a href="./resources.html#organization"><h3>County committee</h3><p>Management, representation, and participation.</p>${arrow}</a><a href="./resources.html#constitution"><h3>County constitution</h3><p>The five-page document published on the original website.</p>${arrow}</a><a href="./platform.html"><h3>Party platform</h3><p>Read the complete platform by topic.</p>${arrow}</a></div></section>`;
 const galleryIds = [
-  "a01937f2e5",
-  "ac389f13ca",
-  "273afe4736",
-  "acfb6db13a",
-  "b71d6407ba",
-  "1c1aab057b",
-  "96e06b9312",
-  "64c858cb01",
-  "809f82751a",
-  "679d132d03",
-  "b6c7487e27",
-  "69de06e2c1",
-  "fe836098ec",
-  "55d916a343",
-  "03978b078d",
-  "aaff6705d3",
+  "2026-wilber-czech-festival-parade",
+  "2026-county-convention-01",
+  "2026-county-convention-02",
+  "2026-county-fair-booth",
+  "parade-gathering-01",
+  "parade-float-01",
+  "community-display-01",
+  "homestead-parade-01",
+  "2025-10-county-gop-meeting",
+  "community-event-01",
+  "community-gathering-01",
+  "community-celebration-01",
+  "county-fair-dunk-tank-01",
+  "county-fair-dunk-tank-02",
+  "barbecue-fundraiser-artwork",
+  "2026-fundraiser-flyer",
 ];
 const galleryNames = [
   "2026 Wilber Czech Festival",
@@ -124,7 +129,7 @@ const resources =
     "Find the source.",
     "Party documents, organization information, and election references in one place.",
   ) +
-  `<section class="wrap section"><div class="resource-grid"><a href="./vote-2026/"><p class="eyebrow">Election reference</p><h2>2026 voter card</h2><p>The imported GOP publication, with candidate references, calendar links, print downloads, and offline saving.</p>${arrow}</a><a href="${content.partyReveal}"><p class="eyebrow">Research & evidence</p><h2>Party Reveal</h2><p>Explore candidate evidence and sources alongside the GOP voter card.</p>${arrow}</a><a href="./platform.html"><p class="eyebrow">Party positions</p><h2>The platform</h2><p>The full published county party platform, organized into readable topics.</p>${arrow}</a></div></section><section class="soft-section" id="constitution"><div class="wrap section"><p class="eyebrow">Governing document</p><h2>County GOP constitution.</h2><p class="body-copy">All five pages from the source website, preserved as published. These are document images; a verified accessible transcription remains to be prepared.</p><div class="document-grid">${constitution.map((a, i) => `<a href="./${a.path}">${img(path.basename(a.path).slice(0, 10), `County GOP constitution, page ${i + 1}`)}<span>Open page ${i + 1} ${arrow}</span></a>`).join("")}</div>${source("articles")}</div></section><section class="wrap section" id="organization"><p class="eyebrow">Party organization</p><h2>Committees & convention.</h2><p class="notice">The published summaries differ on how officers are elected. Read the source summaries alongside the constitution and confirm the governing procedure with the party.</p><div class="disclosures">${[
+  `<section class="wrap section"><div class="resource-grid"><a href="./vote-2026/"><p class="eyebrow">Election reference</p><h2>2026 voter card</h2><p>The imported GOP publication, with candidate references, calendar links, print downloads, and offline saving.</p>${arrow}</a><a href="${content.partyReveal}"><p class="eyebrow">Research & evidence</p><h2>Party Reveal</h2><p>Explore candidate evidence and sources alongside the GOP voter card.</p>${arrow}</a><a href="./platform.html"><p class="eyebrow">Party positions</p><h2>The platform</h2><p>The full published county party platform, organized into readable topics.</p>${arrow}</a></div></section><section class="soft-section" id="constitution"><div class="wrap section"><p class="eyebrow">Governing document</p><h2>County GOP constitution.</h2><p class="body-copy">All five pages from the source website, preserved as published. These are document images; a verified accessible transcription remains to be prepared.</p><div class="document-grid">${constitution.map((a, i) => `<a href="./${a.path}">${img(assetsBySource.get(a.path).id, `County GOP constitution, page ${i + 1}`)}<span>Open page ${i + 1} ${arrow}</span></a>`).join("")}</div>${source("articles")}</div></section><section class="wrap section" id="organization"><p class="eyebrow">Party organization</p><h2>Committees & convention.</h2><p class="notice">The published summaries differ on how officers are elected. Read the source summaries alongside the constitution and confirm the governing procedure with the party.</p><div class="disclosures">${[
     ["new-page-1", "County committee & delegates"],
     ["organization", "Executive committee"],
     ["county-covention", "County convention"],
@@ -190,7 +195,7 @@ const archive =
           ?.map((i) => {
             const a = data.assets.find((a) => a.url === i.url);
             return a
-              ? `<a class="archive-image-link" href="./${a.path}">${img(path.basename(a.path).slice(0, 10), i.alt || `Source image from ${p.slug}`)}</a>`
+              ? `<a class="archive-image-link" href="./${a.path}">${img(assetsBySource.get(a.path).id, i.alt || `Source image from ${p.slug}`)}</a>`
               : "";
           })
           .join("")}</div></details>`,
@@ -203,6 +208,14 @@ fs.mkdirSync(out, { recursive: true });
 fs.cpSync(path.join(root, "assets"), path.join(out, "assets"), {
   recursive: true,
 });
+// Preserve already-published image URLs while new pages use descriptive paths.
+for (const entry of assets) {
+  if (!entry.legacyWebPath) continue;
+  fs.copyFileSync(
+    path.join(root, entry.webPath),
+    path.join(out, entry.legacyWebPath),
+  );
+}
 for (const name of ["style.css", "site.js", "favicon.svg"])
   fs.copyFileSync(path.join(root, "src", name), path.join(out, name));
 for (const [file, title, body] of [

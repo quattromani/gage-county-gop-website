@@ -73,6 +73,37 @@ test("source inventory is complete and original asset hashes remain intact", () 
       a.sha256,
     );
   }
+  const { assets } = JSON.parse(
+    fs.readFileSync(path.join(root, "src/assets.json")),
+  );
+  assert.equal(new Set(assets.map((a) => a.id)).size, assets.length);
+  assert.equal(new Set(assets.map((a) => a.webPath)).size, assets.length);
+  for (const entry of assets) {
+    assert.match(entry.id, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+    assert.match(
+      entry.webPath,
+      /^assets\/web\/(people|places|events|documents|brand|archive)\/[a-z0-9]+(?:-[a-z0-9]+)*\.webp$/,
+    );
+    assert.equal(
+      crypto
+        .createHash("sha256")
+        .update(fs.readFileSync(path.join(root, entry.sourcePath)))
+        .digest("hex"),
+      entry.sourceSha256,
+    );
+    assert.ok(fs.existsSync(path.join(dist, entry.webPath)), entry.id);
+    if (entry.legacyWebPath)
+      assert.deepEqual(
+        fs.readFileSync(path.join(dist, entry.legacyWebPath)),
+        fs.readFileSync(path.join(dist, entry.webPath)),
+      );
+  }
+  for (const original of data.assets) {
+    assert.ok(
+      assets.some((entry) => entry.sourcePath === original.path),
+      original.path,
+    );
+  }
 });
 test("platform wording and source archive preserve complete source text", () => {
   const data = JSON.parse(

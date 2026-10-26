@@ -25,3 +25,9 @@ Public pages carry noindex metadata for review. This reduces unintended indexing
 ## Production verification
 
 Deployment results and live-path checks are reported in the delivery conversation. The workflow runs these same eight checks before publishing dist/. Reverting source and pushing triggers a checked recovery release.
+
+## Headshot and asset naming update, October 26, 2026
+
+Replaced Max Quattromani’s leadership portrait with the user-supplied photo. Registered all 37 display images with stable descriptive IDs, human-readable titles, original checksums, and subject folders. All 36 previously published image paths are generated as compatibility aliases; archived originals and the voter-card import are unchanged.
+
+The eight checks pass with expanded asset validation covering unique IDs and paths, naming rules, original checksums, capture coverage, and byte-identical compatibility aliases. Browser review confirmed the new portrait, title, alt text, and caption at desktop and 390-pixel phone width. Shared guidance checkpoint found no material divergence; the naming convention is local to this project as requested.

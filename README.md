@@ -22,10 +22,11 @@ Open http://localhost:4187/. The build produces static HTML in dist/. GitHub Act
 | Location | Responsibility |
 | --- | --- |
 | src/content.json | Shared contact, roster, and meeting data |
+| src/assets.json | Stable descriptive asset IDs, titles, source checksums, display paths, and legacy aliases |
 | source-snapshot/inventory.json | Extracted original text, URLs, asset provenance, and capture date |
 | source-snapshot/*.html | Unaltered public source pages, retained as historical evidence |
-| assets/originals/ | Downloaded source media, identified by URL hash |
-| assets/web/ | Optimized display derivatives; originals remain unchanged |
+| assets/originals/ | Preserved captured media and descriptively named user-supplied originals |
+| assets/web/ | Descriptively named display derivatives grouped by subject; originals remain unchanged |
 | scripts/build.mjs | Semantic page composition and voter-card integration |
 | src/style.css | Design tokens, layouts, and responsive patterns |
 | src/site.js | Optional archive filtering, source disclosure, and menu Escape behavior |
@@ -44,7 +45,7 @@ To refresh, first complete and validate candidate/artifact changes in the origin
 
 ## Refresh the public archive
 
-scripts/capture.py uses Python's standard library to capture the public sitemap, linked pages, and content media. Running it makes live network requests and overwrites the dated snapshot, so preserve the previous capture in Git first. Inspect changes before rebuilding. scripts/optimize-images.py requires Pillow and regenerates WebP derivatives. Image derivatives are committed, so normal builds need only Node.
+scripts/capture.py uses Python's standard library to capture the public sitemap, linked pages, and content media. Running it makes live network requests and overwrites the dated snapshot, so preserve the previous capture in Git first. Inspect changes before rebuilding. Register new assets in src/assets.json after reviewing the capture. scripts/optimize-images.py requires Pillow and regenerates the registered WebP derivatives. See [asset naming and provenance](project-docs/ASSET-NAMING.md) for the convention and examples. Image derivatives are committed, so normal builds need only Node.
 
 ## Rights and private data
 

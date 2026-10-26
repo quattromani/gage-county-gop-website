@@ -13,9 +13,25 @@
     "source": "home"
   },
   "leaders": [
-    { "name": "Dennis Applegarth", "role": "Chair", "image": "bb746b7284" },
-    { "name": "Max Quattromani", "role": "Vice chair", "image": "a2bb5fb516" },
-    { "name": "Lorrie Sierwalt", "role": "Secretary", "image": "768a8f9806" },
-    { "name": "Kayla Brewer", "role": "Treasurer", "image": "d5b425dd17" }
+    {
+      "name": "Dennis Applegarth",
+      "role": "Chair",
+      "image": "dennis-applegarth-headshot"
+    },
+    {
+      "name": "Max Quattromani",
+      "role": "Vice chair",
+      "image": "max-quattromani-headshot"
+    },
+    {
+      "name": "Lorrie Sierwalt",
+      "role": "Secretary",
+      "image": "lorrie-sierwalt-headshot"
+    },
+    {
+      "name": "Kayla Brewer",
+      "role": "Treasurer",
+      "image": "kayla-brewer-headshot"
+    }
   ]
 }

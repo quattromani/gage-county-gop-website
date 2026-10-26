@@ -7,3 +7,5 @@ Public source evidence lives in source-snapshot/ and assets/originals/. Preserve
 The voter card is a documented snapshot of ../gage-county-gop, including its uncommitted source at import. Candidate corrections belong in Local Civic Reference and the publication project, then resync. Never scrape candidate facts from the old party site into the card. Keep the card's service worker scoped to vote-2026/ and preserve relative links, judicial qualifications, calendars, and downloads.
 
 Build and check with npm run check. GitHub Pages publishes dist/ from main. This is a public design preview with no custom domain; do not change the existing Squarespace site, DNS, or original voter-card deployment.
+
+Asset names and provenance follow project-docs/ASSET-NAMING.md. Register assets in src/assets.json and use stable descriptive IDs in code. Preserve captured originals, legacy published URL aliases, and imported voter-card filenames.
