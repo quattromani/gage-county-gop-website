@@ -648,6 +648,21 @@ a:focus-visible {
   max-width: 780px;
   overflow-wrap: anywhere;
 }
+.mission-statement {
+  margin: 0;
+  padding: clamp(26px, 3vw, 44px);
+  border-left: 4px solid var(--red);
+  background: var(--soft);
+  align-self: start;
+}
+.mission-statement p {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(23px, 2vw, 30px);
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+  text-wrap: pretty;
+}
 .prose p {
   font-size: 16px;
   line-height: 1.8;
