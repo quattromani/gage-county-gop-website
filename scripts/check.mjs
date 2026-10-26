@@ -249,7 +249,7 @@ test("public build excludes source archive and migration language, with confirme
     const html = fs.readFileSync(file, "utf8");
     assert.doesNotMatch(
       html,
-      /archive\.html|source website|original site|Current website|Source record|Source notice|Source captured|Website redesign preview|source leadership page|legacy office lists|imported GOP publication/i,
+      /archive\.html|source website|original (?:site|website)|Current website|Source record|Source notice|Source captured|Website redesign preview|source leadership page|legacy office lists|imported GOP publication/i,
       file,
     );
     assert.doesNotMatch(
