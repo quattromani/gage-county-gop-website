@@ -376,6 +376,32 @@ a:focus-visible {
   align-self: flex-start;
   padding-top: 3px;
 }
+.quick-strip > .quick-featured {
+  position: relative;
+  z-index: 1;
+  background: var(--red);
+  color: #ffffff;
+  border-color: #921925;
+  box-shadow:
+    inset 0 3px 0 #f4ccab,
+    0 8px 20px #65121b30;
+}
+.quick-featured small,
+.quick-featured .quick-number {
+  color: #fff1e2;
+}
+.quick-strip > .quick-featured > span:last-child {
+  color: #ffffff;
+  text-shadow: 0 2px 5px #65121b80;
+  font-weight: 700;
+}
+.quick-strip > .quick-featured:hover {
+  background: #921925;
+}
+.quick-strip > .quick-featured:focus-visible {
+  outline-color: var(--ink);
+  outline-offset: 4px;
+}
 .home-intro {
   display: grid;
   grid-template-columns: 1fr 1fr;
