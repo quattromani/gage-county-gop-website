@@ -9,3 +9,5 @@ The voter card is a documented snapshot of ../gage-county-gop, including its unc
 Build and check with npm run check. GitHub Pages publishes dist/ from main. This is a public design preview with no custom domain; do not change the existing Squarespace site, DNS, or original voter-card deployment.
 
 Asset names and provenance follow project-docs/ASSET-NAMING.md. Register assets in src/assets.json and use stable descriptive IDs in code. Preserve captured originals, legacy published URL aliases, and imported voter-card filenames.
+
+Keep the archive and provenance available, but do not add repeated “Source record” links to the main content pages. The footer archive link remains the shared access point.

@@ -20,7 +20,7 @@ The subject is a human organization with tangible local places, people, and even
 
 Warm paper, dark ink, restrained red, serif headings, and a simple sans serif interface establish an editorial character. The small G monogram is a provisional preview identity, not an adopted replacement logo. Photography supplies local specificity; common grids, borders, and spacing reduce competing visual decisions. CSS tokens own recurring color and spacing. Platform and archive text have a limited reading measure.
 
-Desktop navigation supports direct browsing. A native details menu handles smaller screens and works without JavaScript. Pages are static HTML with relative URLs, so they work at a GitHub repository path. Source disclosure links connect main pages to the historical evidence. The archive search is optional enhancement; all records remain readable without it.
+Desktop navigation supports direct browsing. A native details menu handles smaller screens and works without JavaScript. Pages are static HTML with relative URLs, so they work at a GitHub repository path. The footer archive link provides access to historical evidence without repeated source-record links in the main pages. The archive search is optional enhancement; all records remain readable without it.
 
 ## Acceptance and limits
 

@@ -630,12 +630,6 @@ a:focus-visible {
   font-size: 35px;
   margin-top: 45px;
 }
-.source-link {
-  display: inline-block;
-  font-size: 11px;
-  color: var(--muted);
-  margin-top: 18px;
-}
 .leader-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
