@@ -1,8 +1,14 @@
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
+import { createHash } from "node:crypto";
 const root = path.resolve(import.meta.dirname, "..");
 const out = path.join(root, "dist");
+const assetVersion = (file) =>
+  createHash("sha256")
+    .update(fs.readFileSync(path.join(root, "src", file)))
+    .digest("hex")
+    .slice(0, 12);
 const data = JSON.parse(
   fs.readFileSync(path.join(root, "source-snapshot/inventory.json")),
 );
@@ -48,7 +54,7 @@ function layout(
   description = "Meetings, leadership, governing documents, and election resources from the Gage County Republican Party.",
 ) {
   const home = file === "index.html";
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>${h(title)} | Gage County GOP</title><meta name="description" content="${h(description)}"><meta name="theme-color" content="#142d36"><meta property="og:title" content="${h(title)} | Gage County GOP"><meta property="og:description" content="${h(description)}"><meta property="og:image" content="https://quattromani.github.io/gage-county-gop-website/${asset("gage-county-courthouse-beatrice").slice(2)}"><link rel="icon" href="./favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./style.css"><script src="./site.js" defer></script></head><body><a class="skip" href="#main">Skip to content</a><div class="location-bar">Gage County, Nebraska<span>Gage County Republican Party</span></div><header class="site-header"><a class="brand" href="./index.html" aria-label="Gage County GOP home"><span class="brand-icon" aria-hidden="true">G</span><span>GAGE COUNTY <b>REPUBLICAN PARTY</b></span></a><details class="mobile-nav"><summary>Menu <span aria-hidden="true">☰</span></summary><nav aria-label="Mobile navigation">${nav.map(([url, label]) => `<a href="${url.startsWith("https") ? url : "./" + url}">${label}</a>`).join("")}<a href="./contact.html">Contact</a></nav></details><nav class="desktop-nav" aria-label="Main navigation">${nav
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>${h(title)} | Gage County GOP</title><meta name="description" content="${h(description)}"><meta name="theme-color" content="#142d36"><meta property="og:title" content="${h(title)} | Gage County GOP"><meta property="og:description" content="${h(description)}"><meta property="og:image" content="https://quattromani.github.io/gage-county-gop-website/${asset("gage-county-courthouse-beatrice").slice(2)}"><link rel="icon" href="./favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./style.css?v=${assetVersion("style.css")}"><script src="./site.js?v=${assetVersion("site.js")}" defer></script></head><body><a class="skip" href="#main">Skip to content</a><div class="location-bar">Gage County, Nebraska<span>Gage County Republican Party</span></div><header class="site-header"><a class="brand" href="./index.html" aria-label="Gage County GOP home"><span class="brand-icon" aria-hidden="true">G</span><span>GAGE COUNTY <b>REPUBLICAN PARTY</b></span></a><details class="mobile-nav"><summary>Menu <span aria-hidden="true">☰</span></summary><nav aria-label="Mobile navigation">${nav.map(([url, label]) => `<a href="${url.startsWith("https") ? url : "./" + url}">${label}</a>`).join("")}<a href="./contact.html">Contact</a></nav></details><nav class="desktop-nav" aria-label="Main navigation">${nav
     .filter(([url]) => url !== "index.html")
     .map(
       ([url, label]) =>
@@ -256,7 +262,6 @@ fs.writeFileSync(cardFile, card);
 // Regenerate the card cache fingerprint after integration changes.
 const swFile = path.join(out, "vote-2026/sw.js");
 let sw = fs.readFileSync(swFile, "utf8");
-const { createHash } = await import("node:crypto");
 const integrationHash = createHash("sha256")
   .update(card)
   .digest("hex")

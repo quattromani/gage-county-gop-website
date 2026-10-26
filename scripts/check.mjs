@@ -36,7 +36,7 @@ test("all local page links, assets, and fragment destinations resolve under a re
       const [relative, fragment] = url.split("#");
       let dest = path.resolve(
         path.dirname(file),
-        decodeURIComponent(relative || path.basename(file)),
+        decodeURIComponent(relative.split("?")[0] || path.basename(file)),
       );
       if (fs.existsSync(dest) && fs.statSync(dest).isDirectory())
         dest = path.join(dest, "index.html");
