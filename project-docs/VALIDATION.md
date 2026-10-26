@@ -35,3 +35,7 @@ The eight checks pass with expanded asset validation covering unique IDs and pat
 ## Public review cleanup, October 26, 2026
 
 User confirmed November 10, 2026, at 7 p.m. Removed source-capture, old-site, and redesign commentary from public pages; retained substantive election sourcing. Excluded archive.html and archival-only media from dist/ while retaining the full repository archive and original checksums. Public organization descriptions defer contested procedure details to the constitution. Build checks now verify archive exclusion and confirmed meeting rendering. Earlier archival and date limitations above describe the historical preview, not this revision.
+
+## Meeting calendar action, October 26, 2026
+
+Homepage, events, and contact meeting actions now use one generated .ics event for November 10, 2026, at 7 p.m. Central, at 402 Sports Bar & Grill, Beatrice, Nebraska. A ninth check verifies all three destinations, the exact UTC start, location escaping, CRLF encoding, line folding, and absence of a fabricated duration or attendees. Existing election calendars remain unchanged. No event was added to a personal calendar during verification.

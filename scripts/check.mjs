@@ -267,3 +267,31 @@ test("public build excludes source archive and migration language, with confirme
     );
   }
 });
+
+test("meeting actions open a portable calendar event at the confirmed Central time", () => {
+  const link = "./calendar/gage-county-gop-meeting-2026-11-10.ics";
+  for (const name of ["index.html", "events.html", "contact.html"]) {
+    assert.ok(read(name).includes(`href="${link}" type="text/calendar"`), name);
+    assert.doesNotMatch(
+      read(name),
+      /mailto:[^"]+subject=County%20GOP%20meeting/,
+    );
+  }
+  const calendar = read(link.slice(2));
+  assert.equal((calendar.match(/BEGIN:VEVENT/g) || []).length, 1);
+  assert.match(calendar, /DTSTART:20261111T010000Z\r\n/);
+  assert.match(calendar, /SUMMARY:Gage County GOP meeting/);
+  assert.match(
+    calendar,
+    /LOCATION:402 Sports Bar & Grill\\, Beatrice\\, Nebraska/,
+  );
+  assert.doesNotMatch(calendar, /DTEND:|DURATION:|ATTENDEE:|ORGANIZER:/);
+  assert.ok(!calendar.replaceAll("\r\n", "").includes("\n"));
+  for (const line of calendar.split("\r\n"))
+    assert.ok(Buffer.byteLength(line) <= 75);
+  const unfolded = calendar.replaceAll("\r\n ", "");
+  assert.match(
+    unfolded,
+    /URL:https:\/\/quattromani.github.io\/gage-county-gop-website\/events.html#meeting\r\n/,
+  );
+});
