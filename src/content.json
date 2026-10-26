@@ -1,0 +1,21 @@
+{
+  "name": "Gage County Republican Party",
+  "email": "GageCountyGOP.media@gmail.com",
+  "partyReveal": "https://partyreveal.com/",
+  "facebook": "https://www.facebook.com/groups/625858163898556",
+  "instagram": "https://www.instagram.com/gagecountygopgroup/",
+  "meeting": {
+    "dateLabel": "November 10",
+    "time": "7 p.m.",
+    "venue": "402 Sports Bar & Grill",
+    "city": "Beatrice, Nebraska",
+    "note": "As listed on the current website. Please confirm the date and location before attending; the notice does not specify a year.",
+    "source": "home"
+  },
+  "leaders": [
+    { "name": "Dennis Applegarth", "role": "Chair", "image": "bb746b7284" },
+    { "name": "Max Quattromani", "role": "Vice chair", "image": "a2bb5fb516" },
+    { "name": "Lorrie Sierwalt", "role": "Secretary", "image": "768a8f9806" },
+    { "name": "Kayla Brewer", "role": "Treasurer", "image": "d5b425dd17" }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "gage-county-gop",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Gage County GOP publications, design assets, and reusable project source.",
+  "engines": {"node": ">=22"},
+  "scripts": {
+    "build": "node scripts/build-site.mjs",
+    "test": "node --test scripts/test-gop-web-card.mjs",
+    "check": "npm run build && npm test",
+    "import:candidates": "node scripts/import-civic-reference.mjs",
+    "build:gop-card": "npm run build",
+    "test:gop-card": "npm test"
+  }
+}

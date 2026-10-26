@@ -1,0 +1,193 @@
+{
+  "authority": "Local Civic Reference",
+  "commit": "d559ce36c981b4d4df9bcc085fc7871be563f62f",
+  "sourceSha256": "7b58cbf985b2ddba07d224882872e3ea28c5807fc17e6439adb32311dfb6c959",
+  "data": {
+    "electionId": "2026-general-election-gage-county",
+    "electionDate": "2026-11-03",
+    "courts": [
+      {
+        "courtId": "workers-compensation",
+        "name": "Nebraska Workers’ Compensation Court",
+        "district": null,
+        "scope": "Statewide"
+      },
+      {
+        "courtId": "district-court-1",
+        "name": "District Court",
+        "district": "1",
+        "scope": "District 1"
+      },
+      {
+        "courtId": "county-court-1",
+        "name": "County Court",
+        "district": "1",
+        "scope": "District 1"
+      }
+    ],
+    "questions": [
+      {
+        "questionId": "retain-dirk-v-block-2026",
+        "judgeId": "judge-dirk-v-block",
+        "name": "Dirk V. Block",
+        "courtId": "workers-compensation",
+        "contestType": "judicial-retention",
+        "ballotQuestion": "Shall Judge Dirk V. Block be retained in office?",
+        "choices": [
+          "Yes",
+          "No"
+        ],
+        "termYears": 6,
+        "displayOrder": 1,
+        "sources": [
+          {
+            "sourceId": "ne-retention-list-2026-08-03",
+            "title": "Nebraska Secretary of State: final list of judges who filed for retention",
+            "url": "https://sos.nebraska.gov/sites/default/files/doc/elections/2026/Final_List_of_Judges_Who_Filed_for_Retention_List_8.3.26.pdf",
+            "sourceDate": "2026-08-03",
+            "reviewedDate": "2026-10-26"
+          }
+        ]
+      },
+      {
+        "questionId": "retain-thomas-e-stine-2026",
+        "judgeId": "judge-thomas-e-stine",
+        "name": "Thomas E. Stine",
+        "courtId": "workers-compensation",
+        "contestType": "judicial-retention",
+        "ballotQuestion": "Shall Judge Thomas E. Stine be retained in office?",
+        "choices": [
+          "Yes",
+          "No"
+        ],
+        "termYears": 6,
+        "displayOrder": 2,
+        "sources": [
+          {
+            "sourceId": "ne-retention-list-2026-08-03",
+            "title": "Nebraska Secretary of State: final list of judges who filed for retention",
+            "url": "https://sos.nebraska.gov/sites/default/files/doc/elections/2026/Final_List_of_Judges_Who_Filed_for_Retention_List_8.3.26.pdf",
+            "sourceDate": "2026-08-03",
+            "reviewedDate": "2026-10-26"
+          }
+        ]
+      },
+      {
+        "questionId": "retain-ricky-a-schreiner-2026",
+        "judgeId": "judge-ricky-a-schreiner",
+        "name": "Ricky A. Schreiner",
+        "courtId": "district-court-1",
+        "contestType": "judicial-retention",
+        "ballotQuestion": "Shall Judge Ricky A. Schreiner be retained in office?",
+        "choices": [
+          "Yes",
+          "No"
+        ],
+        "termYears": 6,
+        "displayOrder": 3,
+        "sources": [
+          {
+            "sourceId": "ne-retention-list-2026-08-03",
+            "title": "Nebraska Secretary of State: final list of judges who filed for retention",
+            "url": "https://sos.nebraska.gov/sites/default/files/doc/elections/2026/Final_List_of_Judges_Who_Filed_for_Retention_List_8.3.26.pdf",
+            "sourceDate": "2026-08-03",
+            "reviewedDate": "2026-10-26"
+          }
+        ]
+      },
+      {
+        "questionId": "retain-julie-d-smith-2026",
+        "judgeId": "judge-julie-d-smith",
+        "name": "Julie D. Smith",
+        "courtId": "district-court-1",
+        "contestType": "judicial-retention",
+        "ballotQuestion": "Shall Judge Julie D. Smith be retained in office?",
+        "choices": [
+          "Yes",
+          "No"
+        ],
+        "termYears": 6,
+        "displayOrder": 4,
+        "sources": [
+          {
+            "sourceId": "ne-retention-list-2026-08-03",
+            "title": "Nebraska Secretary of State: final list of judges who filed for retention",
+            "url": "https://sos.nebraska.gov/sites/default/files/doc/elections/2026/Final_List_of_Judges_Who_Filed_for_Retention_List_8.3.26.pdf",
+            "sourceDate": "2026-08-03",
+            "reviewedDate": "2026-10-26"
+          }
+        ]
+      },
+      {
+        "questionId": "retain-david-j-a-bargen-2026",
+        "judgeId": "judge-david-j-a-bargen",
+        "name": "David J. A. Bargen",
+        "courtId": "district-court-1",
+        "contestType": "judicial-retention",
+        "ballotQuestion": "Shall Judge David J. A. Bargen be retained in office?",
+        "choices": [
+          "Yes",
+          "No"
+        ],
+        "termYears": 6,
+        "displayOrder": 5,
+        "sources": [
+          {
+            "sourceId": "ne-retention-list-2026-08-03",
+            "title": "Nebraska Secretary of State: final list of judges who filed for retention",
+            "url": "https://sos.nebraska.gov/sites/default/files/doc/elections/2026/Final_List_of_Judges_Who_Filed_for_Retention_List_8.3.26.pdf",
+            "sourceDate": "2026-08-03",
+            "reviewedDate": "2026-10-26"
+          }
+        ]
+      },
+      {
+        "questionId": "retain-richard-r-smith-2026",
+        "judgeId": "judge-richard-r-smith",
+        "name": "Richard R. Smith",
+        "courtId": "county-court-1",
+        "contestType": "judicial-retention",
+        "ballotQuestion": "Shall Judge Richard R. Smith be retained in office?",
+        "choices": [
+          "Yes",
+          "No"
+        ],
+        "termYears": 6,
+        "displayOrder": 6,
+        "sources": [
+          {
+            "sourceId": "ne-retention-list-2026-08-03",
+            "title": "Nebraska Secretary of State: final list of judges who filed for retention",
+            "url": "https://sos.nebraska.gov/sites/default/files/doc/elections/2026/Final_List_of_Judges_Who_Filed_for_Retention_List_8.3.26.pdf",
+            "sourceDate": "2026-08-03",
+            "reviewedDate": "2026-10-26"
+          }
+        ]
+      }
+    ],
+    "processSource": {
+      "sourceId": "ne-retention-voter-guide",
+      "title": "Nebraska Judicial Branch: voter guide to judicial retention elections",
+      "url": "https://nebraskajudicial.gov/administration/public/voters%E2%80%99-guide-nebraska%E2%80%99s-judicial-retention-elections",
+      "sourceDate": null,
+      "reviewedDate": "2026-10-26"
+    }
+  },
+  "copy": {
+    "heading": "Judicial retention",
+    "introduction": "Nebraska judges are appointed by the governor through a merit selection process. In a retention election, voters decide separately whether each judge should remain in office for another six-year term.",
+    "instructions": "For each judge, vote Yes to retain or No against retention.",
+    "viewJudges": "View judges",
+    "hideJudges": "Hide judges",
+    "questionLabel": "Retention question",
+    "termLabel": "Six-year term",
+    "choicesLabel": "Ballot choices: Yes or No",
+    "filterNotice": "Affiliation filters apply only to candidate races. Clear the affiliation filter to view judicial retention questions.",
+    "sourcesLabel": "Sources and last checked",
+    "reviewedLabel": "Last checked",
+    "judgeUnit": "judge",
+    "questionUnit": "retention question",
+    "summaryOne": "1 judge, 1 retention question",
+    "summaryMany": "{count} judges, {count} retention questions"
+  }
+}

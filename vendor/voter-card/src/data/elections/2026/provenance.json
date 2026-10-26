@@ -1,0 +1,13 @@
+{
+  "authority": "Local Civic Reference",
+  "repository": "https://github.com/quattromani/local-civic-reference",
+  "commit": "d559ce36c981b4d4df9bcc085fc7871be563f62f",
+  "candidateSourcePath": "src/data/elections/2026/election-directory.json",
+  "candidateSourceSha256": "729ffaf46818c04817ccc53ffd9299615058f217242834522d1ae7d0867ef095",
+  "candidateSourceHasUncommittedChanges": true,
+  "calendarSourceSha256": "90890cdd9777fd742d5cf734a7f17d681c14baba02dcff693233f8be9cf617d0",
+  "candidateListings": 83,
+  "distinctCandidates": 82,
+  "offices": 49,
+  "policy": "Candidate facts are maintained upstream. This allowlisted snapshot renders the approved publication and excludes internal audits and manual review queues while preserving affiliation evidence types, review dates and write-in status."
+}

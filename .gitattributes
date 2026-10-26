@@ -1,0 +1,3 @@
+*.pdf binary
+source-snapshot/*.html -text -diff
+source-snapshot/sitemap.xml -text -diff
