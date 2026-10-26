@@ -25,7 +25,7 @@ An ID identifies the content asset and normally matches its filename stem. Code 
 
 Captured originals keep their existing names and bytes under `assets/originals/`; their historical inventory remains unchanged. New user-supplied originals receive descriptive names under `assets/originals/user-supplied/`, with the supplied filename and checksum recorded in the register. The new portrait is titled “Max Quattromani, Vice Chair, Gage County GOP.” Its previous website portrait remains archived.
 
-`legacyWebPath` generates an alias for each previously published image URL. New markup uses the descriptive URL. Do not remove aliases merely to tidy the output folder. Imported voter-card files, source snapshots, downloads, icons, and offline paths retain their upstream names; changing those requires a separate compatibility review.
+`legacyWebPath` generates an alias for previously published images retained in the public presentation. Archival-only media is excluded from the public build; its originals and registry entries remain in the repository. New markup uses the descriptive URL. Do not remove aliases merely to tidy the output folder. Imported voter-card files, source snapshots, downloads, icons, and offline paths retain their upstream names; changing those requires a separate compatibility review.
 
 ## Add or replace an asset
 

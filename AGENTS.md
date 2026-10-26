@@ -10,4 +10,4 @@ Build and check with npm run check. GitHub Pages publishes dist/ from main. This
 
 Asset names and provenance follow project-docs/ASSET-NAMING.md. Register assets in src/assets.json and use stable descriptive IDs in code. Preserve captured originals, legacy published URL aliases, and imported voter-card filenames.
 
-Keep the archive and provenance available, but do not add repeated “Source record” links to the main content pages. The footer archive link remains the shared access point.
+Keep the archive, captured originals, and provenance in the repository only. Do not publish archive.html, archival-only media, source-snapshot files, or navigation links to the archive. Public pages must read as the new party website, without old-site migration notes, source-capture labels, or redesign banners. Keep substantive candidate evidence and source links. The user confirmed the November 10, 2026 meeting at 7 p.m. on October 26, 2026.

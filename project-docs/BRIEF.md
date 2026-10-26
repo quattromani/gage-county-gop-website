@@ -20,17 +20,17 @@ The subject is a human organization with tangible local places, people, and even
 
 Warm paper, dark ink, restrained red, serif headings, and a simple sans serif interface establish an editorial character. The small G monogram is a provisional preview identity, not an adopted replacement logo. Photography supplies local specificity; common grids, borders, and spacing reduce competing visual decisions. CSS tokens own recurring color and spacing. Platform and archive text have a limited reading measure.
 
-Desktop navigation supports direct browsing. A native details menu handles smaller screens and works without JavaScript. Pages are static HTML with relative URLs, so they work at a GitHub repository path. The footer archive link provides access to historical evidence without repeated source-record links in the main pages. The archive search is optional enhancement; all records remain readable without it.
+Desktop navigation supports direct browsing. A native details menu handles smaller screens and works without JavaScript. Pages are static HTML with relative URLs, so they work at a GitHub repository path. Historical source records remain in the repository and are excluded from the public build. The public pages use normal party-site wording without migration commentary or archive navigation.
 
 ## Acceptance and limits
 
-- Eight substantive pages plus voter card and error page, usable on desktop and mobile.
+- Seven substantive pages plus voter card and error page, usable on desktop and mobile.
 - All public captured source text retained in the archive or duplicate-route inventory.
 - Original asset hashes verified and display derivatives hosted locally.
-- Complete published platform preserved; governance conflicts and unconfirmed meeting year visible.
+- Complete published platform preserved. Organization summaries defer procedural details to the constitution. The meeting is confirmed by the user for November 10, 2026, at 7 p.m.
 - Voter card renders its exact imported inclusion set, with judicial section, five calendar milestones, original downloads, scoped offline support, and return navigation.
 - Main navigation includes Party Reveal and voter card.
-- Build validates links, anchors, source fidelity, inclusion, download bytes, archive behavior, and offline scope.
+- Build validates links, anchors, source fidelity, inclusion, download bytes, archive exclusion, confirmed meeting details, and offline scope.
 - Verified public GitHub Pages preview and documented maintenance.
 
 This preview intentionally carries noindex metadata. It is public, not private, and noindex is not an access control. It does not collect form submissions, process donations, add analytics, or claim independent verification of original-site content. Original asset licenses, private Squarespace content, full governing-document transcription, and confirmed event dates remain outside the public capture. See VALIDATION.md for actual test coverage and limitations.

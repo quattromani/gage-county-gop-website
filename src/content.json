@@ -5,12 +5,13 @@
   "facebook": "https://www.facebook.com/groups/625858163898556",
   "instagram": "https://www.instagram.com/gagecountygopgroup/",
   "meeting": {
-    "dateLabel": "November 10",
+    "date": "2026-11-10",
+    "dateLabel": "November 10, 2026",
     "time": "7 p.m.",
+    "dateTime": "2026-11-10T19:00:00-06:00",
     "venue": "402 Sports Bar & Grill",
     "city": "Beatrice, Nebraska",
-    "note": "As listed on the current website. Please confirm the date and location before attending; the notice does not specify a year.",
-    "source": "home"
+    "confirmedBy": "User, October 26, 2026"
   },
   "leaders": [
     {
@@ -33,5 +34,10 @@
       "role": "Treasurer",
       "image": "kayla-brewer-headshot"
     }
+  ],
+  "history": [
+    "The Gage County Republican Party was re-established in 2022. Members attended the state convention, organized a fair booth, and took part in parades and other local activities.",
+    "A November 2023 fundraiser helped build connections and support the party\u2019s mission. The county party held a convention in March 2024 and elected its executive officers.",
+    "In 2024, the party participated in the Homestead Parade and Czech Days Parade, held a dunk booth at the Gage County Fair, and gathered for an election-night celebration."
   ]
 }

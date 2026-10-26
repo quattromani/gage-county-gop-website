@@ -91,6 +91,10 @@ test("source inventory is complete and original asset hashes remain intact", () 
         .digest("hex"),
       entry.sourceSha256,
     );
+    if (entry.webPath.startsWith("assets/web/archive/")) {
+      assert.ok(!fs.existsSync(path.join(dist, entry.webPath)), entry.id);
+      continue;
+    }
     assert.ok(fs.existsSync(path.join(dist, entry.webPath)), entry.id);
     if (entry.legacyWebPath)
       assert.deepEqual(
@@ -105,34 +109,22 @@ test("source inventory is complete and original asset hashes remain intact", () 
     );
   }
 });
-test("platform wording and source archive preserve complete source text", () => {
+test("platform wording remains faithful to preserved source text", () => {
   const data = JSON.parse(
     fs.readFileSync(path.join(root, "source-snapshot/inventory.json")),
   );
-  for (const p of data.pages.filter(
-    (p) =>
-      !["root", "cart", "new-dropdown", "organization-1", "events"].includes(
-        p.slug,
-      ),
-  ))
-    for (const text of p.text)
-      assert.ok(
-        read("archive.html").includes(h(text)),
-        p.slug + ": " + text.slice(0, 50),
-      );
   for (const text of data.pages
     .find((p) => p.slug === "nebraska-platform")
     .text.slice(1)
     .filter((t) => t !== t.toUpperCase()))
     assert.ok(read("platform.html").includes(h(text)));
 });
-test("every website page has landmarks, one h1, language, preview labeling, and image alternatives", () => {
+test("every website page has landmarks, one h1, language, and image alternatives", () => {
   for (const file of htmlFiles.filter((f) => !f.includes("vote-2026"))) {
     const html = fs.readFileSync(file, "utf8");
     assert.equal((html.match(/<h1>/g) || []).length, 1);
     assert.match(html, /<html lang="en">/);
     assert.match(html, /<main id="main">/);
-    assert.match(html, /Website redesign preview/);
     for (const image of html.matchAll(/<img\b[^>]+>/g))
       assert.match(image[0], /alt="[^"]*"/);
     assert.match(html, /https:\/\/partyreveal.com\//);
@@ -249,37 +241,29 @@ test("card offline worker handles save, offline retrieval, and scope boundaries"
   });
   assert.equal(intercepted, false);
 });
-test("archive filtering and direct-link disclosure behavior work", () => {
-  const entries = [
-    { textContent: "Leadership Dennis", hidden: false },
-    { textContent: "Platform agriculture", hidden: false },
-  ];
-  const listeners = {},
-    search = {
-      value: "dennis",
-      addEventListener: (n, fn) => (listeners[n] = fn),
-    },
-    status = {},
-    target = { open: false, matches: () => true };
-  const document = {
-    querySelector: (s) =>
-      s === "[data-archive-search]"
-        ? search
-        : s === "[data-search-status]"
-          ? status
-          : null,
-    querySelectorAll: () => entries,
-    getElementById: () => target,
-    addEventListener: () => {},
-  };
-  vm.runInNewContext(fs.readFileSync(path.join(root, "src/site.js"), "utf8"), {
-    document,
-    location: { hash: "#leadership" },
-    window: { addEventListener: () => {} },
-  });
-  listeners.input();
-  assert.equal(entries[0].hidden, false);
-  assert.equal(entries[1].hidden, true);
-  assert.equal(status.textContent, "1 source page found");
-  assert.equal(target.open, true);
+test("public build excludes source archive and migration language, with confirmed meeting details", () => {
+  assert.ok(!fs.existsSync(path.join(dist, "archive.html")));
+  assert.ok(!fs.existsSync(path.join(dist, "source-snapshot")));
+  assert.ok(!fs.existsSync(path.join(dist, "assets/web/archive")));
+  for (const file of htmlFiles) {
+    const html = fs.readFileSync(file, "utf8");
+    assert.doesNotMatch(
+      html,
+      /archive\.html|source website|original site|Current website|Source record|Source notice|Source captured|Website redesign preview|source leadership page|legacy office lists|imported GOP publication/i,
+      file,
+    );
+    assert.doesNotMatch(
+      html,
+      /href="https?:\/\/(?:www\.)?gagecountygop\.org(?:\/|")/i,
+      file,
+    );
+  }
+  for (const file of ["index.html", "events.html"]) {
+    assert.match(read(file), /November 10, 2026/);
+    assert.match(read(file), /datetime="2026-11-10T19:00:00-06:00"/);
+    assert.doesNotMatch(
+      read(file),
+      /confirm the date|does not specify a year/i,
+    );
+  }
 });

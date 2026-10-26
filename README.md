@@ -33,7 +33,7 @@ Open http://localhost:4187/. The build produces static HTML in dist/. GitHub Act
 | vendor/voter-card/ | Imported publication source and required rendered downloads |
 | project-docs/ | Brief, source review, import manifest, and verification |
 
-The original site contains conflicting and outdated material. The archive identifies that status. Its donation template and generic testimonials are migration evidence, not current party claims. Current candidate facts belong in Local Civic Reference, flow through the existing GOP publication, and are then imported here. Inclusion is not endorsement.
+The captured source contains conflicting and outdated material. The repository archive identifies that status and is excluded from the public build. Its donation template and generic testimonials are migration evidence, not current party claims. Current candidate facts belong in Local Civic Reference, flow through the existing GOP publication, and are then imported here. Inclusion is not endorsement.
 
 ## Voter-card import
 
@@ -54,3 +54,7 @@ Public availability does not establish a new license. Original media and text re
 ## Hosting and recovery
 
 Changes on main trigger a checked Pages release. Failed checks prevent deployment. Recover by reverting the responsible source commit and pushing; do not edit dist/. A custom domain or replacement of Squarespace is a separate decision. Preview pages are public with noindex metadata; they are not access-controlled.
+
+## Public review version
+
+The source archive and archival-only media remain in Git, but archive.html and source-snapshot files are not published. The public website has no archive links, old-site navigation, migration caveats, or redesign banner. Candidate sourcing remains visible because it supports the election reference. The user confirmed the November 10, 2026 meeting at 7 p.m.; that value is maintained once in src/content.json and rendered on the homepage and events page. Governance procedure details defer to the constitution rather than repeating contradictory historical summaries.

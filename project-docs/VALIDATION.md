@@ -31,3 +31,7 @@ Deployment results and live-path checks are reported in the delivery conversatio
 Replaced Max Quattromani’s leadership portrait with the user-supplied photo. Registered all 37 display images with stable descriptive IDs, human-readable titles, original checksums, and subject folders. All 36 previously published image paths are generated as compatibility aliases; archived originals and the voter-card import are unchanged.
 
 The eight checks pass with expanded asset validation covering unique IDs and paths, naming rules, original checksums, capture coverage, and byte-identical compatibility aliases. Browser review confirmed the new portrait, title, alt text, and caption at desktop and 390-pixel phone width. Shared guidance checkpoint found no material divergence; the naming convention is local to this project as requested.
+
+## Public review cleanup, October 26, 2026
+
+User confirmed November 10, 2026, at 7 p.m. Removed source-capture, old-site, and redesign commentary from public pages; retained substantive election sourcing. Excluded archive.html and archival-only media from dist/ while retaining the full repository archive and original checksums. Public organization descriptions defer contested procedure details to the constitution. Build checks now verify archive exclusion and confirmed meeting rendering. Earlier archival and date limitations above describe the historical preview, not this revision.
