@@ -10,7 +10,7 @@ The display collection now uses descriptive filenames in subject folders. The so
 
 ## Naming rules
 
-Use `assets/web/<category>/<subject>[-<detail>].<format>`.
+Use `assets/web/<category>/<subject>[-<detail>].<format>`. Use WebP for photographic derivatives; PNG is supported for sourced flat graphics such as the masthead flag.
 
 - Use lowercase ASCII letters, numbers, and single hyphens. Avoid spaces, underscores, personal device filenames, source hashes, `final`, `new`, and `copy`.
 - Choose a category: `people`, `places`, `events`, `documents`, `brand`, or `archive`.

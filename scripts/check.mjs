@@ -82,7 +82,7 @@ test("source inventory is complete and original asset hashes remain intact", () 
     assert.match(entry.id, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
     assert.match(
       entry.webPath,
-      /^assets\/web\/(people|places|events|documents|brand|archive)\/[a-z0-9]+(?:-[a-z0-9]+)*\.webp$/,
+      /^assets\/web\/(people|places|events|documents|brand|archive)\/[a-z0-9]+(?:-[a-z0-9]+)*\.(?:webp|png)$/,
     );
     assert.equal(
       crypto

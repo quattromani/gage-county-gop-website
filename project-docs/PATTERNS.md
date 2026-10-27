@@ -19,3 +19,11 @@ Meeting actions on the homepage, events, and contact pages link to the same gene
 The homepage voter-card quick link uses the featured red treatment: the shared var(--red) token, white title and arrow, warm-white supporting text, a narrow warm highlight, and a restrained shadow. Its grid position, size rules, and link destination stay shared with the quick-access strip; hover darkens the background without moving the tile.
 
 The About page mission statement uses a semantic blockquote with unchanged party wording, larger serif text, a red leading rule, and the shared soft background. Its inset spacing and type scale adapt to narrow screens. Keep it distinct from ordinary body paragraphs without adding promotional wording.
+
+## Masthead flag and mobile menu
+
+The proposed site uses a flat, unmodified U.S. flag PNG as a small upper-right masthead accent. Source: Wikimedia Commons, File:Flag_of_the_United_States.svg; 330px PNG rendition, public domain. The source register preserves the original file, URL, checksum, and license. A simple rectangular rendering fits the site's restrained typographic branding and remains legible at small size.
+
+Above 900px the flag is 70px wide with original proportions. At 900px and below it is hidden, and the native details/summary Menu control uses red, white, and navy bars. The white bar has a subtle edge for contrast on cream. Keep the visible Menu label, keyboard behavior, focus outline, and all navigation links. The flag is decorative context, never a navigation control.
+
+Contact is a plain footer link, rather than a boxed masthead action; it is also omitted from the mobile header menu. Contextual contact calls to action within page content remain available.

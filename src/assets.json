@@ -335,6 +335,18 @@
       "sourceType": "user-supplied",
       "received": "2026-10-26",
       "webPath": "assets/web/people/max-quattromani-headshot.webp"
+    },
+    {
+      "id": "united-states-flag",
+      "title": "Flag of the United States",
+      "sourcePath": "assets/originals/external/united-states-flag.png",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_the_United_States.svg",
+      "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/330px-Flag_of_the_United_States.svg.png",
+      "sourceSha256": "f97fec79d518f8d2146943d66bdd84f4def75979c01a0a870c61b08fd58b1485",
+      "webPath": "assets/web/brand/united-states-flag.png",
+      "license": "Public domain, as recorded by Wikimedia Commons",
+      "description": "Unmodified 330 \u00d7 174 PNG rendition of the flat U.S. flag. Small masthead accent; retain its original proportions and colors.",
+      "alt": "Flag of the United States"
     }
   ]
 }

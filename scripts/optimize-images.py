@@ -15,5 +15,8 @@ for asset in registry['assets']:
     with Image.open(source) as original:
         display = ImageOps.exif_transpose(original).convert('RGB')
         display.thumbnail((1800, 1800))
-        display.save(output, quality=85, method=6)
+        if output.suffix.lower() == '.png':
+            display.save(output, optimize=True)
+        else:
+            display.save(output, quality=85, method=6)
 print(f"Generated {len(registry['assets'])} registered display images.")

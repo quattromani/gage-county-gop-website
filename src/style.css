@@ -195,16 +195,6 @@ a:focus-visible {
   text-decoration-color: var(--red);
   text-underline-offset: 8px;
 }
-.header-contact {
-  padding: 10px 16px;
-  border: 1px solid var(--ink);
-  font-size: 12px;
-  text-decoration: none;
-  white-space: nowrap;
-}
-.header-contact span {
-  margin-left: 14px;
-}
 .mobile-nav {
   display: none;
 }
@@ -896,9 +886,6 @@ a:focus-visible {
   .brand > span:last-child {
     font-size: 14px;
   }
-  .header-contact {
-    display: none;
-  }
   .hero-copy {
     padding-top: 50px;
   }
@@ -1282,7 +1269,6 @@ a:focus-visible {
   .location-bar,
   .desktop-nav,
   .mobile-nav,
-  .header-contact,
   .site-footer,
   .actions {
     display: none;
@@ -1322,4 +1308,15 @@ a:focus-visible {
   a {
     color: black;
   }
+}
+
+/* The masthead flag yields its position to the mobile navigation control. */
+.header-flag{display:block;flex:none;width:70px;height:auto;aspect-ratio:330 / 174;border:1px solid #142d3620}
+.menu-icon{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:27px;height:25px}
+.menu-icon i{display:block;width:27px;height:4px;background:var(--red)}
+.menu-icon i:nth-child(2){background:var(--white);border:1px solid #53636a80}
+.menu-icon i:nth-child(3){background:var(--ink)}
+@media(max-width:900px){
+ .header-flag{display:none}
+ .mobile-nav summary{align-items:center;min-width:44px;min-height:44px}
 }
