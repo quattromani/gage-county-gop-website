@@ -27,3 +27,9 @@ The proposed site uses a flat, unmodified U.S. flag PNG as a small upper-right m
 Above 900px the flag is 70px wide with original proportions. At 900px and below it is hidden, and the native details/summary Menu control uses red, white, and navy bars. The white bar has a subtle edge for contrast on cream. Keep the visible Menu label, keyboard behavior, focus outline, and all navigation links. The flag is decorative context, never a navigation control.
 
 Contact is a plain footer link, rather than a boxed masthead action; it is also omitted from the mobile header menu. Contextual contact calls to action within page content remain available.
+
+## Meeting event handoff
+
+Meeting actions on Home, Events and Contact download a descriptively named .ics event file. Apple Calendar imports that file through its normal import dialog. The event website is the party homepage, not the GitHub hosting URL. X-WR-CALNAME identifies Gage County GOP Meetings when a calendar application displays a calendar name. The physical LOCATION remains the venue and city. Preserve the existing event UID for import identity; it is an opaque identifier rather than a visitor-facing website field. No end time, invitation sender, or attendees are invented.
+
+A browser may still display the download origin as GitHub while hosting remains there. The event's visible website and venue are party-facing; domain configuration is separate.

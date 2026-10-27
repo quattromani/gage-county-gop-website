@@ -271,7 +271,7 @@ test("public build excludes source archive and migration language, with confirme
 test("meeting actions open a portable calendar event at the confirmed Central time", () => {
   const link = "./calendar/gage-county-gop-meeting-2026-11-10.ics";
   for (const name of ["index.html", "events.html", "contact.html"]) {
-    assert.ok(read(name).includes(`href="${link}" type="text/calendar"`), name);
+    assert.ok(read(name).includes(`href="${link}" type="text/calendar" download="gage-county-gop-meeting-2026-11-10.ics"`), name);
     assert.doesNotMatch(
       read(name),
       /mailto:[^"]+subject=County%20GOP%20meeting/,
@@ -290,8 +290,10 @@ test("meeting actions open a portable calendar event at the confirmed Central ti
   for (const line of calendar.split("\r\n"))
     assert.ok(Buffer.byteLength(line) <= 75);
   const unfolded = calendar.replaceAll("\r\n ", "");
+  assert.match(unfolded, /X-WR-CALNAME:Gage County GOP Meetings/);
+  assert.doesNotMatch(unfolded, /URL:https:\/\/quattromani/);
   assert.match(
     unfolded,
-    /URL:https:\/\/quattromani.github.io\/gage-county-gop-website\/events.html#meeting\r\n/,
+    /URL:https:\/\/www.gagecountygop.org\/\r\n/,
   );
 });
