@@ -26,4 +26,8 @@ Import the existing Gage County GOP voter-card project with its source and prove
 
 ## Remaining confirmations
 
-The public capture cannot supply private Squarespace drafts, original layered artwork, form submissions, administrative settings, unpublished files, or asset licenses. The meeting year and future venue, current leadership confirmation, governing-summary reconciliation, donation recipient, and uncertain event dates remain content-owner questions. Preserve these limits in maintenance records and avoid filling them with assumptions.
+The public capture cannot supply private Squarespace drafts, original layered artwork, form submissions, administrative settings, unpublished files, or asset licenses. The current leadership confirmation, governing-summary reconciliation, donation recipient, and uncertain historical event dates remain content-owner questions. The meeting year and recurring venue were resolved by the user's October 26 and November 20, 2026 confirmations; see src/content.json for the current schedule. A November 20 transcription now makes the constitution readable as text and retains the five original scans. The address redacted in the first scan remains redacted in the text. Preserve remaining limits in maintenance records and avoid filling them with assumptions.
+
+## Donation destination, November 20, 2026
+
+The user requested reuse of the Venmo QR published on the live homepage. A read-only inspection confirmed that its image URL matches the preserved venmogop.jpg. ZXing decoded the 94-byte destination; the original URL is retained exactly in src/content.json. The clean PNG re-renders the decoded module matrix. A desktop visit redirects to the generic Venmo homepage, so the mobile recipient and completed payment flow remain unverified. No payment was made. The unfinished donation-page template remains excluded.

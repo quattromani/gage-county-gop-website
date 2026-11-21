@@ -1,0 +1,42 @@
+{
+  "title": "Get involved",
+  "intro": "Bring your interests and experience. Explore the teams supporting the Gage County Republican Party.",
+  "sourceNote": "Seven team names and Education activities supplied by the owner in the Committee Opportunities photograph, November 20, 2026. General descriptions are editorial summaries for owner review. No workload, vacancies, appointment or response-time promises are asserted.",
+  "ways": [
+    {
+      "id": "candidate-survey",
+      "title": "Candidate Survey Team",
+      "description": "Help develop candidate questionnaires, send surveys, organize responses, and prepare clear summaries for the county party."
+    },
+    {
+      "id": "public-relations",
+      "title": "Public Relations Team",
+      "description": "Help keep the website current, share county party news on social media, and coordinate announcements with local newspapers and other media."
+    },
+    {
+      "id": "recruiting",
+      "title": "Recruiting Team",
+      "description": "Welcome people who want to take part, introduce them to county party activities, and help match their interests with opportunities to volunteer."
+    },
+    {
+      "id": "fundraising",
+      "title": "Fundraising Team",
+      "description": "Help develop fundraising ideas, plan activities, and coordinate event preparations and follow-up with party officers."
+    },
+    {
+      "id": "podcast",
+      "title": "Podcast Team",
+      "description": "Help plan episodes, coordinate guests, prepare discussion topics, and assist with recording, editing, or publishing."
+    },
+    {
+      "id": "program",
+      "title": "Program Team",
+      "description": "Help plan speakers and programs for county GOP meetings and events. Suggest topics, coordinate invitations, and support event preparations."
+    },
+    {
+      "id": "education",
+      "title": "Education Team",
+      "description": "Help coordinate civic education activities, including school Constitution Day observances on September 17 and Patriot Academy classes."
+    }
+  ]
+}

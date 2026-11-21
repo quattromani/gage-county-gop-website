@@ -1,0 +1,93 @@
+{
+  "title": "Constitution of the Gage County Republican Party",
+  "sourcePages": [
+    "assets/originals/89b8552a8a-2026-Costitution-PG-1.png",
+    "assets/originals/62dd31d8c6-2026-Costitution-PG-2.png",
+    "assets/originals/c13bcc87c6-2026-Costitution-PG-3.png",
+    "assets/originals/9a35092d62-2026-Costitution-PG-4.png",
+    "assets/originals/ad3a2e705d-2026-Costitution-PG-5.png"
+  ],
+  "articles": [
+    {
+      "id": "article-i",
+      "heading": "ARTICLE I – Name, Purpose, and Membership",
+      "clauses": [
+        { "label": "Name:", "text": "The name of this Organization is: Gage County Republican Party, herein referred to as the “Party”." },
+        { "label": "Purpose:", "text": "The Purpose of the Party is to:", "items": [
+          "organize the Republicans living in Gage County",
+          "encourage the involvement of all",
+          "encourage strong conservative Republicans to run for office, and above all else,",
+          "protect the Constitutions of the United States and the State of Nebraska"
+        ] },
+        { "label": "Membership:", "text": "The membership of the Party shall be composed of all registered Republican voters of Gage County, Nebraska, who desire to support the objectives of the Party." }
+      ]
+    },
+    {
+      "id": "article-ii",
+      "heading": "ARTICLE II – Registered Office and Agent",
+      "clauses": [
+        { "label": "Registered office and Agent", "text": "The street and mailing address of the registered office and agent is:", "redacted": true, "after": "The registered agent or office may be changed by amendment to these Articles." },
+        { "label": "Existence", "text": "The organization shall commence on November 1, 2023, and shall thereafter have perpetual existence." }
+      ]
+    },
+    {
+      "id": "article-iii",
+      "heading": "ARTICLE III – Conventions",
+      "clauses": [
+        { "text": "A Convention shall be held at the time and place designated by the Chair pursuant to law and shall conduct any business which may properly come before it, including the election of a Chair, Vice Chair, Secretary, Treasurer, and such other officers as it deems necessary. In even numbered years, the Party will conduct a County Convention between March 1st and April 10th at an hour and place to be designated by the County Chair. The Party shall cause a notice to be published at least seven (7) days prior to the date of the Convention setting forth the date, time, and place of the Convention. Members desiring to become delegates and planning to attend the County Convention shall register with the Gage County Clerk between January 1st and March 1st." },
+        { "text": "A Special Convention shall be called if a majority of registered County Delegates submit a request for a Convention. Once requests by a majority of County Delegates calling for a Special Convention have been received, the County Chair shall convene such Special Convention within 30 days and give notice as provided herein. The Special Convention shall conduct any business which may properly come before it, including the removal and election of County Officers." },
+        { "text": "At all Conventions, each Delegate thereto shall be entitled to register his or her individual vote, and it shall be forbidden to attempt to bind any Delegate by any Party or Convention rules requiring the Delegates from any political subdivision to such County Convention to vote as a unit. The authority held by Delegates to the County Convention, by reason of the registration, shall be deemed personal in its nature and no such Delegate may, by power of attorney, proxy, or in any other way, authorize any other person in his or her name or on his or her behalf to appear at such County Convention and cast ballots therein or participate in the organization and transaction of any business at such Convention." },
+        { "text": "The Convention of the duly registered Delegates, when in session, shall be the governing body of the Party. When such Convention is not in session, the County Committee shall be the governing body." },
+        { "text": "At all Conventions and meetings provided for herein, the rules of order shall be the current edition of Robert’s Rules of Order. Any proposed bylaws and resolutions shall be adopted in accordance with the provision of Robert’s Rules of Order." },
+        { "text": "The registered County Convention Delegates present and voting shall constitute a quorum for any Convention in which proper prior notice was published." }
+      ]
+    },
+    {
+      "id": "article-iv",
+      "heading": "ARTICLE IV – Party Administration",
+      "clauses": [
+        { "label": "General Management", "text": "The general management of the affairs and governance of the Party shall be fixed in the County Committee, subject to the direction of the County Convention." },
+        { "label": "County Committee", "text": "The County Committee shall have the power to approve the allocation, budgeting, and disbursement of Party funds. The County Committee shall consist of two persons from each County Supervisor District within Gage County. Each District shall select one man and one woman to be their representatives on the County Committee, selected by district caucuses held at the County Convention or in such other manner as may be authorized by the County Convention. If there are not enough available delegates, two of the same gender may be chosen. A County Committee member position shall be declared vacant if the member:", "items": [
+          "ceases to reside in Gage County",
+          "ceases to remain a registered Republican voter or",
+          "is absent from three (3) consecutive County Committee meetings without notification submitted to the Executive Committee in writing prior to such third consecutive meeting"
+        ], "itemStyle": "parenthesis", "after": "Upon a County Committee vacancy, a replacement may be elected by the County Committee to serve until the next County Convention. The term of a County Committee member shall be approximately two years, or until their respective successors have been elected." },
+        { "label": "Executive Committee", "text": "The officers of the Party organization shall be a Chair, Vice Chair, Secretary, and Treasurer; herein referred to as the Executive Committee. They shall have the powers and duties usually incident to their respective offices, subject to the direction of the County Committee and the County Convention. They shall be elected by the County Convention Delegates. If there is a vacancy, then they shall be elected by the County Committee to serve until the next County Convention. The Chair shall convene a County Convention pursuant to Article III for the purpose of holding elections for state convention delegates, state convention alternates, and county officers. The policies, affairs, and business of the Party shall be administered by the Executive Committee. The term of Party officers shall be approximately two years, or until their respective successors have been selected. The Chair shall have power, with the approval of the County Committee, to appoint such additional committees and committee chairs, from time to time, as circumstances may warrant." },
+        { "label": "Meetings of County Committee", "text": "Meetings of the County Committee, in addition to meetings hereinbefore prescribed, may be called by the Chair or by written request of not less than one-half of the County Committee members. The Chair shall convene a meeting of the County Committee at least once every two months. Notice of County Committee meetings shall be provided to all members at least 3 days in advance." },
+        { "label": "Use of Technology", "text": "Video conferencing tools, such as Zoom, shall be utilized when necessary during meetings of the County Committee, Executive Committee, Special Meetings, and any other committees or subcommittees. This allows the ability to participate in discussions, vote, and engage in all *required* activities remotely, ensuring maximum participation. Text messaging may be employed for time-sensitive decisions that require immediate, within 48 hours, attention from the County Committee, Executive Committee, or other relevant party members. Approval is determined by majority of participating County and Executive Committee members. Participation is defined as any written response with Yes or No. All decisions made via text messaging shall be documented and included in the official records of the Party. A summary of text-based decisions shall be made available to members to maintain transparency and included in the minutes of the next meeting." },
+        { "label": "County Officer Succession Plan and Unfilled Vacancy", "text": "Whenever there is a Party elected officer vacancy, it shall be immediately filled as follows: A vacant Chair position shall be filled temporarily by the Vice Chair with a County Committee election held within 45 days to fill the Chair position. A vacancy in the Vice Chair, Secretary or Treasurer positions shall be filled temporarily by a vote of the remaining officers. If an unfilled Chair vacancy exists for 30 days and there are no remaining officers, the state party Congressional District Chair, with the approval of the State Chair, shall name an acting Chair who shall convene a County Committee meeting within 45 days for the purpose of holding officer elections. The acting Chair shall cause a notice to be published at least seven (7) days prior to the date of the meeting announcing the officer elections and setting forth the date, time, and place of the meeting." },
+        { "label": "Duty to Provide County Party Candidate Access to Electorate.", "text": "A county Party member seeking candidacy to a county Party office shall, upon request, be provided Party contact information for all Party voting members/delegates who will be voting in the county Party election. Such contact information shall be transmitted by the Party to the candidate within two business days of such request." },
+        { "label": "Quorum", "text": "A quorum for the County Committee shall be established with a majority of County Committee members present and voting, either in person or digitally. A quorum of the Executive Committee shall be established with three Executive Committee members present, either in person or digitally." }
+      ]
+    },
+    {
+      "id": "article-v",
+      "heading": "ARTICLE V – Nominations for Candidates and Vacancy on Ballot",
+      "clauses": [
+        { "label": "Nominations", "text": "All nominations for Republican candidates in any Gage County office to be filled at a special election or any other office to be filled by the electors of Gage County, which are required by the provisions of Chapter 32 of the Revised Statutes of Nebraska, as amended, shall be made by a majority vote of a quorum of the County Committee in the manner provided by law. The Chair shall call a meeting of the County Committee to be held at a place designated by the Chair within such time and in the manner provided by law. The Chair shall cause the certificates of such nominations to be properly filed." },
+        { "label": "Vacancies", "text": "Unless otherwise provided for by law, should a vacancy occur for any Republican candidate in any Gage County office for any cause before any election, such vacancy shall be filled by a majority vote of a quorum of the County Committee (Nebraska Revised Statute 32-627). The Chair shall call a meeting for the County Central Committee to be held at a place designated by the Chair within such time as to allow filing of the necessary certificates with the proper officers in the manner provided by law, and the county Chair shall cause such certificates to be properly filed." }
+      ]
+    },
+    {
+      "id": "article-vi",
+      "heading": "ARTICLE VI – Endorsement of Candidates",
+      "clauses": [
+        { "text": "The County Party, including its officers and staff, may endorse a Republican candidate seeking elected office in a contested election if", "items": [
+          "a request for endorsement is made by the candidate and",
+          "the endorsement is approved by a two-thirds vote of the County Committee."
+        ], "after": "Contested election shall mean an election in which two or more Republicans are seeking the same political office in either a primary, special, or general election." },
+        { "text": "The Party, including its officers and staff, shall not endorse a non-Republican candidate in an election in which a Republican is also a candidate. Any officer or member found to have violated this provision may be removed from office or committee and vacancy shall exist if a majority of the County Committee members vote to remove said officer or member." },
+        { "text": "Endorsement shall mean: (1) a public display or statement of support either by print, electronic media, or a written statement; or (2) a reported campaign contribution. Materials created and distributed for the purpose of increasing voter turnout including but not limited to door-to-door distribution of Republican candidate literature, shall not be a prohibited endorsement. Financially supporting shall not include resources made available from the Republican National Committee through the State Party and the county Party to all Republican candidates including but not limited to mobile canvassing applications, walk lists, call lists, or data." },
+        { "text": "Nothing in these sections shall restrict the County Party including its officers and staff from endorsing a Republican candidate in an election at any level when he or she is the only declared Republican candidate seeking that office." }
+      ]
+    },
+    {
+      "id": "article-vii",
+      "heading": "ARTICLE VII – Amendments",
+      "paragraphs": [
+        "This Constitution may be amended by any Gage County Republican Party Convention with a majority vote of those present and voting. This Constitution may also be amended by the County Committee but only if a quorum is present and at least two-thirds (2/3) of those present and voting vote in favor of the proposed amendment. Such vote by the County Committee shall be taken at a County Committee meeting called specifically to consider such amendments, and a written copy of the proposed amendments, together with any section proposed to be deleted, shall accompany the notice of such meeting. The next subsequent County Convention may suspend such amendment if a motion is made and adopted by a majority of the Delegates present.",
+        "It was moved and seconded that the above Articles of Organization be adopted as set forth on April 11, 2026. For the adoption of the motion - _12_; Against - _0_."
+      ]
+    }
+  ]
+}

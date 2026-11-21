@@ -1,0 +1,608 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-20",
+  "title": "Government in Gage County",
+  "scope": {
+    "included": [
+      "Legislative District 30",
+      "Gage County Board of Supervisors",
+      "Countywide elected offices",
+      "Selected county services"
+    ],
+    "excluded": [
+      "Municipal governments",
+      "Township boards",
+      "School boards",
+      "Natural resources districts",
+      "Full state executive and judicial organization",
+      "Party affiliations",
+      "Election outcomes"
+    ]
+  },
+  "listingPolicy": "Names and contacts follow the official county and Legislature directories checked November 20, 2026. Directory listings may lag appointments or term changes. This is a service guide, not an official government website.",
+  "sources": {
+    "legislature": {
+      "title": "About the Nebraska Legislature",
+      "url": "https://www.nebraskalegislature.gov/about/about.php",
+      "publisher": "Nebraska Legislature",
+      "checkedAt": "2026-11-20",
+      "note": ""
+    },
+    "lawmaking": {
+      "title": "Lawmaking in Nebraska",
+      "url": "https://www.nebraskalegislature.gov/about/lawmaking.php",
+      "publisher": "Nebraska Legislature",
+      "checkedAt": "2026-11-20",
+      "note": ""
+    },
+    "district-30": {
+      "title": "District 30 senator",
+      "url": "https://nebraskalegislature.gov/senators/landing-pages/index.php?District=30",
+      "publisher": "Nebraska Legislature",
+      "checkedAt": "2026-11-20",
+      "note": ""
+    },
+    "district-30-map": {
+      "title": "Legislative District 30 map",
+      "url": "https://nebraskalegislature.gov/media/images/maps/2021/legislature/District30.pdf",
+      "publisher": "Nebraska Legislature",
+      "checkedAt": "2026-11-20",
+      "note": ""
+    },
+    "board": {
+      "title": "County Board",
+      "url": "https://gagecountyne.gov/county-board/",
+      "publisher": "Gage County, Nebraska",
+      "checkedAt": "2026-11-20",
+      "note": ""
+    },
+    "budget-authority": {
+      "title": "Neb. Rev. Stat. 23-1111",
+      "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=23-1111",
+      "publisher": "Nebraska Legislature",
+      "checkedAt": "2026-11-20",
+      "note": "Budget approval and county officers’ staffing responsibilities; supports the limited relationship explanation, not a comprehensive hierarchy."
+    },
+    "rural-map": {
+      "title": "Rural supervisor district map",
+      "url": "https://gagecountyne.gov/wp-content/uploads/sites/35/2025/07/Supervisor-Districts-rural-with-names.pdf",
+      "publisher": "Gage County, Nebraska",
+      "checkedAt": "2026-11-20",
+      "note": "Use for boundaries; use the board directory for names."
+    },
+    "beatrice-map": {
+      "title": "Supervisor districts within Beatrice",
+      "url": "https://gagecountyne.gov/wp-content/uploads/sites/35/2025/07/Supervisor-Districts-City-of-Beatrice-with-names.pdf",
+      "publisher": "Gage County, Nebraska",
+      "checkedAt": "2026-11-20",
+      "note": "County supervisor districts, not city council wards. Use the board directory for names."
+    },
+    "meetings": {
+      "title": "County Board meeting documents",
+      "url": "https://gagecountyne.gov/county-board/board-meetings/",
+      "publisher": "Gage County, Nebraska",
+      "checkedAt": "2026-11-20",
+      "note": ""
+    },
+    "elections": {
+      "title": "Election Office",
+      "url": "https://gagecountyne.gov/election-office/",
+      "publisher": "Gage County, Nebraska",
+      "checkedAt": "2026-11-20",
+      "note": ""
+    },
+    "assessor": {
+      "title": "County Assessor",
+      "url": "https://gagecountyne.gov/county-assessor/",
+      "publisher": "Gage County, Nebraska",
+      "checkedAt": "2026-11-20",
+      "note": ""
+    },
+    "treasurer": {
+      "title": "County Treasurer",
+      "url": "https://gagecountyne.gov/treasurer-office/",
+      "publisher": "Gage County, Nebraska",
+      "checkedAt": "2026-11-20",
+      "note": ""
+    },
+    "clerk": {
+      "title": "County Clerk & Election Commissioner",
+      "url": "https://gagecountyne.gov/county-clerk/",
+      "publisher": "Gage County, Nebraska",
+      "checkedAt": "2026-11-20",
+      "note": ""
+    },
+    "deeds": {
+      "title": "Register of Deeds",
+      "url": "https://gagecountyne.gov/register-of-deeds/",
+      "publisher": "Gage County, Nebraska",
+      "checkedAt": "2026-11-20",
+      "note": ""
+    },
+    "sheriff": {
+      "title": "County Sheriff",
+      "url": "https://gagecountyne.gov/sheriff-office/",
+      "publisher": "Gage County, Nebraska",
+      "checkedAt": "2026-11-20",
+      "note": ""
+    },
+    "attorney": {
+      "title": "County Attorney",
+      "url": "https://gagecountyne.gov/attorney-county/",
+      "publisher": "Gage County, Nebraska",
+      "checkedAt": "2026-11-20",
+      "note": ""
+    },
+    "district-court-clerk": {
+      "title": "Clerk of the District Court",
+      "url": "https://gagecountyne.gov/clerk-of-district-court/",
+      "publisher": "Gage County, Nebraska",
+      "checkedAt": "2026-11-20",
+      "note": ""
+    },
+    "surveyor": {
+      "title": "County Surveyor",
+      "url": "https://gagecountyne.gov/surveyor/",
+      "publisher": "Gage County, Nebraska",
+      "checkedAt": "2026-11-20",
+      "note": ""
+    },
+    "roads": {
+      "title": "Roads & Bridges",
+      "url": "https://gagecountyne.gov/roads-and-bridges/",
+      "publisher": "Gage County, Nebraska",
+      "checkedAt": "2026-11-20",
+      "note": ""
+    },
+    "planning": {
+      "title": "Planning & Zoning",
+      "url": "https://gagecountyne.gov/planning-and-zoning/",
+      "publisher": "Gage County, Nebraska",
+      "checkedAt": "2026-11-20",
+      "note": ""
+    },
+    "emergency-management": {
+      "title": "Emergency Management",
+      "url": "https://gagecountyne.gov/emergency-management/",
+      "publisher": "Gage County, Nebraska",
+      "checkedAt": "2026-11-20",
+      "note": ""
+    },
+    "veterans": {
+      "title": "Veterans Services",
+      "url": "https://gagecountyne.gov/veterans-services/",
+      "publisher": "Gage County, Nebraska",
+      "checkedAt": "2026-11-20",
+      "note": ""
+    },
+    "weeds": {
+      "title": "Weed Superintendent",
+      "url": "https://gagecountyne.gov/weed-superintendent/",
+      "publisher": "Gage County, Nebraska",
+      "checkedAt": "2026-11-20",
+      "note": ""
+    },
+    "extension": {
+      "title": "Nebraska Extension in Gage County",
+      "url": "https://extension.unl.edu/statewide/gage/",
+      "publisher": "University of Nebraska–Lincoln",
+      "checkedAt": "2026-11-20",
+      "note": "The county Extension link returned 503; University page used directly."
+    }
+  },
+  "people": {
+    "myron-dorn": {
+      "name": "Myron Dorn"
+    },
+    "eddie-dorn": {
+      "name": "Eddie Dorn"
+    },
+    "emily-haxby": {
+      "name": "Emily Haxby"
+    },
+    "erich-tiemann": {
+      "name": "Erich Tiemann"
+    },
+    "rick-clabaugh": {
+      "name": "Rick Clabaugh"
+    },
+    "gary-lytle": {
+      "name": "Gary Lytle"
+    },
+    "rex-adams": {
+      "name": "Rex Adams"
+    },
+    "terry-jurgens": {
+      "name": "Terry Jurgens"
+    },
+    "assessor-holder": {
+      "name": "Patricia Milligan"
+    },
+    "treasurer-holder": {
+      "name": "Laurie Wollenburg"
+    },
+    "clerk-holder": {
+      "name": "Dawn Hill"
+    },
+    "deeds-holder": {
+      "name": "Donna Munoz"
+    },
+    "sheriff-holder": {
+      "name": "Millard “Gus” Gustafson"
+    },
+    "attorney-holder": {
+      "name": "Amanda Fanning"
+    },
+    "district-court-clerk-holder": {
+      "name": "Phyllis Schoen"
+    },
+    "surveyor-holder": {
+      "name": "Chris Witulski"
+    }
+  },
+  "state": {
+    "institution": "Nebraska Legislature",
+    "title": "State senator",
+    "district": "30",
+    "personId": "myron-dorn",
+    "phone": "402-471-2620",
+    "email": "myron.dorn@leg.ne.gov",
+    "summary": "Your District 30 senator represents the district in the Legislature. Contact the senator about state legislation and proposed changes to Nebraska law.",
+    "sourceIds": [
+      "district-30",
+      "lawmaking"
+    ],
+    "mapSourceId": "district-30-map"
+  },
+  "board": {
+    "title": "Board of Supervisors",
+    "summary": "Seven district representatives serve together on the county board. Start here for county budget questions, board decisions, and matters for a public meeting.",
+    "sourceIds": [
+      "board",
+      "budget-authority",
+      "meetings"
+    ],
+    "districts": [
+      {
+        "district": 1,
+        "personId": "eddie-dorn",
+        "phone": "402-228-6170",
+        "email": "edorn@gagecountyne.gov",
+        "sourceIds": [
+          "board"
+        ]
+      },
+      {
+        "district": 2,
+        "personId": "emily-haxby",
+        "phone": "402-989-2387",
+        "email": "ehaxby@gagecountyne.gov",
+        "sourceIds": [
+          "board"
+        ]
+      },
+      {
+        "district": 3,
+        "personId": "erich-tiemann",
+        "phone": "402-520-0295",
+        "email": "etiemann@gagecountyne.gov",
+        "sourceIds": [
+          "board"
+        ]
+      },
+      {
+        "district": 4,
+        "personId": "rick-clabaugh",
+        "phone": "402-239-9066",
+        "email": "rclabaugh@gagecountyne.gov",
+        "sourceIds": [
+          "board"
+        ]
+      },
+      {
+        "district": 5,
+        "personId": "gary-lytle",
+        "phone": "402-239-4266",
+        "email": "glytle@gagecountyne.gov",
+        "sourceIds": [
+          "board"
+        ]
+      },
+      {
+        "district": 6,
+        "personId": "rex-adams",
+        "phone": "402-520-2434",
+        "email": "radams@gagecountyne.gov",
+        "sourceIds": [
+          "board"
+        ]
+      },
+      {
+        "district": 7,
+        "personId": "terry-jurgens",
+        "phone": "402-766-4737",
+        "email": "tjurgens@gagecountyne.gov",
+        "sourceIds": [
+          "board"
+        ]
+      }
+    ],
+    "mapSourceIds": [
+      "rural-map",
+      "beatrice-map"
+    ]
+  },
+  "offices": [
+    {
+      "id": "assessor",
+      "title": "County Assessor",
+      "personId": "assessor-holder",
+      "phone": "402-223-1308",
+      "email": "pmilligan@gagecountyne.gov",
+      "summary": "Values property for tax purposes and processes personal property returns, homestead exemptions, and property tax exemption applications.",
+      "questions": [
+        "Property valuation",
+        "Homestead exemption",
+        "Personal property returns"
+      ],
+      "sourceIds": [
+        "assessor"
+      ],
+      "kind": "countywide-elected-office"
+    },
+    {
+      "id": "treasurer",
+      "title": "County Treasurer",
+      "personId": "treasurer-holder",
+      "phone": "402-223-1316",
+      "email": "lwollenburg@gagecountyne.gov",
+      "summary": "Bills and collects property taxes, handles county revenues, and provides vehicle and boat title and registration services.",
+      "questions": [
+        "Pay a property tax bill",
+        "Vehicle title or registration",
+        "Boat registration"
+      ],
+      "sourceIds": [
+        "treasurer"
+      ],
+      "kind": "countywide-elected-office"
+    },
+    {
+      "id": "clerk",
+      "title": "County Clerk & Election Commissioner",
+      "personId": "clerk-holder",
+      "phone": "402-223-1300",
+      "email": "dhill@gagecountyne.gov",
+      "summary": "Keeps county board records, issues marriage licenses, and administers local elections and voter registration.",
+      "questions": [
+        "Board minutes",
+        "Marriage license",
+        "Voting and elections"
+      ],
+      "sourceIds": [
+        "clerk",
+        "elections"
+      ],
+      "kind": "countywide-elected-office",
+      "phoneNote": "Option 4",
+      "relatedSourceIds": [
+        "elections"
+      ]
+    },
+    {
+      "id": "deeds",
+      "title": "Register of Deeds",
+      "personId": "deeds-holder",
+      "phone": "402-223-1361",
+      "email": "dmunoz@gagecountyne.gov",
+      "summary": "Records and preserves land documents, including deeds, mortgages, deeds of trust, and plats.",
+      "questions": [
+        "Record a deed",
+        "Find a recorded mortgage",
+        "Land records"
+      ],
+      "sourceIds": [
+        "deeds"
+      ],
+      "kind": "countywide-elected-office"
+    },
+    {
+      "id": "sheriff",
+      "title": "County Sheriff",
+      "personId": "sheriff-holder",
+      "phone": "402-223-5221",
+      "email": "mwg903@gcsone.us",
+      "summary": "Provides county law enforcement, criminal investigations, jail operations, and other public safety services.",
+      "questions": [
+        "Nonemergency law enforcement",
+        "Jail information",
+        "Sheriff services"
+      ],
+      "sourceIds": [
+        "sheriff"
+      ],
+      "kind": "countywide-elected-office"
+    },
+    {
+      "id": "attorney",
+      "title": "County Attorney",
+      "personId": "attorney-holder",
+      "phone": "402-223-1344",
+      "email": null,
+      "summary": "Prosecutes cases for the state and county, advises county officials, and operates programs including victim/witness assistance and diversion.",
+      "questions": [
+        "Victim/witness assistance",
+        "Diversion programs",
+        "County prosecution"
+      ],
+      "sourceIds": [
+        "attorney"
+      ],
+      "kind": "countywide-elected-office"
+    },
+    {
+      "id": "district-court-clerk",
+      "title": "Clerk of the District Court",
+      "personId": "district-court-clerk-holder",
+      "phone": "402-223-1332",
+      "email": "phyllis.schoen@nejudicial.gov",
+      "summary": "Maintains District Court case records and filings, processes court orders, and provides protection-order application and passport services.",
+      "questions": [
+        "District Court records",
+        "Court filings",
+        "Protection-order applications"
+      ],
+      "sourceIds": [
+        "district-court-clerk"
+      ],
+      "kind": "countywide-elected-office"
+    },
+    {
+      "id": "surveyor",
+      "title": "County Surveyor",
+      "personId": "surveyor-holder",
+      "phone": "402-239-7608",
+      "email": "lst_inc@diodecom.net",
+      "summary": "Maintains county survey information and government survey corners and works with maps, plats, boundaries, and public works surveys.",
+      "questions": [
+        "County survey records",
+        "Survey corners",
+        "Survey information"
+      ],
+      "sourceIds": [
+        "surveyor"
+      ],
+      "kind": "countywide-elected-office"
+    }
+  ],
+  "services": [
+    {
+      "id": "roads",
+      "title": "Roads & Bridges",
+      "phone": "402-223-1395",
+      "summary": "County-maintained roads, bridges, signs, snow removal, and ice control. Confirm road responsibility: some roads are maintained by the state, a city or village, or another local authority.",
+      "sourceIds": [
+        "roads"
+      ],
+      "kind": "county-service"
+    },
+    {
+      "id": "planning",
+      "title": "Planning & Zoning",
+      "phone": "402-223-1305",
+      "summary": "County land-use regulations, zoning questions, and county permit information. Ask the office whether county zoning applies to your property.",
+      "sourceIds": [
+        "planning"
+      ],
+      "kind": "county-service"
+    },
+    {
+      "id": "emergency-management",
+      "title": "Emergency Management",
+      "phone": "402-223-1305",
+      "summary": "Disaster preparedness, warning systems, emergency planning, and coordination with response agencies.",
+      "sourceIds": [
+        "emergency-management"
+      ],
+      "kind": "county-service"
+    },
+    {
+      "id": "veterans",
+      "title": "Veterans Services",
+      "phone": "402-223-1342",
+      "summary": "Helps veterans and their dependents understand benefits, prepare applications, and gather supporting documents.",
+      "sourceIds": [
+        "veterans"
+      ],
+      "kind": "county-service"
+    },
+    {
+      "id": "weeds",
+      "title": "Weed Superintendent",
+      "phone": "402-223-1399",
+      "summary": "Noxious weed identification and control, inspections, and weed-management assistance.",
+      "sourceIds": [
+        "weeds"
+      ],
+      "kind": "county-service"
+    },
+    {
+      "id": "extension",
+      "title": "Nebraska Extension in Gage County",
+      "phone": "402-223-1384",
+      "summary": "University of Nebraska Extension programs, including horticulture education and Gage County 4-H.",
+      "sourceIds": [
+        "extension"
+      ],
+      "kind": "extension-partnership"
+    }
+  ],
+  "relationships": [
+    {
+      "from": "district-30",
+      "to": "legislature",
+      "type": "seat-in-legislature",
+      "sourceIds": [
+        "district-30"
+      ]
+    },
+    {
+      "from": "board",
+      "to": "countywide-offices",
+      "type": "budget-approval-with-separate-statutory-duties",
+      "sourceIds": [
+        "budget-authority"
+      ]
+    }
+  ],
+  "quickRoutes": [
+    {
+      "question": "My property’s assessed value",
+      "target": "assessor"
+    },
+    {
+      "question": "Paying my property taxes",
+      "target": "treasurer"
+    },
+    {
+      "question": "Deeds and land records",
+      "target": "deeds"
+    },
+    {
+      "question": "Voting or a marriage license",
+      "target": "clerk"
+    },
+    {
+      "question": "A county road problem",
+      "target": "roads"
+    },
+    {
+      "question": "A proposed state law",
+      "target": "state-representation"
+    }
+  ],
+  "issues": [
+    {
+      "id": "directory-currency",
+      "status": "publisher-listings-only",
+      "detail": "Current service is not inferred from election candidacies or results; refresh after incoming terms and any appointments."
+    },
+    {
+      "id": "attorney-email",
+      "status": "omitted-ambiguous-contact",
+      "sourceIds": [
+        "attorney"
+      ],
+      "detail": "Source lists Amanda Fanning but county email text contains a roger@gcaone.us parenthetical; use official page and phone."
+    },
+    {
+      "id": "map-names",
+      "status": "boundaries-only",
+      "sourceIds": [
+        "rural-map",
+        "beatrice-map"
+      ],
+      "detail": "PDFs may retain older representative names. Names on this page follow the board directory."
+    }
+  ]
+}

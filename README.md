@@ -21,19 +21,27 @@ Open http://localhost:4187/. The build produces static HTML in dist/. GitHub Act
 
 | Location | Responsibility |
 | --- | --- |
-| src/content.json | Shared contact, roster, and meeting data |
+| src/content.json | Shared public contact, leadership, homepage links, and meeting schedule/overrides |
+| src/participation.json | Owner-supplied committee teams and general descriptions |
+| src/contact-intake.json | Public intake and prefilled task/interest links; no private contact records |
+| src/meeting.mjs | Shared occurrence, dated notice, and calendar model |
 | src/assets.json | Stable descriptive asset IDs, titles, source checksums, display paths, and legacy aliases |
+| src/constitution.json | Clause-level transcription of the five original constitution scans, with source-page paths |
 | source-snapshot/inventory.json | Extracted original text, URLs, asset provenance, and capture date |
 | source-snapshot/*.html | Unaltered public source pages, retained as historical evidence |
 | assets/originals/ | Preserved captured media and descriptively named user-supplied originals |
 | assets/web/ | Descriptively named display derivatives grouped by subject; originals remain unchanged |
 | scripts/build.mjs | Semantic page composition and voter-card integration |
 | src/style.css | Design tokens, layouts, and responsive patterns |
-| src/site.js | Optional archive filtering, source disclosure, and menu Escape behavior |
+| src/site.js | Meeting refresh, document disclosures/scrollspy, menu and government-map interactions |
 | vendor/voter-card/ | Imported publication source and required rendered downloads |
 | project-docs/ | Brief, source review, import manifest, and verification |
 
 The captured source contains conflicting and outdated material. The repository archive identifies that status and is excluded from the public build. Its donation template and generic testimonials are migration evidence, not current party claims. Current candidate facts belong in Local Civic Reference, flow through the existing GOP publication, and are then imported here. Inclusion is not endorsement.
+
+## Party documents
+
+The platform at `platform.html` renders the captured public wording from `source-snapshot/inventory.json`. The constitution at `constitution.html` renders `src/constitution.json` as navigable text and links to all five unchanged original scans below it. The scan's registered address is blacked out; the transcription explicitly marks that redaction and does not infer the hidden text. Review the scans when updating the transcription, preserving the source's spelling, punctuation, capitalization, and substantive wording. The page layout and clause grouping may change without changing that wording.
 
 ## Voter-card import
 
@@ -57,4 +65,8 @@ Changes on main trigger a checked Pages release. Failed checks prevent deploymen
 
 ## Public review version
 
-The source archive and archival-only media remain in Git, but archive.html and source-snapshot files are not published. The public website has no archive links, old-site navigation, migration caveats, or redesign banner. Candidate sourcing remains visible because it supports the election reference. The user confirmed the November 10, 2026 meeting at 7 p.m.; that value is maintained once in src/content.json and rendered on the homepage and events page. Governance procedure details defer to the constitution rather than repeating contradictory historical summaries.
+The source archive and archival-only media remain in Git, but archive.html and source-snapshot files are not published. The public website has no archive links, old-site navigation, migration caveats, or redesign banner. Candidate sourcing remains visible because it supports the election reference. The user confirmed meetings on the second Tuesday of each month at 7 p.m. Central at 402 Sports Bar & Grill, starting with December 8, 2026. The schedule is maintained in src/content.json and rendered on Home and Events. The single-event link advances after meeting day in Central time; Add monthly meetings imports a recurring series with dated exceptions. Imported calendar events do not receive later website corrections automatically. Governance procedure details defer to the constitution rather than repeating contradictory historical summaries.
+
+## Participation and important notices
+
+Navigation and homepage ordering prioritize attending, helping, and keeping contact details current. The Get involved page uses the seven teams supplied by the owner. Party organization remains in Resources alongside the documents and local-government guide. The contact form handles add/update/stop requests and optional committee inquiries. Responses feed a restricted Google Sheet for manual review; the website contains no private roster. Sending remains manual. See [contact and meeting operations](project-docs/CONTACT-AND-MEETING-OPERATIONS.md) for ownership, review, suppression, dated meeting changes, and calendar limits.

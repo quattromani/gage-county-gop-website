@@ -1,0 +1,44 @@
+{
+  "reviewDate": "2026-11-20",
+  "scope": "Read-only creative direction and UX review; no implementation",
+  "breakpoints": [
+    {
+      "width": 1440,
+      "height": 900,
+      "meetingTop": 1028.8359375,
+      "committeeCardTop": 790.3515625,
+      "pageWidth": 1440
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "meetingTop": 901.5703125,
+      "committeeCardTop": 706,
+      "pageWidth": 1024
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "meetingTop": 963.8671875,
+      "committeeCardTop": 792.2734375,
+      "pageWidth": 768
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "meetingTop": 1638.921875,
+      "committeeCardTop": 1190.796875,
+      "primaryMeetingLinkTop": 486.96875,
+      "pageWidth": 390
+    }
+  ],
+  "solidColorContrastRatios": {
+    "ink/paper": 13.11,
+    "muted/paper": 5.69,
+    "red/paper": 5.79,
+    "white/red": 6.26,
+    "muted/soft": 5.24,
+    "line/paper": 1.31
+  },
+  "limitations": "Heuristic review, not audience testing or a complete accessibility audit. No visitor analytics, message system, private contact records, or donation completion inspected. Future committee roster assumed supplied; no committee content invented."
+}

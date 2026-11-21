@@ -30,3 +30,7 @@ Captured originals keep their existing names and bytes under `assets/originals/`
 ## Add or replace an asset
 
 Preserve the original, register its provenance and descriptive display path, and generate the derivative with `scripts/optimize-images.py`. It verifies original checksums before processing. Update the relevant content ID, then run `npm run check` and inspect the image in its real layout. After refreshing the public capture, register new inventory assets before rebuilding. Never overwrite an original to hide a source change.
+
+## Courthouse banner, November 20, 2026
+
+The homepage uses Tequask’s May 28, 2012 south-facade photograph from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Gage_County_Nebraska_Courthouse.jpg). The original 1600 × 1220 JPEG is preserved in assets/originals/external; the display WebP has its own descriptive ID and path in src/assets.json. The prior courthouse photograph and its URL aliases remain intact. The caption renders the creator, source, and CC BY-SA 4.0 link from the registry. Conversion and display-crop details remain in the registry; the user requested their removal from the visible caption. The new image derivative retains CC BY-SA 4.0.

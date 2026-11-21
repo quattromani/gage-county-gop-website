@@ -1,0 +1,44 @@
+[
+  {
+    "dpr": 4,
+    "overflow": false,
+    "page": "/updates.html",
+    "width": 1280
+  },
+  {
+    "dpr": 4,
+    "overflow": false,
+    "page": "/events.html",
+    "width": 1280
+  },
+  {
+    "dpr": 4,
+    "overflow": false,
+    "page": "/committees.html",
+    "width": 1280
+  },
+  {
+    "dpr": 4,
+    "overflow": false,
+    "page": "/resources.html",
+    "width": 1280
+  },
+  {
+    "dpr": 4,
+    "overflow": false,
+    "page": "/constitution.html",
+    "width": 1280
+  },
+  {
+    "dpr": 4,
+    "overflow": false,
+    "page": "/platform.html",
+    "width": 1280
+  },
+  {
+    "dpr": 4,
+    "overflow": false,
+    "page": "/government.html",
+    "width": 1280
+  }
+]

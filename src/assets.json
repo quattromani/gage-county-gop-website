@@ -345,8 +345,56 @@
       "sourceSha256": "f97fec79d518f8d2146943d66bdd84f4def75979c01a0a870c61b08fd58b1485",
       "webPath": "assets/web/brand/united-states-flag.png",
       "license": "Public domain, as recorded by Wikimedia Commons",
-      "description": "Unmodified 330 \u00d7 174 PNG rendition of the flat U.S. flag. Small masthead accent; retain its original proportions and colors.",
+      "description": "Unmodified 330 × 174 PNG rendition of the flat U.S. flag. Small masthead accent; retain its original proportions and colors.",
       "alt": "Flag of the United States"
+    },
+    {
+      "id": "gage-county-courthouse-memorial-day-2012",
+      "title": "Gage County Courthouse, Beatrice, Nebraska, Memorial Day 2012",
+      "alt": "South facade and clock tower of the Gage County Courthouse in Beatrice, with American flags lining the lawn.",
+      "sourcePath": "assets/originals/external/gage-county-courthouse-memorial-day-2012.jpg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gage_County_Nebraska_Courthouse.jpg",
+      "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/2/26/Gage_County_Nebraska_Courthouse.jpg",
+      "sourceSha256": "2432d7a9259b66a57179df8e7132a01d48200be8d1d6a94c165cd16b92e25ce6",
+      "webPath": "assets/web/places/gage-county-courthouse-memorial-day-2012.webp",
+      "creator": "Tequask",
+      "dateCreated": "2012-05-28",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "changes": "Converted to WebP; cropped responsively in the banner with a CSS caption gradient. Image derivative distributed under CC BY-SA 4.0.",
+      "received": "2026-11-20"
+    },
+    {
+      "id": "gage-county-gop-venmo-qr",
+      "title": "Gage County GOP Venmo donation QR code",
+      "alt": "Scan to open the Gage County GOP’s published Venmo donation link",
+      "sourcePath": "assets/originals/generated/gage-county-gop-venmo-qr.png",
+      "sourceUrl": "https://www.gagecountygop.org/",
+      "sourceSha256": "f3371a1e6d1f99442520713e34bdb5d18829325622ad2c519f52f9818877ff8e",
+      "webPath": "assets/web/brand/gage-county-gop-venmo-qr.png",
+      "sourceType": "generated-from-decoded-qr",
+      "derivedFrom": "venmo-qr-code",
+      "description": "Clean black-and-white rendering of the decoded source QR modules, with a four-module quiet zone. Canonical destination in src/content.json; matrix in src/donation-qr.json; generator in scripts/build-donation-qr.py."
+    },
+    {
+      "id": "gage-county-supervisor-map-rural",
+      "title": "Gage County supervisor district map, rural",
+      "sourcePath": "assets/originals/external/gage-county-supervisor-districts-rural.pdf",
+      "sourceUrl": "https://gagecountyne.gov/wp-content/uploads/sites/35/2025/07/Supervisor-Districts-rural-with-names.pdf",
+      "sourceSha256": "2bd6e9693368dc612b730f48653b7b66493c577fa2cd0c7e76c4d14f8f4b927b",
+      "webPath": "assets/web/places/gage-county-supervisor-map-rural.webp",
+      "generator": "scripts/prepare-supervisor-maps.py",
+      "derivation": "Monochrome map crop; Beatrice linework isolated from colour wash. Beatrice title, census table and printed legend omitted. Interactive geometry in src/supervisor-maps.json; names come exclusively from src/government.json."
+    },
+    {
+      "id": "gage-county-supervisor-map-beatrice",
+      "title": "Gage County supervisor district map, Beatrice",
+      "sourcePath": "assets/originals/external/gage-county-supervisor-districts-beatrice.pdf",
+      "sourceUrl": "https://gagecountyne.gov/wp-content/uploads/sites/35/2025/07/Supervisor-Districts-City-of-Beatrice-with-names.pdf",
+      "sourceSha256": "48529f4a30e40b321a452ab99c2ad28ae0cfc4da8eeb4156ec439e0fd0715e6a",
+      "webPath": "assets/web/places/gage-county-supervisor-map-beatrice.webp",
+      "generator": "scripts/prepare-supervisor-maps.py",
+      "derivation": "Monochrome map crop; Beatrice linework isolated from colour wash. Beatrice title, census table and printed legend omitted. Interactive geometry in src/supervisor-maps.json; names come exclusively from src/government.json."
     }
   ]
 }

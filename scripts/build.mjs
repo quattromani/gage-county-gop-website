@@ -1,7 +1,12 @@
+import { renderSiteShell } from "./components/site-shell.mjs";
+import { renderMeetingCard, renderMeetingStrip } from "./components/meeting-card.mjs";
+import { renderStayInformed, renderUpdatesPage } from "./components/updates-page.mjs";
+import { renderGovernmentPage } from "./components/government-page.mjs";
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
+import { nextMeeting, meetingNotice, retainedMeetingText, meetingCalendar, meetingSeriesCalendar } from "../src/meeting.mjs";
 const root = path.resolve(import.meta.dirname, "..");
 const out = path.join(root, "dist");
 const assetVersion = (file) =>
@@ -14,6 +19,11 @@ const data = JSON.parse(
 );
 const content = JSON.parse(
   fs.readFileSync(path.join(root, "src/content.json")),
+);
+const supervisorMaps = JSON.parse(fs.readFileSync(path.join(root, "src/supervisor-maps.json")));
+const governmentSource = JSON.parse(fs.readFileSync(path.join(root, "src/government.json")));
+const constitutionSource = JSON.parse(
+  fs.readFileSync(path.join(root, "src/constitution.json")),
 );
 const { assets } = JSON.parse(
   fs.readFileSync(path.join(root, "src/assets.json")),
@@ -37,38 +47,37 @@ const asset = (id) => {
 const img = (id, alt, cls = "", eager = false) =>
   `<img src="${asset(id)}" alt="${h(assetsById.get(id)?.alt || alt)}" title="${h(assetsById.get(id)?.title || alt)}" class="${cls}" loading="${eager ? "eager" : "lazy"}" decoding="async">`;
 const arrow = '<span aria-hidden="true">↗</span>';
-const meetingCalendarPath = `calendar/gage-county-gop-meeting-${content.meeting.date}.ics`;
+const participation = JSON.parse(fs.readFileSync(path.join(root, "src/participation.json")));
+const intake = JSON.parse(fs.readFileSync(path.join(root, "src/contact-intake.json")));
+const meetingInfo = nextMeeting(content.meeting);
+const stripMeeting = meetingNotice(content.meeting);
+const meetingCalendarPath = `calendar/gage-county-gop-meeting-${meetingInfo.date}.ics`;
+const allMeetingsPath = "calendar/gage-county-gop-meetings.ics";
+const meetingLink = (className, label, canceled = meetingInfo.status === "canceled") => `<a${canceled ? " hidden" : ""} class="${className}" data-meeting-calendar href="./${meetingCalendarPath}" type="text/calendar" download="gage-county-gop-meeting-${meetingInfo.date}.ics">${label}</a>`;
+const allMeetingsLink = (className) => `<a class="${className}" href="./${allMeetingsPath}" type="text/calendar" download="gage-county-gop-meetings.ics">Add monthly meetings <span aria-hidden="true">→</span></a>`;
 const paragraphs = (slug) =>
   (pages.get(slug)?.text || []).map((t) => `<p>${h(t)}</p>`).join("");
-const nav = [
-  ["index.html", "Home"],
-  ["about.html", "About"],
-  ["events.html", "Meetings & events"],
-  ["resources.html", "Resources"],
-  ["vote-2026/", "Voter card"],
-  [content.partyReveal, "Party Reveal ↗"],
-];
-function layout(
-  file,
-  title,
-  body,
-  description = "Meetings, leadership, governing documents, and election resources from the Gage County Republican Party.",
-) {
-  const home = file === "index.html";
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>${h(title)} | Gage County GOP</title><meta name="description" content="${h(description)}"><meta name="theme-color" content="#142d36"><meta property="og:title" content="${h(title)} | Gage County GOP"><meta property="og:description" content="${h(description)}"><meta property="og:image" content="https://quattromani.github.io/gage-county-gop-website/${asset("gage-county-courthouse-beatrice").slice(2)}"><link rel="icon" href="./favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./style.css?v=${assetVersion("style.css")}"><script src="./site.js?v=${assetVersion("site.js")}" defer></script></head><body><a class="skip" href="#main">Skip to content</a><div class="location-bar">Gage County, Nebraska<span>Gage County Republican Party</span></div><header class="site-header"><a class="brand" href="./index.html" aria-label="Gage County GOP home"><span class="brand-icon" aria-hidden="true">G</span><span>GAGE COUNTY <b>REPUBLICAN PARTY</b></span></a><details class="mobile-nav"><summary>Menu <span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></summary><nav aria-label="Mobile navigation">${nav.map(([url, label]) => `<a href="${url.startsWith("https") ? url : "./" + url}">${label}</a>`).join("")}</nav></details><nav class="desktop-nav" aria-label="Main navigation">${nav
-    .filter(([url]) => url !== "index.html")
-    .map(
-      ([url, label]) =>
-        `<a ${file === url ? 'aria-current="page"' : ""} href="${url.startsWith("https") ? url : "./" + url}">${label}</a>`,
-    )
-    .join(
-      "",
-    )}</nav><img class="header-flag" src="${asset("united-states-flag")}" alt="Flag of the United States" width="70" height="37" decoding="async"></header><main id="main">${body}</main><footer class="site-footer"><div class="footer-top"><a class="brand" href="./index.html"><span class="brand-icon" aria-hidden="true">G</span><span>GAGE COUNTY <b>REPUBLICAN PARTY</b></span></a><p>Gage County, Nebraska.<br>Party information. Local connections. Election resources.</p><a href="mailto:${content.email}">Email the county party ${arrow}</a></div><div class="footer-bottom"><span>Gage County Republican Party</span><div><a href="./resources.html">Resources</a><a href="./contact.html">Contact</a></div></div></footer></body></html>`;
+function layout(file, title, body, description) {
+  return renderSiteShell({ file, title, body, description, content, asset, assetVersion, h, meetingStrip: renderMeetingStrip(stripMeeting, h) });
 }
 const pageHero = (kicker, title, desc) =>
   `<section class="page-hero wrap"><p class="eyebrow">${kicker}</p><h1>${title}</h1><p class="lead">${desc}</p></section>`;
-const meeting = `<article class="meeting-card"><p class="eyebrow">Meeting notice</p><div class="meeting-date"><span>NOV</span><strong>10</strong></div><div><h3>County GOP meeting</h3><p><time datetime="${content.meeting.dateTime}">${content.meeting.dateLabel} at ${content.meeting.time}</time><br> ${content.meeting.venue}<br>${content.meeting.city}</p></div><a class="text-link" href="./${meetingCalendarPath}" type="text/calendar" download="gage-county-gop-meeting-${content.meeting.date}.ics">Add to calendar <span aria-hidden="true">→</span></a></article>`;
-const home = `<section class="hero"><div class="hero-copy"><p class="eyebrow"><span class="red-line"></span> Gage County, Nebraska</p><h1>Your county.<br>Your party.<br><em>Your connection.</em></h1><p>Get to know the Gage County Republican Party. Meet our leaders, explore our events, and discover local resources.</p><div class="actions"><a class="button" href="./events.html">Meetings & events <span aria-hidden="true">→</span></a><a class="text-link" href="./about.html">Get to know us ${arrow}</a></div><div class="hero-note"><span aria-hidden="true">★</span> Local information. In one place.</div></div><figure class="hero-image">${img("gage-county-courthouse-beatrice", "The Gage County Courthouse in Beatrice, with American flags on the lawn.", "", true)}<figcaption>Gage County Courthouse <span>Beatrice, Nebraska</span></figcaption><div class="image-label" aria-hidden="true">GAGE<br>COUNTY<br><span>NEBRASKA</span></div></figure></section><section class="quick-strip" aria-label="Quick access"><a class="quick-featured" href="./vote-2026/"><span class="quick-number">01</span><span>2026 voter card<small>Candidates, dates & downloads</small></span>${arrow}</a><a href="${content.partyReveal}"><span class="quick-number">02</span><span>Party Reveal<small>Candidate evidence & sources</small></span>${arrow}</a><a href="./resources.html#constitution"><span class="quick-number">03</span><span>Party documents<small>Platform, constitution & organization</small></span>${arrow}</a></section><section class="wrap section home-intro"><div><p class="eyebrow">The county party</p><h2>A local organization.<br>A shared place to start.</h2><p class="body-copy">Learn about the party’s mission, meet its leadership, and see how the county organization works.</p><a class="text-link" href="./about.html">About the Gage County GOP ${arrow}</a></div>${meeting}</section><section class="election-band"><div class="wrap election-inner"><div><p class="eyebrow">Election resources / 2026</p><h2>Keep your voter card close.</h2><p>Browse the candidate reference, check voting dates, and save the card for offline use. Explore the underlying evidence through Party Reveal.</p><div class="actions"><a class="button light" href="./vote-2026/">Open the voter card <span aria-hidden="true">→</span></a><a class="text-link" href="${content.partyReveal}">Explore Party Reveal ${arrow}</a></div><p class="small">A party reference, not an official ballot. Inclusion does not imply endorsement.</p></div><a href="./vote-2026/" class="card-preview" aria-label="Open the 2026 Gage County GOP voter card"><div><span>GAGE COUNTY GOP</span><strong>2026</strong></div><h3>Candidate<br>reference card</h3><div class="sample-lines" aria-hidden="true"><i></i><i></i><i></i></div><span>Candidates · Voting dates · Downloads ${arrow}</span></a></div></section><section class="wrap section"><div class="section-heading"><div><p class="eyebrow">Around the county</p><h2>People. Places. Participation.</h2></div><a class="text-link" href="./events.html#gallery">See community photos ${arrow}</a></div><div class="photo-grid"><a class="photo-story" href="./events.html#gallery">${img("2026-wilber-czech-festival-parade", "Gage County GOP float at the 2026 Wilber Czech Festival.")}<span>In the community <b>Parades & local events ${arrow}</b></span></a><a class="photo-story" href="./events.html#gallery">${img("2026-county-convention-02", "People gathered in a hall at the 2026 Gage County Republican convention.")}<span>At the table <b>Meetings & convention ${arrow}</b></span></a><a class="photo-story" href="./events.html#gallery">${img("2026-county-fair-booth", "Gage County GOP display at the 2026 county fair.")}<span>Across Gage County <b>The county fair ${arrow}</b></span></a></div></section><section class="contact-band wrap"><div><p class="eyebrow">Questions or ideas?</p><h2>Start a conversation.</h2></div><a class="button" href="./contact.html">Contact the county party ${arrow}</a></section>`;
+const meetingSchedule = `Meetings are held on the second Tuesday of each month at ${content.meeting.time} Central.`;
+const meeting = renderMeetingCard(meetingInfo, { h, meetingLink, allMeetingsLink, schedule: meetingSchedule, retainedNotice: retainedMeetingText(meetingInfo, stripMeeting) });
+const courthouse = assetsById.get("gage-county-courthouse-memorial-day-2012");
+const donation = content.donation;
+const donationBand = `<section class="donate-band" id="donate" aria-labelledby="donate-title"><div class="wrap donate-inner"><div><p class="eyebrow">Support the county party</p><h2 id="donate-title">Donate to the Gage County GOP.</h2><p>Support the work of the Gage County Republican Party.</p><div class="actions"><a class="button light" href="${h(donation.url)}">Donate with Venmo</a></div><p class="donate-help">Scan the QR code with your phone or open Venmo using the link.</p></div><figure class="donate-qr"><a href="${h(donation.url)}" aria-label="Donate to the Gage County GOP with Venmo">${img(donation.qrAsset, "Venmo donation QR code for the Gage County GOP")}</a><figcaption>Gage County GOP<br>Scan to donate with Venmo</figcaption></figure></div></section>`;
+const governmentLink = content.homeGovernmentLink;
+const governmentBanner = `<section class="government-banner" aria-labelledby="government-banner-title"><a class="wrap government-banner-link" href="./${h(governmentLink.href)}"><div><h2 id="government-banner-title">${h(governmentLink.title)}</h2><p>${h(governmentLink.description)}</p></div><span class="government-banner-action">${h(governmentLink.action)}</span></a></section>`;
+const home = `<section class="hero"><div class="hero-copy"><p class="eyebrow"><span class="red-line"></span> Gage County Republican Party</p><h1>Your county.<br>Your party.<br><em>Your connection.</em></h1><p>Come to a meeting, share your ideas, and find a way to take part in the Gage County Republican Party.</p><div class="actions"><a class="button" href="./events.html#meeting">Come to the next meeting <span aria-hidden="true">→</span></a><a class="text-link" href="./committees.html">Explore ways to help ${arrow}</a></div><div class="hero-note">New here? You’re welcome. No RSVP required.</div></div><figure class="hero-image">${img("gage-county-courthouse-memorial-day-2012", "The Gage County Courthouse in Beatrice, with American flags on the lawn.", "", true)}<figcaption><span>Gage County Courthouse, Beatrice</span><span class="photo-credit">Photo: <a href="${h(courthouse.sourceUrl)}">${h(courthouse.creator)}</a> / <a href="${h(courthouse.licenseUrl)}">${h(courthouse.license)}</a></span></figcaption></figure></section>
+<section class="wrap section home-meeting" aria-labelledby="home-meeting-title"><div><p class="eyebrow">Join us</p><h2 id="home-meeting-title">Come as you are.<br>Start with a meeting.</h2><p class="body-copy">Meet the people behind the county party, hear what’s happening, and bring your questions and ideas.</p><p>Newcomers are welcome. You can attend without an invitation, RSVP, or existing membership.</p><a class="text-link" href="./events.html#meeting">Meeting details & directions ${arrow}</a></div>${meeting}</section>
+<section class="quick-strip" aria-label="Quick access">${content.homeQuickLinks.map((link, index) => `<a${index === 0 ? ' class="quick-featured"' : ""} href="./${h(link.href)}"><span class="quick-number">${String(index + 1).padStart(2, "0")}</span><span>${h(link.title)}<small>${h(link.description)}</small></span>${arrow}</a>`).join("")}</section>
+<section class="wrap section home-community"><div class="section-heading"><div><p class="eyebrow">People. Places. Participation.</p><h2>A local organization.<br>A shared place to start.</h2></div><a class="text-link" href="./about.html">Meet the county party ${arrow}</a></div><p class="body-copy">From meetings to the fair booth and local parades, there are different ways to take part.</p><div class="photo-grid">${[
+  ["2026-wilber-czech-festival-parade", "Gage County GOP float at the 2026 Wilber Czech Festival.", "2026 Wilber Czech Festival"],
+  ["2026-county-convention-02", "People gathered at the 2026 county convention.", "2026 county convention"],
+  ["2026-county-fair-booth", "Gage County GOP display at the 2026 county fair.", "2026 county fair booth"],
+].map(([id,alt,caption]) => `<figure class="community-photo">${img(id,alt)}<figcaption>${caption}</figcaption></figure>`).join("")}</div><a class="text-link gallery-route" href="./events.html#gallery">See community photos ${arrow}</a></section>
+${renderStayInformed(intake, h)}${governmentBanner}${donationBand}<section class="contact-band wrap"><div><p class="eyebrow">Questions or ideas?</p><h2>Start a conversation.</h2></div><a class="text-link" href="./contact.html">Contact the county party ${arrow}</a></section>`;
 const leaders = content.leaders
   .map(
     (l) =>
@@ -81,7 +90,7 @@ const about =
     "Rooted in Gage County.",
     "The mission, people, and history of the county Republican organization.",
   ) +
-  `<section class="wrap section prose-grid"><div><p class="eyebrow">Our mission</p><h2>What the party is here to do.</h2></div><blockquote class="mission-statement" aria-label="Gage County Republican Party mission statement">${paragraphs("vision")}</blockquote></section><section class="wrap section" id="leadership"><div class="section-heading"><div><p class="eyebrow">Leadership</p><h2>Meet the executive officers.</h2></div></div><div class="leader-grid">${leaders}</div></section><section class="soft-section"><div class="wrap section prose-grid"><div><p class="eyebrow">Our history</p><h2>Re-established in 2022.</h2></div><div class="prose">${content.history.map((text) => `<p>${h(text)}</p>`).join("")}</div></div></section><section class="wrap section"><p class="eyebrow">How the party works</p><h2>Organization & governing documents.</h2><div class="resource-grid"><a href="./resources.html#organization"><h3>County committee</h3><p>Management, representation, and participation.</p>${arrow}</a><a href="./resources.html#constitution"><h3>County constitution</h3><p>The five-page governing document for the county party.</p>${arrow}</a><a href="./platform.html"><h3>Party platform</h3><p>Read the complete platform by topic.</p>${arrow}</a></div></section>`;
+  `<section class="wrap section prose-grid"><div><p class="eyebrow">Our mission</p><h2>What the party is here to do.</h2></div><blockquote class="mission-statement" aria-label="Gage County Republican Party mission statement">${paragraphs("vision")}</blockquote></section><section class="wrap section" id="leadership"><div class="section-heading"><div><p class="eyebrow">Leadership</p><h2>Meet the executive officers.</h2></div></div><div class="leader-grid">${leaders}</div></section><section class="soft-section"><div class="wrap section prose-grid"><div><p class="eyebrow">Our history</p><h2>Re-established in 2022.</h2></div><div class="prose">${content.history.map((text) => `<p>${h(text)}</p>`).join("")}</div></div></section><section class="wrap section"><p><a class="button" href="./committees.html">Explore ways to get involved ${arrow}</a></p><p class="eyebrow">How the party works</p><h2>Organization & governing documents.</h2><div class="resource-grid"><a href="./resources.html#organization"><h3>Party organization</h3><p>Governing committees, representation, and convention.</p>${arrow}</a><a href="./constitution.html"><h3>County constitution</h3><p>Read the governing document as text, with original scans linked below.</p>${arrow}</a><a href="./platform.html"><h3>Party platform</h3><p>Read the complete platform by topic.</p>${arrow}</a></div></section>`;
 const galleryIds = [
   "2026-wilber-czech-festival-parade",
   "2026-county-convention-01",
@@ -118,51 +127,47 @@ const galleryNames = [
   "Fundraiser artwork",
   "2026 fundraiser flyer",
 ];
-const events =
-  pageHero(
-    "Meetings & events",
-    "The county party, together.",
-    "Meeting information and a photographic record of local activity.",
-  ) +
-  `<section class="wrap section meeting-detail" id="meeting"><div><p class="eyebrow">Next meeting</p><h2><time datetime="${content.meeting.dateTime}">${content.meeting.dateLabel}<br><em>${content.meeting.time}</em></time></h2></div><div><h3>${content.meeting.venue}</h3><p>${content.meeting.city}</p><a class="button" href="./${meetingCalendarPath}" type="text/calendar" download="gage-county-gop-meeting-${content.meeting.date}.ics">Add to calendar ${arrow}</a></div></section><section class="soft-section" id="gallery"><div class="wrap section"><p class="eyebrow">Community events</p><h2>From the fair booth to the convention.</h2><p class="body-copy">Parades, county fairs, conventions, and gatherings across the community.</p><div class="gallery">${galleryIds.map((id, i) => `<figure><a href="${asset(id)}">${img(id, galleryNames[i])}</a><figcaption>${galleryNames[i]}</figcaption></figure>`).join("")}</div></div></section>`;
-const constitution = data.assets
-  .filter((a) => a.path?.includes("Costitution"))
-  .sort((a, b) => a.path.match(/PG-(\d)/)[1] - b.path.match(/PG-(\d)/)[1]);
-const resources =
-  pageHero(
-    "Resources",
-    "Party resources.",
-    "Party documents, organization information, and election references in one place.",
-  ) +
-  `<section class="wrap section"><div class="resource-grid"><a href="./vote-2026/"><p class="eyebrow">Election reference</p><h2>2026 voter card</h2><p>Candidate references, calendar links, print downloads, and offline saving.</p>${arrow}</a><a href="${content.partyReveal}"><p class="eyebrow">Research & evidence</p><h2>Party Reveal</h2><p>Explore candidate evidence and sources alongside the GOP voter card.</p>${arrow}</a><a href="./platform.html"><p class="eyebrow">Party positions</p><h2>The platform</h2><p>The full published county party platform, organized into readable topics.</p>${arrow}</a></div></section><section class="soft-section" id="constitution"><div class="wrap section"><p class="eyebrow">Governing document</p><h2>County GOP constitution.</h2><p class="body-copy">Read the five-page county party constitution. Select a page to open the full-size document.</p><div class="document-grid">${constitution.map((a, i) => `<a href="./${a.path}">${img(assetsBySource.get(a.path).id, `County GOP constitution, page ${i + 1}`)}<span>Open page ${i + 1} ${arrow}</span></a>`).join("")}</div></div></section><section class="wrap section" id="organization"><p class="eyebrow">Party organization</p><h2>Committees & convention.</h2><p class="body-copy">The constitution sets out the party’s governing procedures, officer elections, and delegate requirements.</p><div class="disclosures">${[
-    [
-      "County committee",
-      "The county committee manages party affairs and represents the county’s supervisor districts.",
-    ],
-    [
-      "Executive committee",
-      "The executive committee consists of the chair, vice chair, secretary, and treasurer.",
-    ],
-    [
-      "County convention",
-      "Read the constitution for convention procedures, delegate requirements, and officer elections.",
-    ],
-  ]
-    .map(
-      ([title, text]) =>
-        `<details><summary>${title}</summary><div class="prose"><p>${text}</p></div></details>`,
-    )
-    .join(
-      "",
-    )}</div></section><section class="wrap section"><p class="eyebrow">Further references</p><h2>More information.</h2><div class="link-list"><a href="https://ne.gop/">Nebraska Republican Party ${arrow}</a><a href="./endorsements.html">About the endorsement process ${arrow}</a></div></section>`;
+const events = pageHero("Meetings & events", "A place at the table.", "Come to a regular meeting, get to know the county party, and bring your questions and ideas.") +
+  `<section class="wrap section event-meeting" id="meeting"><div><p class="eyebrow">New here?</p><h2>You’re welcome.</h2><p class="body-copy">Regular meetings are open to newcomers. You can attend without an invitation, RSVP, or existing membership.</p><h3>Finding the meeting</h3><p><span data-meeting-venue-summary>We meet at ${h(meetingInfo.venue)} in ${h(meetingInfo.city)}.</span></p><a class="text-link" data-meeting-directions href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(meetingInfo.location)}">Find the venue on a map ${arrow}</a><p class="calendar-note">Check this page for schedule changes, or <a href="./updates.html">add your details for important notices</a>.</p><a class="text-link" href="./committees.html">Explore ways to take part ${arrow}</a></div>${meeting}</section><section class="soft-section" id="gallery"><div class="wrap section"><p class="eyebrow">Community events</p><h2>From the fair booth to the convention.</h2><p class="body-copy">Parades, county fairs, conventions, and gatherings across the community.</p><div class="gallery">${galleryIds.map((id, i) => `<figure><a href="${asset(id)}">${img(id, galleryNames[i])}</a><figcaption>${galleryNames[i]}</figcaption></figure>`).join("")}</div></div></section>`;
+const constitution = constitutionSource.sourcePages.map((sourcePath) => {
+  const source = data.assets.find((entry) => entry.path === sourcePath);
+  if (!source || !assetsBySource.has(sourcePath))
+    throw Error(`Missing constitution source: ${sourcePath}`);
+  return source;
+});
+const resources = pageHero("Resources", "Find the reference you need.", "Party documents, organization information, and a guide to local government.") +
+  `<section class="wrap section" id="documents"><p class="eyebrow">Party documents</p><div class="resource-grid"><a href="./platform.html"><h2>Platform</h2><p>Party positions, organized by topic.</p>${arrow}</a><a href="./constitution.html"><h2>Constitution</h2><p>The complete governing document, with original scans.</p>${arrow}</a><a href="./government.html"><h2>Local government</h2><p>County offices, local representatives, and who to contact.</p>${arrow}</a></div></section><section class="soft-section" id="organization"><div class="wrap section"><p class="eyebrow">Party organization</p><h2>How the party is organized.</h2><p class="body-copy">The constitution sets out the party’s governing procedures, officer elections, and delegate requirements.</p><p>Looking for ways to help? <a href="./committees.html">Explore involvement opportunities.</a></p><div class="disclosures">${[
+  ["County committee", "The county committee manages party affairs and represents the county’s supervisor districts."],
+  ["Executive committee", "The executive committee consists of the chair, vice chair, secretary, and treasurer."],
+  ["County convention", "Read the constitution for convention procedures, delegate requirements, and officer elections."],
+].map(([title,text]) => `<details><summary>${title}</summary><div class="prose"><p>${text}</p><a href="./constitution.html">Read the constitution</a></div></details>`).join("")}</div></div></section><section class="wrap section" id="election-references"><p class="eyebrow">Completed election cycle</p><h2>2026 election references.</h2><p class="body-copy">Reference materials from the completed 2026 election. Check official election sources for future election dates and requirements.</p><div class="resource-grid"><a href="./vote-2026/"><h3>2026 voter card</h3><p>Candidate references, print downloads, and offline saving.</p>${arrow}</a><a href="${content.partyReveal}"><h3>Party Reveal</h3><p>Explore candidate evidence and sources.</p>${arrow}</a><a href="./endorsements.html"><h3>Endorsement process</h3><p>How the county party’s endorsement process works.</p>${arrow}</a></div></section><section class="wrap section"><p class="eyebrow">Further reference</p><a class="text-link" href="https://ne.gop/">Nebraska Republican Party ${arrow}</a></section>`;
+const opportunities = participation;
+const teamInterestUrl = (team) => {
+  if (intake.status !== "ready") return "./updates.html#interest";
+  const url = new URL(intake.taskLinks.interest);
+  url.searchParams.set(intake.interestField, team.title);
+  return url.href;
+};
+const committees = pageHero("Get involved", "Find your way to take part.", h(opportunities.intro)) +
+  `<section class="wrap section"><div class="section-heading"><div><p class="eyebrow">Committee opportunities</p><h2>Find a team. Bring what you do well.</h2></div><a class="text-link" href="./events.html#meeting">Start with a meeting ${arrow}</a></div><p class="calendar-note">Interest links open our Google contact form in a new tab with the team name filled in. You can ask about helping without signing up for ongoing notices. <a href="./updates.html#interest">More about the contact form</a>.</p><div class="involvement-grid">${opportunities.ways.map((way) => `<article id="${h(way.id)}"><h3>${h(way.title)}</h3><p>${h(way.description)}</p><a class="text-link" href="${h(teamInterestUrl(way))}" target="_blank" rel="noopener noreferrer" aria-label="Express interest in the ${h(way.title)} (opens in a new tab)">I’m interested ${arrow}</a></article>`).join("")}</div></section><section class="soft-section"><div class="wrap section prose-grid"><div><p class="eyebrow">Not sure where to start?</p><h2>A conversation is a good start.</h2></div><div class="prose"><p>You don’t need to choose a team before getting in touch. Tell us about your interests and experience, and a member of the county party team can discuss where you might fit.</p><a class="button" href="./updates.html#interest">Express an interest ${arrow}</a><p class="calendar-note">You can also <a href="./contact.html">contact the party directly</a>.</p></div></div></section><section class="wrap section"><p class="eyebrow">Party organization</p><h2>Looking for the governing structure?</h2><p class="body-copy">The county committee, executive committee, and convention have formal roles described in the constitution.</p><a class="text-link" href="./resources.html#organization">Read the organization overview ${arrow}</a></section>`;
 const platformText = pages.get("nebraska-platform").text;
+const constitutionClause = (clause, index) =>
+  `<li><div class="constitution-clause"><span class="clause-number" aria-hidden="true">${index + 1})</span><div><p>${clause.label ? `<strong>${h(clause.label)}</strong> ` : ""}${h(clause.text)}${clause.redacted ? ' <span class="redaction" aria-label="Address redacted in source document">[redacted in source]</span>.' : ""}</p>${clause.items ? `<ol class="subclauses${clause.itemStyle === "parenthesis" ? " parenthesis" : ""}" type="a">${clause.items.map((item) => `<li>${h(item)}</li>`).join("")}</ol>` : ""}${clause.after ? `<p>${h(clause.after)}</p>` : ""}</div></div></li>`;
+const constitutionPage =
+  pageHero(
+    "Governing document",
+    constitutionSource.title,
+    "Read the constitution as text. Links to the five original scanned pages follow the transcription.",
+  ) +
+  `<section class="wrap section document-layout"><details class="topic-disclosure" open><summary>Jump to an article</summary><nav class="topic-nav" aria-label="Constitution articles">${constitutionSource.articles.map((article) => `<a href="#${article.id}">${h(article.heading)}</a>`).join("")}<a href="#source-pages">Original pages</a></nav></details><div class="constitution-text">${constitutionSource.articles.map((article) => `<section class="constitution-article" id="${article.id}"><h2>${h(article.heading)}</h2>${article.clauses ? `<ol class="constitution-clauses">${article.clauses.map(constitutionClause).join("")}</ol>` : article.paragraphs.map((paragraph) => `<p>${h(paragraph)}</p>`).join("")}</section>`).join("")}</div></section>` +
+  `<section class="soft-section" id="source-pages"><div class="wrap section"><p class="eyebrow">Source documents</p><h2>Original scanned pages.</h2><p class="body-copy">The text above follows these five page images. The registered address is redacted in the original.</p><div class="document-grid">${constitution.map((source, i) => `<a href="./${source.path}">${img(assetsBySource.get(source.path).id, `Constitution, original page ${i + 1}`)}<span>Open original page ${i + 1} ${arrow}</span></a>`).join("")}</div></div></section>`;
 let topics = [],
   intro = [],
   current;
 for (const text of platformText.slice(1)) {
   if (text === text.toUpperCase() && text.length < 55) {
     current = {
-      title: text.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase()),
+      title: text,
       paragraphs: [],
     };
     topics.push(current);
@@ -172,17 +177,17 @@ for (const text of platformText.slice(1)) {
 const platform =
   pageHero(
     "Party documents",
-    "The county party platform.",
+    platformText[0],
     "Gage County Republican Party positions, organized by topic.",
   ) +
-  `<section class="wrap section platform-layout"><nav class="topic-nav" aria-label="Platform topics">${topics.map((t, i) => `<a href="#topic-${i}">${h(t.title)}</a>`).join("")}</nav><div class="prose">${intro.map((t) => `<p>${h(t)}</p>`).join("")}${topics.map((t, i) => `<section id="topic-${i}"><h2>${h(t.title)}</h2>${t.paragraphs.map((p) => `<p>${h(p)}</p>`).join("")}</section>`).join("")}</div></section>`;
+  `<section class="wrap section platform-layout"><details class="topic-disclosure" open><summary>Jump to a topic</summary><nav class="topic-nav" aria-label="Platform topics">${topics.map((t, i) => `<a href="#topic-${i}">${h(t.title)}</a>`).join("")}</nav></details><div class="prose">${intro.map((t) => `<p>${h(t)}</p>`).join("")}${topics.map((t, i) => `<section id="topic-${i}"><h2>${h(t.title)}</h2>${t.paragraphs.map((p) => `<p>${h(p)}</p>`).join("")}</section>`).join("")}</div></section>`;
 const contact =
   pageHero(
     "Contact",
     "A direct line to the county party.",
     "Questions about meetings, the committee, or local party activities? Start here.",
   ) +
-  `<section class="wrap section contact-layout"><div><p class="eyebrow">Email</p><h2>Let’s connect.</h2><a class="email-link" href="mailto:${content.email}">${content.email} ${arrow}</a><p class="body-copy">For information about the Gage County Republican Party, send an email or join us at the next meeting.</p><div class="link-list"><a href="${content.facebook}">Facebook group ${arrow}</a><a href="${content.instagram}">Instagram ${arrow}</a><a href="./${meetingCalendarPath}" type="text/calendar" download="gage-county-gop-meeting-${content.meeting.date}.ics">Add the meeting to your calendar <span aria-hidden="true">→</span></a></div></div><div class="contact-aside"><p class="eyebrow">Ways to participate</p><h3>Bring your interests and experience.</h3><ul><li>Plan meetings, social events, and fundraisers.</li><li>Help with communications and social media.</li><li>Converse with representatives and candidates.</li><li>Learn about the county committee.</li></ul><a class="text-link" href="./resources.html#organization">Learn how the committee works ${arrow}</a><hr><h3>Contribution questions</h3><p>Contact the party for contribution information.</p></div></section>`;
+  `<section class="wrap section contact-layout"><div><p class="eyebrow">Email</p><h2>Let’s connect.</h2><a class="email-link" href="mailto:${content.email}">${content.email} ${arrow}</a><p class="body-copy">For information about the Gage County Republican Party, send an email or join us at the next meeting.</p><div class="link-list"><a href="${content.facebook}">Facebook group ${arrow}</a><a href="${content.instagram}">Instagram ${arrow}</a>${meetingLink("", 'Add this meeting to your calendar <span aria-hidden="true">→</span>')}${allMeetingsLink("")}<p class="calendar-note">${h(meetingSchedule)} Calendar imports are snapshots; <a href="./updates.html">sign up separately for important notices</a>.</p></div></div><div class="contact-aside"><p class="eyebrow">Ways to participate</p><h3>Bring your interests and experience.</h3><ul><li>Plan meetings, social events, and fundraisers.</li><li>Help with communications and social media.</li><li>Converse with representatives and candidates.</li><li>Learn about the county committee.</li></ul><a class="text-link" href="./committees.html">Explore ways to get involved ${arrow}</a><hr><h3>Important meeting notices</h3><p>Add or update your contact details for occasional, important county party notices.</p><a class="text-link" href="./updates.html">Stay informed ${arrow}</a><hr><h3>Contribution questions</h3><p>Contact the party for contribution information.</p></div></section>`;
 const endorsements =
   pageHero(
     "Party information",
@@ -192,55 +197,10 @@ const endorsements =
   `<section class="wrap section prose"><p class="notice">Contact the county party with questions about endorsements. Listing on the voter card does not imply endorsement.</p>${paragraphs("endorsements")}<a class="button" href="mailto:${content.email}">Ask about endorsements ${arrow}</a></section>`;
 fs.rmSync(out, { recursive: true, force: true });
 fs.mkdirSync(out, { recursive: true });
-// Publish a portable event rather than opening an email or assuming an end time.
-const calendarText = (value) =>
-  String(value)
-    .replaceAll("\\", "\\\\")
-    .replaceAll("\n", "\\n")
-    .replaceAll(",", "\\,")
-    .replaceAll(";", "\\;");
-const utcStamp = (value) =>
-  new Date(value)
-    .toISOString()
-    .replace(/[-:]/g, "")
-    .replace(/\.\d{3}Z$/, "Z");
-const foldLine = (line) => {
-  const chunks = [];
-  let chunk = "";
-  for (const character of line) {
-    if (Buffer.byteLength(chunk + character) > 75) {
-      chunks.push(chunk);
-      chunk = " ";
-    }
-    chunk += character;
-  }
-  chunks.push(chunk);
-  return chunks.join("\r\n");
-};
-const meetingCalendar =
-  [
-    "BEGIN:VCALENDAR",
-    "VERSION:2.0",
-    "PRODID:-//Gage County GOP//County Meetings//EN",
-    "CALSCALE:GREGORIAN",
-    "METHOD:PUBLISH",
-    "X-WR-CALNAME:Gage County GOP Meetings",
-    "X-WR-CALDESC:Meeting events from the Gage County Republican Party",
-    "BEGIN:VEVENT",
-    `UID:gage-county-gop-meeting-${content.meeting.date}@quattromani.github.io`,
-    `DTSTAMP:${utcStamp(content.meeting.calendarUpdatedAt)}`,
-    `DTSTART:${utcStamp(content.meeting.dateTime)}`,
-    "SUMMARY:Gage County GOP meeting",
-    `LOCATION:${calendarText(`${content.meeting.venue}, ${content.meeting.city}`)}`,
-    `DESCRIPTION:${calendarText(`Gage County GOP meeting at ${content.meeting.venue}, ${content.meeting.city}. Starts at ${content.meeting.time} Central Time.`)}`,
-    "URL:https://www.gagecountygop.org/",
-    "END:VEVENT",
-    "END:VCALENDAR",
-  ]
-    .map(foldLine)
-    .join("\r\n") + "\r\n";
+// Publish the initial event as a no-script fallback; the browser generates later dates.
 fs.mkdirSync(path.join(out, "calendar"), { recursive: true });
-fs.writeFileSync(path.join(out, meetingCalendarPath), meetingCalendar);
+fs.writeFileSync(path.join(out, meetingCalendarPath), meetingCalendar(meetingInfo, content.meeting.calendarUpdatedAt));
+fs.writeFileSync(path.join(out, allMeetingsPath), meetingSeriesCalendar(content.meeting));
 
 fs.cpSync(path.join(root, "assets/web"), path.join(out, "assets/web"), {
   recursive: true,
@@ -260,18 +220,22 @@ for (const entry of assets) {
     path.join(out, entry.legacyWebPath),
   );
 }
-for (const name of ["style.css", "site.js", "favicon.svg"])
+for (const name of ["style.css", "site.js", "meeting.mjs", "favicon.svg"])
   fs.copyFileSync(path.join(root, "src", name), path.join(out, name));
 for (const [file, title, body] of [
   ["index.html", "Home", home],
   ["about.html", "About the party", about],
   ["events.html", "Meetings & events", events],
   ["resources.html", "Resources", resources],
+  ["committees.html", opportunities.title, committees],
+  ["government.html", governmentSource.title, renderGovernmentPage(governmentSource, { escapeHtml: h, pageHero, supervisorMaps, asset })],
+  ["constitution.html", "County constitution", constitutionPage],
   ["platform.html", "Party platform", platform],
   ["contact.html", "Contact", contact],
+  ["updates.html", "Meeting updates", renderUpdatesPage(intake, { h, pageHero, email: content.email })],
   ["endorsements.html", "Endorsements", endorsements],
 ])
-  fs.writeFileSync(path.join(out, file), layout(file, title, body));
+  fs.writeFileSync(path.join(out, file), layout(file, title, body, file === "government.html" ? "A guide to District 30 representation, Gage County supervisors, elected offices, and county services, with official contact links." : undefined));
 fs.writeFileSync(
   path.join(out, "404.html"),
   layout(
@@ -323,5 +287,5 @@ sw = sw.replace(
 );
 fs.writeFileSync(swFile, sw);
 console.log(
-  "Built 7 website pages and voter card in dist/; source archive retained in repository.",
+  "Built 11 website pages and voter card in dist/; source archive retained in repository.",
 );

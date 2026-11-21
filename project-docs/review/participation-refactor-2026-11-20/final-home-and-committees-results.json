@@ -1,0 +1,66 @@
+[
+  {
+    "height": 844,
+    "overflow": false,
+    "page": "/index.html",
+    "scrollWidth": 390,
+    "stripBackground": "rgb(20, 45, 54)",
+    "width": 390
+  },
+  {
+    "height": 844,
+    "overflow": false,
+    "page": "/committees.html",
+    "scrollWidth": 390,
+    "stripBackground": "rgb(20, 45, 54)",
+    "width": 390
+  },
+  {
+    "height": 1024,
+    "overflow": false,
+    "page": "/index.html",
+    "scrollWidth": 768,
+    "stripBackground": "rgb(20, 45, 54)",
+    "width": 768
+  },
+  {
+    "height": 1024,
+    "overflow": false,
+    "page": "/committees.html",
+    "scrollWidth": 768,
+    "stripBackground": "rgb(20, 45, 54)",
+    "width": 768
+  },
+  {
+    "height": 768,
+    "overflow": false,
+    "page": "/index.html",
+    "scrollWidth": 1024,
+    "stripBackground": "rgb(20, 45, 54)",
+    "width": 1024
+  },
+  {
+    "height": 768,
+    "overflow": false,
+    "page": "/committees.html",
+    "scrollWidth": 1024,
+    "stripBackground": "rgb(20, 45, 54)",
+    "width": 1024
+  },
+  {
+    "height": 900,
+    "overflow": false,
+    "page": "/index.html",
+    "scrollWidth": 1440,
+    "stripBackground": "rgb(20, 45, 54)",
+    "width": 1440
+  },
+  {
+    "height": 900,
+    "overflow": false,
+    "page": "/committees.html",
+    "scrollWidth": 1440,
+    "stripBackground": "rgb(20, 45, 54)",
+    "width": 1440
+  }
+]

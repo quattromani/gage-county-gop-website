@@ -10,6 +10,10 @@ for asset in registry['assets']:
     source = root / asset['sourcePath']
     if hashlib.sha256(source.read_bytes()).hexdigest() != asset['sourceSha256']:
         raise ValueError(f"Source changed; review provenance before regenerating: {source}")
+    if asset.get('generator'):
+        # Precise source-map derivatives have a dedicated preparation process.
+        print(f"Use {asset['generator']} for {asset['id']}")
+        continue
     output = root / asset['webPath']
     output.parent.mkdir(parents=True, exist_ok=True)
     with Image.open(source) as original:
@@ -19,4 +23,4 @@ for asset in registry['assets']:
             display.save(output, optimize=True)
         else:
             display.save(output, quality=85, method=6)
-print(f"Generated {len(registry['assets'])} registered display images.")
+print(f"Generated {len(registry['assets'])} registered assets checked. Dedicated derivatives retain their preparation process.")

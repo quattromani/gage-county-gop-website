@@ -5,14 +5,16 @@
   "facebook": "https://www.facebook.com/groups/625858163898556",
   "instagram": "https://www.instagram.com/gagecountygopgroup/",
   "meeting": {
-    "date": "2026-11-10",
-    "dateLabel": "November 10, 2026",
+    "firstDate": "2026-12-08",
+    "recurrence": "second-tuesday-monthly",
+    "timeZone": "America/Chicago",
+    "startHour": 19,
     "time": "7 p.m.",
-    "dateTime": "2026-11-10T19:00:00-06:00",
     "venue": "402 Sports Bar & Grill",
     "city": "Beatrice, Nebraska",
-    "confirmedBy": "User, October 26, 2026",
-    "calendarUpdatedAt": "2026-10-27T00:12:46Z"
+    "confirmedBy": "User, November 20, 2026 (date, monthly schedule, time, and location)",
+    "calendarUpdatedAt": "2026-11-20T00:00:00Z",
+    "overrides": []
   },
   "leaders": [
     {
@@ -38,7 +40,38 @@
   ],
   "history": [
     "The Gage County Republican Party was re-established in 2022. Members attended the state convention, organized a fair booth, and took part in parades and other local activities.",
-    "A November 2023 fundraiser helped build connections and support the party\u2019s mission. The county party held a convention in March 2024 and elected its executive officers.",
+    "A November 2023 fundraiser helped build connections and support the party’s mission. The county party held a convention in March 2024 and elected its executive officers.",
     "In 2024, the party participated in the Homestead Parade and Czech Days Parade, held a dunk booth at the Gage County Fair, and gathered for an election-night celebration."
-  ]
+  ],
+  "homeQuickLinks": [
+    {
+      "href": "committees.html",
+      "title": "Get involved",
+      "description": "Find a team and explore ways to help"
+    },
+    {
+      "href": "platform.html",
+      "title": "Platform",
+      "description": "Party positions, organized by topic"
+    },
+    {
+      "href": "constitution.html",
+      "title": "Constitution",
+      "description": "The county party’s governing document"
+    }
+  ],
+  "donation": {
+    "url": "https://www.paypal.com/qrcodes/venmocs/4568ce93-7648-49f3-b64e-2e64c7455413?created=1759887992",
+    "qrAsset": "gage-county-gop-venmo-qr",
+    "sourceUrl": "https://www.gagecountygop.org/",
+    "sourceImageAsset": "venmo-qr-code",
+    "verifiedAt": "2026-11-20",
+    "verification": "Decoded archived image; live homepage uses the identical image URL. Original destination retained exactly. Desktop redirects to venmo.com; mobile recipient not independently confirmed."
+  },
+  "homeGovernmentLink": {
+    "href": "government.html",
+    "title": "Looking for local government information?",
+    "description": "Find county offices, local representatives, and who to contact.",
+    "action": "Explore the guide"
+  }
 }
