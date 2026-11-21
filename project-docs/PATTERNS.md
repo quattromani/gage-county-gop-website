@@ -68,8 +68,23 @@ These are source-based interactive overviews, not georeferenced parcel/address l
 
 ## Approved participation hierarchy, November 20, 2026
 
-Shared navigation is Meetings & events, Get involved, About, Resources, Donate. Meeting updates is a utility/mobile/footer route. Reference pages have a Resources breadcrumb without falsely marking Resources as the current page. Desktop document sidebars retain current-section underlines; native topic disclosures provide mobile jumps and close after selection.
+Shared navigation is Meetings & events, Get involved, About, Resources, Donate. Meeting updates is a utility/mobile route. The footer contains secondary destinations only: Local government, Contact, Privacy, and Accessibility. Reference pages have a Resources breadcrumb without falsely marking Resources as the current page. Desktop document sidebars retain current-section underlines; native topic disclosures provide mobile jumps and close after selection.
 
 The global meeting strip uses the existing ink blue with white text; explicit dated change notices use the existing red. Homepage order is shorter hero, full meeting card, Get involved/Platform/Constitution quick links, local activity, Stay informed, government reference, compact donation, contact and footer. On phones the full meeting card precedes its accompanying welcome copy.
 
 Get involved renders src/participation.json. Team interest links prefill the public form with that team and reply-only, while a general unsure route remains available. Keep private form administration and roster records outside the public build. Dated overrides and calendars share src/meeting.mjs. See CONTACT-AND-MEETING-OPERATIONS.md.
+
+## Custom contact dialog, November 21, 2026
+
+Contact actions use one shared native dialog per page, rendered by scripts/components/contact-form.mjs. It becomes full-screen at phone widths; its fixed header keeps Close available while the form body scrolls. Use explicit data-contact-open task hooks and optional team labels. Homepage links retain an Updates fallback; the Updates page also offers a no-script email alternative. No external Google Form is used by the website.
+
+Use visible labels, at least 16px input text and 44–52px touch controls. Enable browser autofill for full name (name), email (email), mobile (tel) and town (address-level2), with appropriate input types/keyboards. Do not read a visitor's saved profile, put contact data in URLs, or save it in local storage. Previous-contact and honeypot inputs intentionally opt out of autofill. A full-name field avoids requiring separate name entry.
+
+Focus moves to the dialog heading, remains within its controls, and returns to the opener on Close/Escape. Validation provides a focused error summary with field links and inline errors. Interest actions preselect the team and reply-only preference. Stopping notices changes the question and does not require the contact method for the channel being stopped, because staff match the existing record manually.
+
+Submission is pending until the private append-only service confirms the matching request UUID. Inputs remain in memory after failure; unchanged retries reuse the UUID. A successful response received while the dialog was closed is shown on reopening. No opaque request, iframe load, or button click counts as proof of saving. See services/contact-intake/README.md and project-docs/ON-SITE-CONTACT-FORM.md.
+
+
+## Website policy pages
+
+Privacy and Accessibility use the existing page hero and a single readable text column. Their authoritative wording and review date live in src/policies.json; scripts/components/policy-page.mjs renders escaped paragraphs, headings, and links. Use this pattern for factual website information, with a contact route and explicit limitations. Do not add compliance badges, legal claims, response-time promises, or retention periods without evidence/owner policy. The form privacy link opens a named new tab to preserve draft entries; footer links use normal same-tab navigation. The secondary footer avoids repeating header/mobile routes, indicates the current page, and uses 44px-high links with wrapping on narrow screens.

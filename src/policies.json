@@ -1,0 +1,102 @@
+{
+  "updated": "2026-11-21",
+  "updatedLabel": "November 21, 2026",
+  "privacy": {
+    "title": "Privacy",
+    "intro": "What you share with the Gage County Republican Party, how we use it, and the choices you have.",
+    "sections": [
+      {
+        "id": "information-you-provide",
+        "title": "Information you choose to share",
+        "paragraphs": [
+          "The contact form asks for your name and an email address or mobile number. You may also provide your town or community, previous contact details, a committee interest, and a message. We record your request type, notice preferences, submission time, and the version of the notice wording shown with the form.",
+          "Please provide only what is needed for your request. Do not include financial account information, identification numbers, or other sensitive documents. Sending an email to the county party also shares your email address and the contents of your message."
+        ]
+      },
+      {
+        "id": "use-and-access",
+        "title": "How we use your details",
+        "paragraphs": [
+          "We use your details to reply to your request, discuss ways to get involved, and send the occasional, important county party notices you choose to receive. These may include meeting changes or cancellations. We do not sell your contact information or share it with other organizations for their marketing.",
+          "Contact requests are stored in a restricted Google Sheet for review by the county party’s executive team or an appointed committee member. The website does not display the private register or let visitors look up someone else’s details. Requests to add, update, or stop notices are reviewed by a team member before the register is changed."
+        ]
+      },
+      {
+        "id": "your-choices",
+        "title": "Your notice choices",
+        "paragraphs": [
+          "Choose email notices, text notices, both, or a reply to your request only. Choosing a reply only does not subscribe you to ongoing notices. You can use the same form to update your details or ask us to stop email notices, text notices, or both. Changes require manual review, so they are not immediate.",
+          "For questions about a record, how long it is kept, or to request correction or removal, email the county party. We may need to confirm that the request concerns your own details. Submitting this form does not register you to vote, establish party registration, appoint you to a committee, or subscribe you to calendar updates."
+        ],
+        "links": [{"label": "Add, update, or stop notices", "href": "./updates.html"}, {"label": "Email about your information", "href": "party-email"}]
+      },
+      {
+        "id": "service-providers",
+        "title": "Services that help this website work",
+        "paragraphs": [
+          "Google Apps Script receives contact-form submissions and Google Sheets stores them. Google processes information through those services under its own privacy policy. Your form details are sent when you submit; they are not added to the page address or saved by this site in browser storage. A Google account is not required to submit a request.",
+          "This version of the website is hosted on GitHub Pages. GitHub states that it logs visitors’ IP addresses for security purposes. The site does not include advertising trackers, audience analytics, externally hosted fonts, or embedded social feeds. We do not set our own tracking cookies.",
+          "The 2026 voter card can save public reference files on your device for offline use. This feature is separate from the contact form and does not save private contact requests. You can remove saved website data through your browser’s settings."
+        ],
+        "links": [{"label": "Google privacy policy", "href": "https://policies.google.com/privacy"}, {"label": "GitHub privacy statement", "href": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"}]
+      },
+      {
+        "id": "other-websites",
+        "title": "Links and donations",
+        "paragraphs": [
+          "Links to Venmo, social networks, directions, government offices, and other resources take you to services with their own privacy practices. Donations are handled by Venmo or PayPal, not by this website. We do not collect payment-card or bank-account details through the site."
+        ]
+      },
+      {
+        "id": "privacy-contact",
+        "title": "Questions or changes",
+        "paragraphs": [
+          "Contact the Gage County GOP with questions about your information or this notice. We will update this page when the website’s information practices change."
+        ],
+        "links": [{"label": "Email the county party", "href": "party-email"}]
+      }
+    ]
+  },
+  "accessibility": {
+    "title": "Accessibility",
+    "intro": "Everyone should be able to learn about the county party, find a meeting, and take part. Let us know if something gets in your way.",
+    "sections": [
+      {
+        "id": "accessibility-help",
+        "title": "Get help or report a barrier",
+        "paragraphs": [
+          "If you have trouble using a page, form, map, or document, email the county party. Include the page or link, what you were trying to do, and what happened. If you can, tell us your device, browser, and any assistive technology you use. You do not need to describe a disability or provide medical information.",
+          "You can also email us directly about meetings, ways to help, contact updates, or stopping notices if the form is difficult to use. Tell us which information or format would help you."
+        ],
+        "links": [{"label": "Email about website accessibility", "href": "accessibility-email"}]
+      },
+      {
+        "id": "using-the-site",
+        "title": "Using the website",
+        "paragraphs": [
+          "Pages use headings, named navigation areas, a Skip to content link, and visible keyboard focus. You can enlarge text using your browser. The mobile menu has a close control, and the contact form supports keyboard navigation, labeled fields, browser autofill, and text explanations of errors.",
+          "The local-government guide includes a list of supervisors and offices as an alternative to using the map. Donation links are available alongside the QR code. The constitution is available as web text as well as original scanned pages."
+        ],
+        "links": [{"label": "Local-government contacts", "href": "./government.html#supervisors"}, {"label": "Read the constitution as text", "href": "./constitution.html"}]
+      },
+      {
+        "id": "known-limitations",
+        "title": "Known limitations and alternatives",
+        "paragraphs": [
+          "Original scans, historical event artwork, downloadable election materials, and linked government PDFs may not work well with screen readers or text enlargement. Some information in images may not have a complete text equivalent. Email us if you need help accessing it.",
+          "Maps are visual overviews and should not be the only way to find your representative. Use the accompanying district buttons, supervisor list, and official contact links. Third-party websites, including donation services, may have different accessibility features.",
+          "JavaScript is needed for the on-site contact form and interactive map. Direct email and the text lists provide alternatives. An internet connection is needed to submit a contact request."
+        ]
+      },
+      {
+        "id": "accessibility-review",
+        "title": "Our approach and review",
+        "paragraphs": [
+          "We use the Web Content Accessibility Guidelines (WCAG) 2.2 Level AA as our design and review target. This is a goal, not a claim that every part of the website meets every requirement.",
+          "Our review includes automated checks, keyboard interaction, and layouts at phone, tablet, and desktop widths in Chromium-based browsers. Full testing with screen readers, other browser engines, and physical mobile devices is still needed. We welcome feedback to help identify and correct barriers."
+        ],
+        "links": [{"label": "About WCAG 2.2", "href": "https://www.w3.org/TR/WCAG22/"}]
+      }
+    ]
+  }
+}

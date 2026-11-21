@@ -1,0 +1,96 @@
+{
+  "conditions": "Localhost, unthrottled Chromium, 390x844, repeat browser cache possible. Approximately 1.2KB temporary metrics instrumentation; removed from final build. One observation per page; not field Core Web Vitals or a network/device performance certification.",
+  "observations": [
+    {
+      "page": "/index.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "domContentLoadedMs": 57.900000005960464,
+      "loadMs": 59.5,
+      "lcpMs": null,
+      "cls": 0,
+      "resources": [
+        {
+          "url": "/style.css",
+          "bytes": 300,
+          "durationMs": 16.5
+        },
+        {
+          "url": "/site.js",
+          "bytes": 0,
+          "durationMs": 14.900000005960464
+        },
+        {
+          "url": "/contact-form.js",
+          "bytes": 300,
+          "durationMs": 16.19999998807907
+        },
+        {
+          "url": "/assets/web/places/gage-county-courthouse-memorial-day-2012.webp",
+          "bytes": 386882,
+          "durationMs": 18.200000017881393
+        },
+        {
+          "url": "/assets/web/brand/united-states-flag.png",
+          "bytes": 0,
+          "durationMs": 27.900000005960464
+        },
+        {
+          "url": "/__metrics.js",
+          "bytes": 1293,
+          "durationMs": 27.80000001192093
+        },
+        {
+          "url": "/meeting.mjs",
+          "bytes": 0,
+          "durationMs": 1.699999988079071
+        }
+      ]
+    },
+    {
+      "page": "/privacy.html",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "domContentLoadedMs": 57.19999998807907,
+      "loadMs": 66,
+      "lcpMs": null,
+      "cls": 0,
+      "resources": [
+        {
+          "url": "/style.css",
+          "bytes": 300,
+          "durationMs": 15.099999994039536
+        },
+        {
+          "url": "/site.js",
+          "bytes": 0,
+          "durationMs": 0
+        },
+        {
+          "url": "/assets/web/brand/united-states-flag.png",
+          "bytes": 0,
+          "durationMs": 0
+        },
+        {
+          "url": "/contact-form.js",
+          "bytes": 300,
+          "durationMs": 15.5
+        },
+        {
+          "url": "/__metrics.js",
+          "bytes": 300,
+          "durationMs": 29.200000017881393
+        },
+        {
+          "url": "/meeting.mjs",
+          "bytes": 0,
+          "durationMs": 0
+        }
+      ]
+    }
+  ]
+}

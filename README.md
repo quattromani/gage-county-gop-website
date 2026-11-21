@@ -23,7 +23,9 @@ Open http://localhost:4187/. The build produces static HTML in dist/. GitHub Act
 | --- | --- |
 | src/content.json | Shared public contact, leadership, homepage links, and meeting schedule/overrides |
 | src/participation.json | Owner-supplied committee teams and general descriptions |
-| src/contact-intake.json | Public intake and prefilled task/interest links; no private contact records |
+| src/policies.json | Privacy/accessibility wording, links, and review date |
+| src/contact-intake.json | Public submission endpoint and notice wording version; no private contact records |
+| services/contact-intake/ | Append-only Google Apps Script service and deployment runbook |
 | src/meeting.mjs | Shared occurrence, dated notice, and calendar model |
 | src/assets.json | Stable descriptive asset IDs, titles, source checksums, display paths, and legacy aliases |
 | src/constitution.json | Clause-level transcription of the five original constitution scans, with source-page paths |
@@ -69,4 +71,8 @@ The source archive and archival-only media remain in Git, but archive.html and s
 
 ## Participation and important notices
 
-Navigation and homepage ordering prioritize attending, helping, and keeping contact details current. The Get involved page uses the seven teams supplied by the owner. Party organization remains in Resources alongside the documents and local-government guide. The contact form handles add/update/stop requests and optional committee inquiries. Responses feed a restricted Google Sheet for manual review; the website contains no private roster. Sending remains manual. See [contact and meeting operations](project-docs/CONTACT-AND-MEETING-OPERATIONS.md) for ownership, review, suppression, dated meeting changes, and calendar limits.
+Navigation and homepage ordering prioritize attending, helping, and keeping contact details current. The Get involved page uses the seven teams supplied by the owner. Party organization remains in Resources alongside the documents and local-government guide. The custom on-site form handles add/update/stop requests and optional committee inquiries, using a full-screen phone layout and desktop dialog. Autofill is enabled for name, email, mobile and town. Requests go through an append-only Apps Script endpoint into the private Incoming requests tab for manual review; the website contains no private roster. Sending remains manual. See [contact and meeting operations](project-docs/CONTACT-AND-MEETING-OPERATIONS.md) for ownership, review, suppression, dated meeting changes, and calendar limits.
+
+## Executive preview readiness
+
+Privacy and Accessibility are linked from the secondary footer alongside Local government and Contact. Their wording reflects actual service use and known limits. See [November 21 preview readiness](project-docs/EXECUTIVE-PREVIEW-READINESS-2026-11-21.md) for the tested artifact, responsive/automated accessibility evidence, and remaining official-launch work. The review is local; it does not deploy a new Pages release or replace Squarespace.

@@ -1,0 +1,44 @@
+[
+  {
+    "route": "index.html",
+    "status": 200,
+    "type": "text/html"
+  },
+  {
+    "route": "privacy.html",
+    "status": 200,
+    "type": "text/html"
+  },
+  {
+    "route": "accessibility.html",
+    "status": 200,
+    "type": "text/html"
+  },
+  {
+    "route": "government.html",
+    "status": 200,
+    "type": "text/html"
+  },
+  {
+    "route": "updates.html",
+    "status": 200,
+    "type": "text/html"
+  },
+  {
+    "route": "calendar/gage-county-gop-meetings.ics",
+    "status": 200,
+    "type": "text/calendar"
+  },
+  {
+    "route": "this-page-does-not-exist",
+    "status": 404
+  },
+  {
+    "route": "source-snapshot/inventory.json",
+    "status": 404
+  },
+  {
+    "route": "__axe.js",
+    "status": 404
+  }
+]

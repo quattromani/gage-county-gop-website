@@ -1652,8 +1652,16 @@ a:focus-visible {
 .page-hero h1 { font-size: clamp(42px, 4.5vw, 64px); max-width: 1050px; }
 .page-hero .lead { max-width: 700px; }
 .page-return { text-align: right; padding-block: 18px 32px; font-size: 14px; }
+.footer-bottom { font-size: 12px; }
 .footer-bottom nav { display: flex; flex-wrap: wrap; gap: 12px 24px; }
-.footer-bottom nav a { padding-block: 8px; }
+.footer-bottom nav a { display: inline-flex; align-items: center; min-height: 44px; padding-block: 10px; font-size: 12px; }
+.footer-bottom nav a[aria-current="page"] { font-weight: 700; text-decoration-thickness: 2px; }
+.policy-page { max-width: 880px; margin-inline: 0; }
+.policy-page section { margin-top: 40px; }
+.policy-page h2 { font-size: clamp(28px, 3vw, 36px); }
+.policy-updated { color: var(--muted); font-size: 14px; margin-top: 0; }
+.policy-links { padding-left: 22px; }
+.policy-links li { margin-block: 10px; }
 .hero { min-height: 0; }
 .hero-copy { padding: 36px 40px 30px var(--space); }
 .hero h1 { font-size: clamp(48px, 4.4vw, 64px); line-height: 1.02; margin-bottom: 20px; }
@@ -1791,3 +1799,58 @@ button:focus-visible { outline: 3px solid var(--red); outline-offset: 4px; }
   .intake-choice .button { width: 100%; justify-content: center; }
 }
 @media print { .meeting-strip, .updates-utility, .breadcrumbs, .page-return { display: none; } .topic-disclosure > summary { display: none; } }
+
+/* Custom contact intake: one accessible dialog, full-screen on phones. */
+button.button { font-family: var(--sans); cursor: pointer; }
+button.text-link { background: none; color: var(--ink); border: 0; border-bottom: 1px solid currentColor; padding: 0 0 6px; font-family: var(--sans); cursor: pointer; }
+.contact-modal-open { overflow: hidden; }
+.contact-dialog { width: min(720px, calc(100vw - 48px)); max-width: none; height: min(900px, calc(100dvh - 64px)); max-height: calc(100vh - 64px); max-height: calc(100dvh - 64px); padding: 0; border: 1px solid var(--line); color: var(--ink); background: var(--white); box-shadow: 0 16px 60px #142d3640; }
+.contact-dialog[open] { display: flex; flex-direction: column; }
+.contact-dialog::backdrop { background: #142d36b3; }
+.contact-dialog-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex: none; padding: 20px 28px; border-bottom: 1px solid var(--line); background: var(--paper); }
+.contact-dialog-header .eyebrow { font-size: 10px; margin: 0 0 8px; }
+.contact-dialog h2 { font: 36px/1.1 var(--serif); margin: 0; }
+.contact-close { display: inline-flex; align-items: center; gap: 12px; flex: none; min-height: 44px; padding: 8px 12px; border: 1px solid var(--line); background: var(--white); color: var(--ink); font: 14px var(--sans); cursor: pointer; }
+.contact-close span { font-size: 26px; line-height: 1; }
+.contact-dialog-body { padding: 24px 28px; overflow-y: auto; overscroll-behavior: contain; min-height: 0; }
+.contact-dialog-body > [data-contact-editor] > p { margin-top: 0; color: var(--muted); font-size: 15px; }
+.contact-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 20px; }
+.contact-full { grid-column: 1/-1; }
+.contact-field label, .contact-notices legend { display: block; font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+.contact-field label span { font-weight: 400; color: var(--muted); }
+.contact-field input, .contact-field select, .contact-field textarea { display: block; width: 100%; min-height: 48px; border: 1px solid var(--muted); border-radius: 0; padding: 12px; background: var(--white); color: var(--ink); font: 16px/1.4 var(--sans); }
+.contact-field textarea { resize: vertical; }
+.contact-field [aria-invalid="true"] { border: 2px solid var(--red); }
+.contact-field-help { font-size: 13px; color: var(--muted); line-height: 1.5; margin: 8px 0 0; }
+.contact-fields > .contact-field-help { margin: -4px 0 -8px; }
+.contact-notices { margin: 0; padding: 0; border: 0; min-width: 0; }
+.contact-notices legend { padding: 0; margin: 0; }
+.contact-notice-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+.contact-notice-options label { display: flex; align-items: center; gap: 10px; min-height: 52px; padding: 12px; border: 1px solid var(--line); font-size: 14px; line-height: 1.4; cursor: pointer; }
+.contact-notice-options input { flex: none; width: 18px; height: 18px; accent-color: var(--red); }
+.contact-notice-options label:has(:checked) { border-color: var(--ink); background: var(--soft); }
+.contact-field-error { display: block; margin-top: 8px; color: var(--red); font-size: 14px; line-height: 1.5; }
+.contact-error-summary { border: 2px solid var(--red); padding: 16px; margin-bottom: 24px; font-size: 15px; }
+.contact-error-summary p { margin: 0 0 8px; font-weight: 700; }
+.contact-error-summary ul { margin: 0; padding-left: 20px; }
+.contact-error-summary a { display: inline-block; padding-block: 4px; }
+.contact-privacy-note { margin-top: 24px; padding: 16px; background: var(--soft); }
+.contact-privacy-note p { font-size: 13px; line-height: 1.55; margin: 0 0 10px; }
+.contact-privacy-note p:last-child { margin: 0; }
+.contact-submit-row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 24px; }
+.contact-submit-row .button, .contact-receipt .button { min-height: 48px; font-size: 15px; justify-content: center; }
+.contact-progress { font-size: 14px; }
+.contact-form :disabled { opacity: .65; cursor: wait; }
+.contact-honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.contact-receipt h3 { font: 38px/1.2 var(--serif); }
+.contact-receipt p { max-width: 540px; }
+@media (max-width: 700px) {
+  .contact-dialog { width: 100%; height: 100%; height: 100dvh; max-height: 100%; max-height: 100dvh; margin: 0; border: 0; }
+  .contact-dialog-header { padding: max(16px, env(safe-area-inset-top)) 20px 16px; gap: 12px; }
+  .contact-dialog h2 { font-size: 30px; }
+  .contact-dialog-body { padding: 20px 20px max(24px, env(safe-area-inset-bottom)); }
+  .contact-fields { grid-template-columns: 1fr; gap: 22px; }
+  .contact-submit-row .button { width: 100%; }
+}
+@media (max-width: 360px) { .contact-notice-options { grid-template-columns: 1fr; } .contact-dialog-header { padding-inline: 16px; } .contact-dialog-body { padding-inline: 16px; } }
+@media print { .contact-dialog { display: none !important; } }

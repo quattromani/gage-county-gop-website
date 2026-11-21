@@ -1,0 +1,512 @@
+[
+  {
+    "url": "/index.html",
+    "engine": {
+      "name": "axe-core",
+      "version": "4.10.3"
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            ".wrap > a[href$=\"events.html#meeting\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            ".button[href$=\"events.html#meeting\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "figcaption > span:nth-child(1)"
+          ],
+          [
+            ".photo-credit"
+          ],
+          [
+            ".photo-credit > a:nth-child(1)"
+          ],
+          [
+            ".photo-credit > a:nth-child(2)"
+          ],
+          [
+            "a[download=\"gage-county-gop-meetings.ics\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "a[href$=\"updates.html#add\"][data-contact-open=\"add\"][aria-haspopup=\"dialog\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "a[href$=\"#top\"] > span[aria-hidden=\"true\"]"
+          ]
+        ]
+      }
+    ],
+    "passes": 40
+  },
+  {
+    "url": "/events.html",
+    "engine": {
+      "name": "axe-core",
+      "version": "4.10.3"
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            "a[href$=\"events.html#meeting\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            ".button-outline > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "a[href$=\"#top\"] > span[aria-hidden=\"true\"]"
+          ]
+        ]
+      }
+    ],
+    "passes": 40
+  },
+  {
+    "url": "/committees.html",
+    "engine": {
+      "name": "axe-core",
+      "version": "4.10.3"
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            ".wrap > a[href$=\"events.html#meeting\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "button[data-contact-team=\"Candidate Survey Team\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "button[data-contact-team=\"Public Relations Team\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "button[data-contact-team=\"Recruiting Team\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "button[data-contact-team=\"Fundraising Team\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "button[data-contact-team=\"Podcast Team\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "button[data-contact-team=\"Program Team\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "button[data-contact-team=\"Education Team\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "a[href$=\"#top\"] > span[aria-hidden=\"true\"]"
+          ]
+        ]
+      }
+    ],
+    "passes": 41
+  },
+  {
+    "url": "/about.html",
+    "engine": {
+      "name": "axe-core",
+      "version": "4.10.3"
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            "a[href$=\"events.html#meeting\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "a[href$=\"#top\"] > span[aria-hidden=\"true\"]"
+          ]
+        ]
+      }
+    ],
+    "passes": 39
+  },
+  {
+    "url": "/resources.html",
+    "engine": {
+      "name": "axe-core",
+      "version": "4.10.3"
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            "a[href$=\"events.html#meeting\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "a[href$=\"#top\"] > span[aria-hidden=\"true\"]"
+          ]
+        ]
+      }
+    ],
+    "passes": 40
+  },
+  {
+    "url": "/government.html",
+    "engine": {
+      "name": "axe-core",
+      "version": "4.10.3"
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            "a[href$=\"events.html#meeting\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "g[transform=\"translate(860 510)\"] > text[dominant-baseline=\"central\"]"
+          ],
+          [
+            "g[transform=\"translate(300 700)\"] > text[dominant-baseline=\"central\"]"
+          ],
+          [
+            "g[transform=\"translate(590 1140)\"] > text[dominant-baseline=\"central\"]"
+          ],
+          [
+            "g[transform=\"translate(865 1300)\"] > text[dominant-baseline=\"central\"]"
+          ],
+          [
+            "g[transform=\"translate(360 1350)\"] > text[dominant-baseline=\"central\"]"
+          ],
+          [
+            ".district-city-label"
+          ],
+          [
+            "a[href$=\"#top\"] > span[aria-hidden=\"true\"]"
+          ]
+        ]
+      }
+    ],
+    "passes": 44
+  },
+  {
+    "url": "/constitution.html",
+    "engine": {
+      "name": "axe-core",
+      "version": "4.10.3"
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            "a[href$=\"events.html#meeting\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "a[href$=\"#top\"] > span[aria-hidden=\"true\"]"
+          ]
+        ]
+      }
+    ],
+    "passes": 41
+  },
+  {
+    "url": "/platform.html",
+    "engine": {
+      "name": "axe-core",
+      "version": "4.10.3"
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            "a[href$=\"events.html#meeting\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "a[href$=\"#top\"] > span[aria-hidden=\"true\"]"
+          ]
+        ]
+      }
+    ],
+    "passes": 39
+  },
+  {
+    "url": "/contact.html",
+    "engine": {
+      "name": "axe-core",
+      "version": "4.10.3"
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            "a[href$=\"events.html#meeting\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "a[data-meeting-calendar=\"\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "a[download=\"gage-county-gop-meetings.ics\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "a[href$=\"#top\"] > span[aria-hidden=\"true\"]"
+          ]
+        ]
+      }
+    ],
+    "passes": 42
+  },
+  {
+    "url": "/updates.html",
+    "engine": {
+      "name": "axe-core",
+      "version": "4.10.3"
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            "a[href$=\"events.html#meeting\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "button[data-contact-open=\"add\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "button[data-contact-open=\"update\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "button[data-contact-open=\"stop\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "button[data-contact-open=\"interest\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "a[href$=\"#top\"] > span[aria-hidden=\"true\"]"
+          ]
+        ]
+      }
+    ],
+    "passes": 41
+  },
+  {
+    "url": "/endorsements.html",
+    "engine": {
+      "name": "axe-core",
+      "version": "4.10.3"
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            "a[href$=\"events.html#meeting\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "a[href$=\"#top\"] > span[aria-hidden=\"true\"]"
+          ]
+        ]
+      }
+    ],
+    "passes": 40
+  },
+  {
+    "url": "/privacy.html",
+    "engine": {
+      "name": "axe-core",
+      "version": "4.10.3"
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            "a[href$=\"events.html#meeting\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "a[href$=\"#top\"] > span[aria-hidden=\"true\"]"
+          ]
+        ]
+      }
+    ],
+    "passes": 41
+  },
+  {
+    "url": "/accessibility.html",
+    "engine": {
+      "name": "axe-core",
+      "version": "4.10.3"
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            "a[href$=\"events.html#meeting\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "a[href$=\"#top\"] > span[aria-hidden=\"true\"]"
+          ]
+        ]
+      }
+    ],
+    "passes": 41
+  },
+  {
+    "url": "/404.html",
+    "engine": {
+      "name": "axe-core",
+      "version": "4.10.3"
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            "a[href$=\"events.html#meeting\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "a[href$=\"#top\"] > span[aria-hidden=\"true\"]"
+          ]
+        ]
+      }
+    ],
+    "passes": 39
+  },
+  {
+    "url": "/updates.html",
+    "engine": {
+      "name": "axe-core",
+      "version": "4.10.3"
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            "label:nth-child(3) > span"
+          ],
+          [
+            "label[data-reply-choice=\"\"] > span"
+          ],
+          [
+            "label[for=\"contact-community\"]"
+          ],
+          [
+            "label[for=\"contact-community\"] > span"
+          ],
+          [
+            "label[for=\"contact-committee\"]"
+          ],
+          [
+            "label[for=\"contact-committee\"] > span"
+          ],
+          [
+            "label[for=\"contact-message\"]"
+          ],
+          [
+            "label[for=\"contact-message\"] > span"
+          ],
+          [
+            "#contact-message"
+          ],
+          [
+            "button[type=\"submit\"] > span[aria-hidden=\"true\"]"
+          ],
+          [
+            "#contact-form > .contact-field-help"
+          ],
+          [
+            ".contact-field-help > a"
+          ]
+        ]
+      }
+    ],
+    "passes": 33,
+    "state": "dialog open"
+  },
+  {
+    "url": "/updates.html",
+    "engine": {
+      "name": "axe-core",
+      "version": "4.10.3"
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            "label[for=\"contact-email\"]"
+          ],
+          [
+            "#contact-email-error"
+          ],
+          [
+            "label[for=\"contact-mobile\"]"
+          ],
+          [
+            "legend"
+          ],
+          [
+            "fieldset > .contact-field-help"
+          ],
+          [
+            ".contact-notice-options > label:nth-child(1) > span"
+          ],
+          [
+            "label:nth-child(2) > span"
+          ],
+          [
+            "label:nth-child(3) > span"
+          ],
+          [
+            "label[data-reply-choice=\"\"] > span"
+          ],
+          [
+            "#contact-notices-error"
+          ],
+          [
+            "label[for=\"contact-community\"]"
+          ],
+          [
+            "label[for=\"contact-community\"] > span"
+          ],
+          [
+            "label[for=\"contact-committee\"]"
+          ],
+          [
+            "label[for=\"contact-committee\"] > span"
+          ],
+          [
+            "label[for=\"contact-message\"]"
+          ],
+          [
+            "label[for=\"contact-message\"] > span"
+          ],
+          [
+            "#contact-message"
+          ]
+        ]
+      }
+    ],
+    "passes": 35,
+    "state": "empty form validation"
+  }
+]

@@ -402,7 +402,7 @@ test("government guide has sourced officeholders and contact routes with homepag
     const html = fs.readFileSync(file, "utf8");
     const header = html.match(/<header class="site-header">(.*?)<\/header>/)[1];
     assert.doesNotMatch(header, /government\.html/);
-    assert.match(html, /<a href="\.\/government\.html">Local government<\/a>/);
+    assert.match(html, /<a href="\.\/government\.html"(?: aria-current="page")?>Local government<\/a>/);
   }
   const home = read("index.html");
   const meetingPosition = home.indexOf('class="meeting-card"');
@@ -510,8 +510,8 @@ test("meeting configuration rejects ambiguous overrides and resolves the actual 
 test("participation routes stay consistent and private intake administration stays out of public output", () => {
   const intake = JSON.parse(fs.readFileSync(path.join(root, "src/contact-intake.json")));
   assert.equal(intake.status, "ready");
-  assert.equal(new URL(intake.formUrl).hostname, "docs.google.com");
-  for (const task of ["add", "update", "stop", "interest"]) assert.ok(intake.taskLinks[task]);
+  assert.match(intake.endpoint, /^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/);
+  for (const task of ["add", "update", "stop", "interest"]) assert.ok(read("updates.html").includes(`data-contact-open="${task}"`));
   for (const file of htmlFiles.filter((f) => !f.includes("vote-2026"))) {
     const html = fs.readFileSync(file, "utf8");
     const nav = html.match(/<nav class="desktop-nav"[^>]*>(.*?)<\/nav>/)[1];
@@ -526,7 +526,8 @@ test("participation routes stay consistent and private intake administration sta
   for (const file of files(dist).filter((f) => /\.(html|json|js|mjs)$/.test(f))) {
     assert.doesNotMatch(fs.readFileSync(file, "utf8"), /1mXsRm-5JTbS1BAZtVwToSx1GjN00W6uWImOqW9YqNyA|1Qt1lBAURsxPkTxaxwsI-eQQTKgvP3JB8VT9fk2tpwXo|qa-test@example\.com|private contact register/i, file);
   }
-  assert.match(read("updates.html"), /A Google account is not required/);
+  assert.match(read("updates.html"), /data-contact-dialog/);
+  assert.doesNotMatch(read("updates.html"), /docs\.google\.com\/forms/);
   assert.match(read("updates.html"), /separate from voter registration/);
   assert.ok(read("government.html").indexOf("Start with your question.") < read("government.html").indexOf("Different responsibilities."));
 });

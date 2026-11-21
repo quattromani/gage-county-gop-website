@@ -1,0 +1,573 @@
+{
+  "release": "executive-preview-2026-11-21",
+  "baseCommit": "c8d3ca33023b64379f3e271beefd736458df0166",
+  "sourceState": "uncommitted local changes",
+  "artifactSha256": "d190fd7004ce95583b7ee7d5ab7d59a7bf2568f8ef2d9af30b963c5ab9ea026f",
+  "files": [
+    {
+      "path": ".nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "404.html",
+      "bytes": 12132,
+      "sha256": "0b1d82fd249afc93c18637c19a53eef7dcf83d8d37adbc6e0e851e4f58b3fe14"
+    },
+    {
+      "path": "about.html",
+      "bytes": 15272,
+      "sha256": "7c378cfba82e877cdec9d5633156fb70b522d2bfd4f7575c2cec9589f37804ce"
+    },
+    {
+      "path": "accessibility.html",
+      "bytes": 15405,
+      "sha256": "27b318fcdb76a1464f76dc86c520c14f255213b69d421d507a93212706e6b923"
+    },
+    {
+      "path": "assets/originals/62dd31d8c6-2026-Costitution-PG-2.png",
+      "bytes": 45318,
+      "sha256": "9bca653b9b057fc56736994693820f340c9de94ce7b6c2826a817c5387b5ec2d"
+    },
+    {
+      "path": "assets/originals/89b8552a8a-2026-Costitution-PG-1.png",
+      "bytes": 39338,
+      "sha256": "807cceeb98080b8bca9380d08a6d04e9b4d9cc748e108a0ce597ad548f9974ec"
+    },
+    {
+      "path": "assets/originals/9a35092d62-2026-Costitution-PG-4.png",
+      "bytes": 48074,
+      "sha256": "94bcc9417e42ad0f98d162c9591992a79ebd886ea0ca815d75a6fd504b46e9fa"
+    },
+    {
+      "path": "assets/originals/ad3a2e705d-2026-Costitution-PG-5.png",
+      "bytes": 35743,
+      "sha256": "8e76ad03a18f12792b2e3e224c081c565b69c9a3cbf21eb8692f749add2e5742"
+    },
+    {
+      "path": "assets/originals/c13bcc87c6-2026-Costitution-PG-3.png",
+      "bytes": 49751,
+      "sha256": "654d3c1d53bc0576d1cf2f85933e589635c6f86c272c0954fbdf6fbe5dc1a673"
+    },
+    {
+      "path": "assets/web/03978b078d-BBQ-pic-2.webp",
+      "bytes": 89082,
+      "sha256": "a41d6429dcee12049963e63c7ebc6934012a6b51c59c173cc39b9decb02a5e25"
+    },
+    {
+      "path": "assets/web/17648eacaa-courthouse-photo.webp",
+      "bytes": 172284,
+      "sha256": "1410ed312a250afb5e4752bef6db5c1c597f339d2ee9637613b92e665d906c43"
+    },
+    {
+      "path": "assets/web/1c1aab057b-1000001811.webp",
+      "bytes": 473388,
+      "sha256": "a07ececa111044daedfb675dc6b2a0ba4c99b5ad4e44842b332401a80502ef4d"
+    },
+    {
+      "path": "assets/web/273afe4736-GOP-Convention-2026-pic1.webp",
+      "bytes": 71672,
+      "sha256": "0b8da03ea49e1382738df644cd87ad10252a24c8a733730445f9b6813f8086c3"
+    },
+    {
+      "path": "assets/web/55d916a343-2024-dunk-1.webp",
+      "bytes": 7954,
+      "sha256": "cdfeb5ef7543f6d9be9eedbab17b93353f010b8511eec2844c82cefd793095d8"
+    },
+    {
+      "path": "assets/web/62dd31d8c6-2026-Costitution-PG-2.webp",
+      "bytes": 94412,
+      "sha256": "a079ccc19d8e8ce774605a28a7a4e7fa165a4e2c7818e9026f6542596b1c9f20"
+    },
+    {
+      "path": "assets/web/64c858cb01-2024-Homestead-parade.webp",
+      "bytes": 28518,
+      "sha256": "1509355036bc91ca64bc83dd6dd971b7f2c8e4d6c58d650e5a4d02369a3b2b64"
+    },
+    {
+      "path": "assets/web/66fc6188b4-Gage-county-Courthouse-animated.webp",
+      "bytes": 13966,
+      "sha256": "8e1cd3ff2cfc5a1ecfc183e16142624cf70ff47d38146d7c7912c487da8aecbb"
+    },
+    {
+      "path": "assets/web/679d132d03-2024-pic-3---Copy.webp",
+      "bytes": 4662,
+      "sha256": "e09b20e2e89d2f5a7264353f9687806833bceec6f3c6fa778ebe09b399292cd5"
+    },
+    {
+      "path": "assets/web/69de06e2c1-2024-pic-4---Copy.webp",
+      "bytes": 11118,
+      "sha256": "8d1c8e4a55384bdcec63e96ed9c0c1701d9028f4fe9936c8dfcf7d660ca12df1"
+    },
+    {
+      "path": "assets/web/768a8f9806-LORRIE-pic.webp",
+      "bytes": 3598,
+      "sha256": "a372c660bd8accc324f5f3e60653f3d8e4dc01a82c0a35876342e3103ef5224e"
+    },
+    {
+      "path": "assets/web/809f82751a-GOP-mtg-October-2025.webp",
+      "bytes": 46984,
+      "sha256": "abc9dc96ce48158fe10aa7bd6876160806382ded1bf596ce7a8d9ec3b8118c56"
+    },
+    {
+      "path": "assets/web/89b8552a8a-2026-Costitution-PG-1.webp",
+      "bytes": 79846,
+      "sha256": "3be15516324dcb7b59c466e839301ff86652d06115cb226730eed77fa2de210c"
+    },
+    {
+      "path": "assets/web/96e06b9312-2024-pic-1.webp",
+      "bytes": 9450,
+      "sha256": "3cf433f927cc5aa229fb5c040ba13589fa2b7a048f53684f01cc1334b1a80879"
+    },
+    {
+      "path": "assets/web/9a35092d62-2026-Costitution-PG-4.webp",
+      "bytes": 101320,
+      "sha256": "6ec4349b0d42626921ad10a750bf29f943153c2958bab080a90dbf589e8aa0a9"
+    },
+    {
+      "path": "assets/web/a01937f2e5-2026-Wilber-Parade.webp",
+      "bytes": 831650,
+      "sha256": "a7b3f14b3c69ab26af11c5568fba3a5dbbd1c459bfaeb6e01203e1ba2ea69216"
+    },
+    {
+      "path": "assets/web/a4cfeaf17e-Republican-Party-Logo.webp",
+      "bytes": 7124,
+      "sha256": "69aa73bfe13326feda4b7a87ea169e8a1ed23c704a932d4771db3ca97e187b1a"
+    },
+    {
+      "path": "assets/web/aaff6705d3-Draft_7--1-.webp",
+      "bytes": 179834,
+      "sha256": "a4a4e548ea70b41e2934c37a197bc4ace9e02c4818aaf0da97fd7a420dc1d775"
+    },
+    {
+      "path": "assets/web/ac389f13ca-GOP-Convention-2026-pic2.webp",
+      "bytes": 66130,
+      "sha256": "3130b7dd365d23ad687bd1fe3eb118eef3a6ae88cce32ffad2a0dcc654f3f521"
+    },
+    {
+      "path": "assets/web/acfb6db13a-2026-GOP-GAge-county-fair.webp",
+      "bytes": 372546,
+      "sha256": "3136b6d40dd418d5da28f279f0f20b758898c5b20180284ccde6911266916f03"
+    },
+    {
+      "path": "assets/web/ad3a2e705d-2026-Costitution-PG-5.webp",
+      "bytes": 74262,
+      "sha256": "5ead459a156d743cb15d2b41450e8f89cec5ef7d8d6cd98bd36b18152c3392a6"
+    },
+    {
+      "path": "assets/web/b6c7487e27-2024-pic-2---Copy.webp",
+      "bytes": 5236,
+      "sha256": "88f1eb371bcbd3f8281462e75b727714694b2e3a9ade3200af4c9645f15d38cd"
+    },
+    {
+      "path": "assets/web/b71d6407ba-1000001812.webp",
+      "bytes": 31744,
+      "sha256": "745885c618a3dfa07100133468ded6d6d58bffff97b6ae3281f6448454dac874"
+    },
+    {
+      "path": "assets/web/bb746b7284-DennisApplegarth_Gallery_no_hat.webp",
+      "bytes": 64208,
+      "sha256": "44626016f33452a6488d2704294372e33a74a83b159b40e44b5d4611ae0dce17"
+    },
+    {
+      "path": "assets/web/brand/gage-county-courthouse-illustration.webp",
+      "bytes": 13966,
+      "sha256": "8e1cd3ff2cfc5a1ecfc183e16142624cf70ff47d38146d7c7912c487da8aecbb"
+    },
+    {
+      "path": "assets/web/brand/gage-county-gop-venmo-qr.png",
+      "bytes": 3764,
+      "sha256": "f3371a1e6d1f99442520713e34bdb5d18829325622ad2c519f52f9818877ff8e"
+    },
+    {
+      "path": "assets/web/brand/republican-party-logo.webp",
+      "bytes": 7124,
+      "sha256": "69aa73bfe13326feda4b7a87ea169e8a1ed23c704a932d4771db3ca97e187b1a"
+    },
+    {
+      "path": "assets/web/brand/united-states-flag.png",
+      "bytes": 2076,
+      "sha256": "f97fec79d518f8d2146943d66bdd84f4def75979c01a0a870c61b08fd58b1485"
+    },
+    {
+      "path": "assets/web/c13bcc87c6-2026-Costitution-PG-3.webp",
+      "bytes": 103254,
+      "sha256": "f414388b71c6a1e1fb77d3e54b8277cf7a1340062cf43e77d55fd608aa92b18f"
+    },
+    {
+      "path": "assets/web/d5b425dd17-Kayla-pic.webp",
+      "bytes": 2988,
+      "sha256": "2ebd890d838b5d1020981d9f14c19938c750d74d5acc0c7c1c5416964adcfe3b"
+    },
+    {
+      "path": "assets/web/documents/county-gop-constitution-2026-page-01.webp",
+      "bytes": 79846,
+      "sha256": "3be15516324dcb7b59c466e839301ff86652d06115cb226730eed77fa2de210c"
+    },
+    {
+      "path": "assets/web/documents/county-gop-constitution-2026-page-02.webp",
+      "bytes": 94412,
+      "sha256": "a079ccc19d8e8ce774605a28a7a4e7fa165a4e2c7818e9026f6542596b1c9f20"
+    },
+    {
+      "path": "assets/web/documents/county-gop-constitution-2026-page-03.webp",
+      "bytes": 103254,
+      "sha256": "f414388b71c6a1e1fb77d3e54b8277cf7a1340062cf43e77d55fd608aa92b18f"
+    },
+    {
+      "path": "assets/web/documents/county-gop-constitution-2026-page-04.webp",
+      "bytes": 101320,
+      "sha256": "6ec4349b0d42626921ad10a750bf29f943153c2958bab080a90dbf589e8aa0a9"
+    },
+    {
+      "path": "assets/web/documents/county-gop-constitution-2026-page-05.webp",
+      "bytes": 74262,
+      "sha256": "5ead459a156d743cb15d2b41450e8f89cec5ef7d8d6cd98bd36b18152c3392a6"
+    },
+    {
+      "path": "assets/web/events/2025-10-county-gop-meeting.webp",
+      "bytes": 46984,
+      "sha256": "abc9dc96ce48158fe10aa7bd6876160806382ded1bf596ce7a8d9ec3b8118c56"
+    },
+    {
+      "path": "assets/web/events/2026-county-convention-01.webp",
+      "bytes": 66130,
+      "sha256": "3130b7dd365d23ad687bd1fe3eb118eef3a6ae88cce32ffad2a0dcc654f3f521"
+    },
+    {
+      "path": "assets/web/events/2026-county-convention-02.webp",
+      "bytes": 71672,
+      "sha256": "0b8da03ea49e1382738df644cd87ad10252a24c8a733730445f9b6813f8086c3"
+    },
+    {
+      "path": "assets/web/events/2026-county-fair-booth.webp",
+      "bytes": 372546,
+      "sha256": "3136b6d40dd418d5da28f279f0f20b758898c5b20180284ccde6911266916f03"
+    },
+    {
+      "path": "assets/web/events/2026-fundraiser-flyer.webp",
+      "bytes": 179834,
+      "sha256": "a4a4e548ea70b41e2934c37a197bc4ace9e02c4818aaf0da97fd7a420dc1d775"
+    },
+    {
+      "path": "assets/web/events/2026-wilber-czech-festival-parade.webp",
+      "bytes": 831650,
+      "sha256": "a7b3f14b3c69ab26af11c5568fba3a5dbbd1c459bfaeb6e01203e1ba2ea69216"
+    },
+    {
+      "path": "assets/web/events/barbecue-fundraiser-artwork.webp",
+      "bytes": 89082,
+      "sha256": "a41d6429dcee12049963e63c7ebc6934012a6b51c59c173cc39b9decb02a5e25"
+    },
+    {
+      "path": "assets/web/events/community-celebration-01.webp",
+      "bytes": 11118,
+      "sha256": "8d1c8e4a55384bdcec63e96ed9c0c1701d9028f4fe9936c8dfcf7d660ca12df1"
+    },
+    {
+      "path": "assets/web/events/community-display-01.webp",
+      "bytes": 9450,
+      "sha256": "3cf433f927cc5aa229fb5c040ba13589fa2b7a048f53684f01cc1334b1a80879"
+    },
+    {
+      "path": "assets/web/events/community-event-01.webp",
+      "bytes": 4662,
+      "sha256": "e09b20e2e89d2f5a7264353f9687806833bceec6f3c6fa778ebe09b399292cd5"
+    },
+    {
+      "path": "assets/web/events/community-gathering-01.webp",
+      "bytes": 5236,
+      "sha256": "88f1eb371bcbd3f8281462e75b727714694b2e3a9ade3200af4c9645f15d38cd"
+    },
+    {
+      "path": "assets/web/events/county-fair-dunk-tank-01.webp",
+      "bytes": 6046,
+      "sha256": "493654125cc4a464bf8218341ddfbafadf6449c0828c939f2e33b085f46f37e8"
+    },
+    {
+      "path": "assets/web/events/county-fair-dunk-tank-02.webp",
+      "bytes": 7954,
+      "sha256": "cdfeb5ef7543f6d9be9eedbab17b93353f010b8511eec2844c82cefd793095d8"
+    },
+    {
+      "path": "assets/web/events/homestead-parade-01.webp",
+      "bytes": 28518,
+      "sha256": "1509355036bc91ca64bc83dd6dd971b7f2c8e4d6c58d650e5a4d02369a3b2b64"
+    },
+    {
+      "path": "assets/web/events/parade-float-01.webp",
+      "bytes": 473388,
+      "sha256": "a07ececa111044daedfb675dc6b2a0ba4c99b5ad4e44842b332401a80502ef4d"
+    },
+    {
+      "path": "assets/web/events/parade-gathering-01.webp",
+      "bytes": 31744,
+      "sha256": "745885c618a3dfa07100133468ded6d6d58bffff97b6ae3281f6448454dac874"
+    },
+    {
+      "path": "assets/web/fe836098ec-2024-dunk-2---Copy.webp",
+      "bytes": 6046,
+      "sha256": "493654125cc4a464bf8218341ddfbafadf6449c0828c939f2e33b085f46f37e8"
+    },
+    {
+      "path": "assets/web/people/dennis-applegarth-headshot.webp",
+      "bytes": 64208,
+      "sha256": "44626016f33452a6488d2704294372e33a74a83b159b40e44b5d4611ae0dce17"
+    },
+    {
+      "path": "assets/web/people/kayla-brewer-headshot.webp",
+      "bytes": 2988,
+      "sha256": "2ebd890d838b5d1020981d9f14c19938c750d74d5acc0c7c1c5416964adcfe3b"
+    },
+    {
+      "path": "assets/web/people/lorrie-sierwalt-headshot.webp",
+      "bytes": 3598,
+      "sha256": "a372c660bd8accc324f5f3e60653f3d8e4dc01a82c0a35876342e3103ef5224e"
+    },
+    {
+      "path": "assets/web/people/max-quattromani-headshot.webp",
+      "bytes": 147496,
+      "sha256": "9968ef30d4fa19fa90315c8e26d17927450d9bb4a1b0abf898b6b711be3065c2"
+    },
+    {
+      "path": "assets/web/places/gage-county-courthouse-beatrice.webp",
+      "bytes": 172284,
+      "sha256": "1410ed312a250afb5e4752bef6db5c1c597f339d2ee9637613b92e665d906c43"
+    },
+    {
+      "path": "assets/web/places/gage-county-courthouse-memorial-day-2012.webp",
+      "bytes": 386582,
+      "sha256": "1ae7f3cfe2bcdcfc946f61a42087f3bb835a4952258945764880d1fed508465a"
+    },
+    {
+      "path": "assets/web/places/gage-county-supervisor-map-beatrice.webp",
+      "bytes": 703376,
+      "sha256": "4e8f779a6cf5f82a0e180ccfb4440971fd75d5f08716eddc2e6cd034158822d5"
+    },
+    {
+      "path": "assets/web/places/gage-county-supervisor-map-rural.webp",
+      "bytes": 355526,
+      "sha256": "cb977c482c3cf4cb529282f1d67c7487a010294ff54bd5b549977fe15ebdffdc"
+    },
+    {
+      "path": "calendar/gage-county-gop-meeting-2026-12-08.ics",
+      "bytes": 727,
+      "sha256": "8da645b186953e24b457443069bee4ad288aef54f91be4e76e31c59e0d221f84"
+    },
+    {
+      "path": "calendar/gage-county-gop-meetings.ics",
+      "bytes": 1039,
+      "sha256": "43b10745e90ecd79f069f4e50e48738ab2825b783f1edb86c98a860847c0ef10"
+    },
+    {
+      "path": "committees.html",
+      "bytes": 16799,
+      "sha256": "8bf0592a72b215ac4c7eae77f431e274c9afb908ed3e3d6516b3dc1cd65a4c74"
+    },
+    {
+      "path": "constitution.html",
+      "bytes": 32174,
+      "sha256": "cc7548c8072361669188f4938c9a50b8fbbb49ca330dbcf420096afa6d8c0f3d"
+    },
+    {
+      "path": "contact-form.js",
+      "bytes": 10905,
+      "sha256": "5c3484ea85a137754a22b6b32fb46ad2b16634dd606d5b8888090f0da149eeae"
+    },
+    {
+      "path": "contact.html",
+      "bytes": 14134,
+      "sha256": "c36a24598b28413343a2b4643418a4def38df0d156ea0084b5ddf3ea5e8b8ede"
+    },
+    {
+      "path": "endorsements.html",
+      "bytes": 13648,
+      "sha256": "f9865dfbae2d5fc24647206181776d2289879ef1fab0fa838c89ab1b9cec468f"
+    },
+    {
+      "path": "events.html",
+      "bytes": 19378,
+      "sha256": "dc01c852234e83db3a5dc4d5d4dc02b08339548ffb65b98439e9f8e13ce828df"
+    },
+    {
+      "path": "favicon.svg",
+      "bytes": 285,
+      "sha256": "f4f286c2175063de326f179498f462c682824a7332faf07efd331981c96a7b65"
+    },
+    {
+      "path": "government.html",
+      "bytes": 47755,
+      "sha256": "ad0380b0647f9dc92d0b55994575fe0528b3f09f859de1b5b431c7a1730e623e"
+    },
+    {
+      "path": "index.html",
+      "bytes": 19588,
+      "sha256": "26f796ff05fbe82b6e97df7453a5271ef56fa0832c28dee0d358f9a9266870b3"
+    },
+    {
+      "path": "meeting.mjs",
+      "bytes": 10495,
+      "sha256": "17fc1bb477cc54b19682418cac91221612a30e17998dc30f8c8423d623a279c6"
+    },
+    {
+      "path": "platform.html",
+      "bytes": 25673,
+      "sha256": "28857a16cf167357926bbf8fa8ede0054e5077fe715b99b7e754b3fad628dd0a"
+    },
+    {
+      "path": "privacy.html",
+      "bytes": 16468,
+      "sha256": "b67cf41bea7e5b82dbc6d907915c729c345caaafef48861bb535bcc6233afc43"
+    },
+    {
+      "path": "resources.html",
+      "bytes": 14752,
+      "sha256": "4e3e5244378dd50fc194265ddae0345ae76f011f0796957f05dd163ad1a6b0b8"
+    },
+    {
+      "path": "site.js",
+      "bytes": 10381,
+      "sha256": "64a77db48a0a842a7bdf2e1d7e2f93faccb27096723f69d40c2d71148da47907"
+    },
+    {
+      "path": "style.css",
+      "bytes": 53364,
+      "sha256": "a1a3e8a1bbb17907224d505229ca1c295c23286566a4a35dd338bfdee9dfba97"
+    },
+    {
+      "path": "updates.html",
+      "bytes": 14868,
+      "sha256": "2253627fc61fa6c2a473a9dd5b154cc5f0c6f7ec2d4438d33feaeae87526be54"
+    },
+    {
+      "path": "vote-2026/_headers",
+      "bytes": 87,
+      "sha256": "86dab02725c99de035854fdee280d7e931f212d01ffda5df6ef9bc0c72a4eb3d"
+    },
+    {
+      "path": "vote-2026/app.8c0919beaf90.js",
+      "bytes": 2760,
+      "sha256": "8c0919beaf9087cd8e83682101c3ea3aa877d018b042bdf07c123847aaa3842f"
+    },
+    {
+      "path": "vote-2026/app.js",
+      "bytes": 2760,
+      "sha256": "8c0919beaf9087cd8e83682101c3ea3aa877d018b042bdf07c123847aaa3842f"
+    },
+    {
+      "path": "vote-2026/assets/apple-touch-icon.png",
+      "bytes": 12687,
+      "sha256": "40567e38318114c3c4c39e81f50ace9ee011c616811eb9527c45afe6fc59e8bf"
+    },
+    {
+      "path": "vote-2026/assets/candidate-card.pdf",
+      "bytes": 175967,
+      "sha256": "64377dc0e795a018ffb1101a3576af3311b8e8ff11665a4f76f6296d30950d26"
+    },
+    {
+      "path": "vote-2026/assets/candidate-card.png",
+      "bytes": 1740133,
+      "sha256": "210106ad039973d02aef253af9fd2628719ca72ea812babf24895bccc142daec"
+    },
+    {
+      "path": "vote-2026/assets/facebook-post-square.png",
+      "bytes": 471718,
+      "sha256": "cd74ad33350904cad13ebaf82e9eff489d7084271e25935d51e3e2dd417b894d"
+    },
+    {
+      "path": "vote-2026/assets/facebook-preview.png",
+      "bytes": 344730,
+      "sha256": "762255d6b1e28f7486c8ec43e31a645689156e54faa5792f65eb52d7074bdceb"
+    },
+    {
+      "path": "vote-2026/assets/gop-logo.webp",
+      "bytes": 8248,
+      "sha256": "7464c4bec700a54ff631604b1f1081f56f392a269cedeb444d37691f61c743cf"
+    },
+    {
+      "path": "vote-2026/assets/icon-192.png",
+      "bytes": 13865,
+      "sha256": "5d3d78ccdfd1b83b3d6d78bcbe957de51f497b9c3e487937c3ac6a4fcb951a00"
+    },
+    {
+      "path": "vote-2026/assets/icon-512.png",
+      "bytes": 61675,
+      "sha256": "d1c1c7bcc72678c76997274dd7567c57f90982d48f618c1ae7ff270ea5d0d370"
+    },
+    {
+      "path": "vote-2026/assets/print-flyer.pdf",
+      "bytes": 229322,
+      "sha256": "afd1e3dfec71c5cb7b739fedb921fd3332e2cc53524156594d6312ce6ac298d0"
+    },
+    {
+      "path": "vote-2026/assets/sticker.png",
+      "bytes": 1290385,
+      "sha256": "816019cb2c696eb1c5d9aa972cdd892e564dab106c7758dd9a89b8b6eb9d5b6e"
+    },
+    {
+      "path": "vote-2026/build-info.json",
+      "bytes": 834,
+      "sha256": "0589866bbbea4ec1767e24574dd2d8563171b511cac857d36ae6f4b2a0a9fa7e"
+    },
+    {
+      "path": "vote-2026/calendar/2026-09-28.ics",
+      "bytes": 633,
+      "sha256": "006cf841eec854cb3757f64347bc329645c83bddd186808f899a2f1944476237"
+    },
+    {
+      "path": "vote-2026/calendar/2026-10-05.ics",
+      "bytes": 652,
+      "sha256": "c33f79d60d2f65086d00b9fc5817c4bd3597e182870ffbf38094e81690982349"
+    },
+    {
+      "path": "vote-2026/calendar/2026-10-16.ics",
+      "bytes": 704,
+      "sha256": "c21e656dff5b5e624df9ba8115cfd342b5afede19c80953cc07e2d94534af526"
+    },
+    {
+      "path": "vote-2026/calendar/2026-10-23.ics",
+      "bytes": 737,
+      "sha256": "fb8b1982522a000386db0eaef926ba4f9e1ba131fab4a12e1ed76ee43d7bbdd2"
+    },
+    {
+      "path": "vote-2026/calendar/2026-11-03.ics",
+      "bytes": 671,
+      "sha256": "e24fbe9162c5868f77094316870173b273216fff1a886581fa3eb34dd86f5d98"
+    },
+    {
+      "path": "vote-2026/calendar/all-dates.ics",
+      "bytes": 2841,
+      "sha256": "1fa2440f0f68ed9ac794bca7102431316dddf653e69262a1a42ab00d0ba0ae25"
+    },
+    {
+      "path": "vote-2026/index.html",
+      "bytes": 47676,
+      "sha256": "448e7efbaeb6ea713413a64b446f3255ee175a87eaeed18942b7bfefaa93b9f5"
+    },
+    {
+      "path": "vote-2026/manifest.webmanifest",
+      "bytes": 535,
+      "sha256": "9c722e3a0813abf587b66fd75c0ae64bde3b59fdc5d27f1c0b7f3e8981268ae6"
+    },
+    {
+      "path": "vote-2026/sticker-share.mjs",
+      "bytes": 345,
+      "sha256": "1f2345b689e5a4a85d56e00e3d03fd8346461f2a30a55a692b0963c7207563ef"
+    },
+    {
+      "path": "vote-2026/style.020179fbb51d.css",
+      "bytes": 8616,
+      "sha256": "020179fbb51da4ccd1d9b509a2d16691a4be28e0e68b7dd58b8e57c05d9dbf6b"
+    },
+    {
+      "path": "vote-2026/style.css",
+      "bytes": 8616,
+      "sha256": "020179fbb51da4ccd1d9b509a2d16691a4be28e0e68b7dd58b8e57c05d9dbf6b"
+    },
+    {
+      "path": "vote-2026/sw.js",
+      "bytes": 2418,
+      "sha256": "427ffb16c2bb1cb3ee9a1e1a933a50812f868cc920a840744a81eb915c643a83"
+    }
+  ]
+}

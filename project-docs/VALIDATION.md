@@ -63,3 +63,14 @@ The owner approved the creative-direction recommendations, then supplied seven c
 Limits: no real-device iOS/Android, other browser-engine, assistive-technology, delivery-provider, native calendar re-import or usability-study certification. Calendar downloads remain snapshots. No attendees, durations, workload commitments or unconfirmed committee vacancies are fabricated. See CONTACT-AND-MEETING-OPERATIONS.md for maintenance and operating ownership.
 
 Final follow-up: all Google contact-form links now request a new tab with `noopener noreferrer`, accessible link labels, and an advance explanation. Verified a Candidate Survey interest link opened a separate Chrome tab while preserving the committee page, team field and reply-only choice. The in-app browser's automated popup inventory did not expose a new tab; the native Chrome handoff was confirmed. All 18 checks still pass.
+
+## On-site form conversion, November 21, 2026
+
+24 automated checks pass, including six new submission-service/client contracts. Signed-out phone-width inquiry successfully saved to Incoming requests and returned an on-site matching-ID receipt. No Google Forms navigation, account login, roster lookup or automatic contact modification is involved. New intake consent and deployment were explicitly approved by the owner at Google's permission checkpoint.
+
+Manual form review: widths 320, 390, 768 and 1280; 16px autofill-compatible inputs; mobile full-screen layout; committee/reply-only preselection; validation summary/field links; retained values after failure; keyboard containment, Escape and focus return. Native autofill metadata was checked; physical-device autofill/keyboard behavior remains unverified. The selected Updates handoff sentence was removed. See ON-SITE-CONTACT-FORM.md for full evidence and operational limits.
+
+
+## Executive preview and policy pages, November 21, 2026
+
+Added structured Privacy and Accessibility pages and a secondary-only footer. All 24 build/service checks pass. axe-core 4.10.3 found zero reported violations across 13 pages, the 404 template, and open/validation dialog states after landmark and ARIA cleanup. Scanner manual contrast-review entries remain; no conformance certification is claimed. New policy pages and Home fit at five widths from 320px to 1280px; footer links measure 44px high. Mobile menu, committee preselection, footer policy routes, District 3 selection, and Treasurer question highlighting were exercised. Temporary audit/metrics tooling is excluded from the final artifact. See EXECUTIVE-PREVIEW-READINESS-2026-11-21.md and review/executive-preview-2026-11-21/ for scope, hashes, evidence, operational limits, and official-launch follow-ups. No release or domain change performed.

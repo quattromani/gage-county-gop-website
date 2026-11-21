@@ -1,3 +1,5 @@
+import { renderContactForm, contactTrigger } from "./components/contact-form.mjs";
+import { renderPolicyPage } from "./components/policy-page.mjs";
 import { renderSiteShell } from "./components/site-shell.mjs";
 import { renderMeetingCard, renderMeetingStrip } from "./components/meeting-card.mjs";
 import { renderStayInformed, renderUpdatesPage } from "./components/updates-page.mjs";
@@ -49,6 +51,7 @@ const img = (id, alt, cls = "", eager = false) =>
 const arrow = '<span aria-hidden="true">↗</span>';
 const participation = JSON.parse(fs.readFileSync(path.join(root, "src/participation.json")));
 const intake = JSON.parse(fs.readFileSync(path.join(root, "src/contact-intake.json")));
+const policies = JSON.parse(fs.readFileSync(path.join(root, "src/policies.json")));
 const meetingInfo = nextMeeting(content.meeting);
 const stripMeeting = meetingNotice(content.meeting);
 const meetingCalendarPath = `calendar/gage-county-gop-meeting-${meetingInfo.date}.ics`;
@@ -58,7 +61,7 @@ const allMeetingsLink = (className) => `<a class="${className}" href="./${allMee
 const paragraphs = (slug) =>
   (pages.get(slug)?.text || []).map((t) => `<p>${h(t)}</p>`).join("");
 function layout(file, title, body, description) {
-  return renderSiteShell({ file, title, body, description, content, asset, assetVersion, h, meetingStrip: renderMeetingStrip(stripMeeting, h) });
+  return renderSiteShell({ file, title, body, description, content, asset, assetVersion, h, meetingStrip: renderMeetingStrip(stripMeeting, h), contactForm: renderContactForm(intake, participation, content.email, h) });
 }
 const pageHero = (kicker, title, desc) =>
   `<section class="page-hero wrap"><p class="eyebrow">${kicker}</p><h1>${title}</h1><p class="lead">${desc}</p></section>`;
@@ -90,7 +93,7 @@ const about =
     "Rooted in Gage County.",
     "The mission, people, and history of the county Republican organization.",
   ) +
-  `<section class="wrap section prose-grid"><div><p class="eyebrow">Our mission</p><h2>What the party is here to do.</h2></div><blockquote class="mission-statement" aria-label="Gage County Republican Party mission statement">${paragraphs("vision")}</blockquote></section><section class="wrap section" id="leadership"><div class="section-heading"><div><p class="eyebrow">Leadership</p><h2>Meet the executive officers.</h2></div></div><div class="leader-grid">${leaders}</div></section><section class="soft-section"><div class="wrap section prose-grid"><div><p class="eyebrow">Our history</p><h2>Re-established in 2022.</h2></div><div class="prose">${content.history.map((text) => `<p>${h(text)}</p>`).join("")}</div></div></section><section class="wrap section"><p><a class="button" href="./committees.html">Explore ways to get involved ${arrow}</a></p><p class="eyebrow">How the party works</p><h2>Organization & governing documents.</h2><div class="resource-grid"><a href="./resources.html#organization"><h3>Party organization</h3><p>Governing committees, representation, and convention.</p>${arrow}</a><a href="./constitution.html"><h3>County constitution</h3><p>Read the governing document as text, with original scans linked below.</p>${arrow}</a><a href="./platform.html"><h3>Party platform</h3><p>Read the complete platform by topic.</p>${arrow}</a></div></section>`;
+  `<section class="wrap section prose-grid"><div><p class="eyebrow">Our mission</p><h2>What the party is here to do.</h2></div><blockquote class="mission-statement">${paragraphs("vision")}</blockquote></section><section class="wrap section" id="leadership"><div class="section-heading"><div><p class="eyebrow">Leadership</p><h2>Meet the executive officers.</h2></div></div><div class="leader-grid">${leaders}</div></section><section class="soft-section"><div class="wrap section prose-grid"><div><p class="eyebrow">Our history</p><h2>Re-established in 2022.</h2></div><div class="prose">${content.history.map((text) => `<p>${h(text)}</p>`).join("")}</div></div></section><section class="wrap section"><p><a class="button" href="./committees.html">Explore ways to get involved ${arrow}</a></p><p class="eyebrow">How the party works</p><h2>Organization & governing documents.</h2><div class="resource-grid"><a href="./resources.html#organization"><h3>Party organization</h3><p>Governing committees, representation, and convention.</p>${arrow}</a><a href="./constitution.html"><h3>County constitution</h3><p>Read the governing document as text, with original scans linked below.</p>${arrow}</a><a href="./platform.html"><h3>Party platform</h3><p>Read the complete platform by topic.</p>${arrow}</a></div></section>`;
 const galleryIds = [
   "2026-wilber-czech-festival-parade",
   "2026-county-convention-01",
@@ -128,7 +131,7 @@ const galleryNames = [
   "2026 fundraiser flyer",
 ];
 const events = pageHero("Meetings & events", "A place at the table.", "Come to a regular meeting, get to know the county party, and bring your questions and ideas.") +
-  `<section class="wrap section event-meeting" id="meeting"><div><p class="eyebrow">New here?</p><h2>You’re welcome.</h2><p class="body-copy">Regular meetings are open to newcomers. You can attend without an invitation, RSVP, or existing membership.</p><h3>Finding the meeting</h3><p><span data-meeting-venue-summary>We meet at ${h(meetingInfo.venue)} in ${h(meetingInfo.city)}.</span></p><a class="text-link" data-meeting-directions href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(meetingInfo.location)}">Find the venue on a map ${arrow}</a><p class="calendar-note">Check this page for schedule changes, or <a href="./updates.html">add your details for important notices</a>.</p><a class="text-link" href="./committees.html">Explore ways to take part ${arrow}</a></div>${meeting}</section><section class="soft-section" id="gallery"><div class="wrap section"><p class="eyebrow">Community events</p><h2>From the fair booth to the convention.</h2><p class="body-copy">Parades, county fairs, conventions, and gatherings across the community.</p><div class="gallery">${galleryIds.map((id, i) => `<figure><a href="${asset(id)}">${img(id, galleryNames[i])}</a><figcaption>${galleryNames[i]}</figcaption></figure>`).join("")}</div></div></section>`;
+  `<section class="wrap section event-meeting" id="meeting"><div><p class="eyebrow">New here?</p><h2>You’re welcome.</h2><p class="body-copy">Regular meetings are open to newcomers. You can attend without an invitation, RSVP, or existing membership.</p><h3>Finding the meeting</h3><p><span data-meeting-venue-summary>We meet at ${h(meetingInfo.venue)} in ${h(meetingInfo.city)}.</span></p><a class="text-link" data-meeting-directions href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(meetingInfo.location)}">Find the venue on a map ${arrow}</a><p class="calendar-note">Check this page for schedule changes, or <a href="./updates.html#add" ${contactTrigger("add", "", h)}>add your details for important notices</a>.</p><a class="text-link" href="./committees.html">Explore ways to take part ${arrow}</a></div>${meeting}</section><section class="soft-section" id="gallery"><div class="wrap section"><p class="eyebrow">Community events</p><h2>From the fair booth to the convention.</h2><p class="body-copy">Parades, county fairs, conventions, and gatherings across the community.</p><div class="gallery">${galleryIds.map((id, i) => `<figure><a href="${asset(id)}">${img(id, galleryNames[i])}</a><figcaption>${galleryNames[i]}</figcaption></figure>`).join("")}</div></div></section>`;
 const constitution = constitutionSource.sourcePages.map((sourcePath) => {
   const source = data.assets.find((entry) => entry.path === sourcePath);
   if (!source || !assetsBySource.has(sourcePath))
@@ -142,17 +145,11 @@ const resources = pageHero("Resources", "Find the reference you need.", "Party d
   ["County convention", "Read the constitution for convention procedures, delegate requirements, and officer elections."],
 ].map(([title,text]) => `<details><summary>${title}</summary><div class="prose"><p>${text}</p><a href="./constitution.html">Read the constitution</a></div></details>`).join("")}</div></div></section><section class="wrap section" id="election-references"><p class="eyebrow">Completed election cycle</p><h2>2026 election references.</h2><p class="body-copy">Reference materials from the completed 2026 election. Check official election sources for future election dates and requirements.</p><div class="resource-grid"><a href="./vote-2026/"><h3>2026 voter card</h3><p>Candidate references, print downloads, and offline saving.</p>${arrow}</a><a href="${content.partyReveal}"><h3>Party Reveal</h3><p>Explore candidate evidence and sources.</p>${arrow}</a><a href="./endorsements.html"><h3>Endorsement process</h3><p>How the county party’s endorsement process works.</p>${arrow}</a></div></section><section class="wrap section"><p class="eyebrow">Further reference</p><a class="text-link" href="https://ne.gop/">Nebraska Republican Party ${arrow}</a></section>`;
 const opportunities = participation;
-const teamInterestUrl = (team) => {
-  if (intake.status !== "ready") return "./updates.html#interest";
-  const url = new URL(intake.taskLinks.interest);
-  url.searchParams.set(intake.interestField, team.title);
-  return url.href;
-};
 const committees = pageHero("Get involved", "Find your way to take part.", h(opportunities.intro)) +
-  `<section class="wrap section"><div class="section-heading"><div><p class="eyebrow">Committee opportunities</p><h2>Find a team. Bring what you do well.</h2></div><a class="text-link" href="./events.html#meeting">Start with a meeting ${arrow}</a></div><p class="calendar-note">Interest links open our Google contact form in a new tab with the team name filled in. You can ask about helping without signing up for ongoing notices. <a href="./updates.html#interest">More about the contact form</a>.</p><div class="involvement-grid">${opportunities.ways.map((way) => `<article id="${h(way.id)}"><h3>${h(way.title)}</h3><p>${h(way.description)}</p><a class="text-link" href="${h(teamInterestUrl(way))}" target="_blank" rel="noopener noreferrer" aria-label="Express interest in the ${h(way.title)} (opens in a new tab)">I’m interested ${arrow}</a></article>`).join("")}</div></section><section class="soft-section"><div class="wrap section prose-grid"><div><p class="eyebrow">Not sure where to start?</p><h2>A conversation is a good start.</h2></div><div class="prose"><p>You don’t need to choose a team before getting in touch. Tell us about your interests and experience, and a member of the county party team can discuss where you might fit.</p><a class="button" href="./updates.html#interest">Express an interest ${arrow}</a><p class="calendar-note">You can also <a href="./contact.html">contact the party directly</a>.</p></div></div></section><section class="wrap section"><p class="eyebrow">Party organization</p><h2>Looking for the governing structure?</h2><p class="body-copy">The county committee, executive committee, and convention have formal roles described in the constitution.</p><a class="text-link" href="./resources.html#organization">Read the organization overview ${arrow}</a></section>`;
+  `<section class="wrap section"><div class="section-heading"><div><p class="eyebrow">Committee opportunities</p><h2>Find a team. Bring what you do well.</h2></div><a class="text-link" href="./events.html#meeting">Start with a meeting ${arrow}</a></div><p class="calendar-note">The interest form opens right here with the team name filled in. You can ask about helping without signing up for ongoing notices. <a href="./updates.html#interest">More about the contact form</a>.</p><div class="involvement-grid">${opportunities.ways.map((way) => `<article id="${h(way.id)}"><h3>${h(way.title)}</h3><p>${h(way.description)}</p><button type="button" class="text-link" ${contactTrigger("interest", way.title, h)} aria-label="Express interest in the ${h(way.title)}">I’m interested <span aria-hidden="true">→</span></button></article>`).join("")}</div></section><section class="soft-section"><div class="wrap section prose-grid"><div><p class="eyebrow">Not sure where to start?</p><h2>A conversation is a good start.</h2></div><div class="prose"><p>You don’t need to choose a team before getting in touch. Tell us about your interests and experience, and a member of the county party team can discuss where you might fit.</p><a class="button" href="./updates.html#interest" ${contactTrigger("interest", "", h)}>Express an interest ${arrow}</a><p class="calendar-note">You can also <a href="./contact.html">contact the party directly</a>.</p></div></div></section><section class="wrap section"><p class="eyebrow">Party organization</p><h2>Looking for the governing structure?</h2><p class="body-copy">The county committee, executive committee, and convention have formal roles described in the constitution.</p><a class="text-link" href="./resources.html#organization">Read the organization overview ${arrow}</a></section>`;
 const platformText = pages.get("nebraska-platform").text;
 const constitutionClause = (clause, index) =>
-  `<li><div class="constitution-clause"><span class="clause-number" aria-hidden="true">${index + 1})</span><div><p>${clause.label ? `<strong>${h(clause.label)}</strong> ` : ""}${h(clause.text)}${clause.redacted ? ' <span class="redaction" aria-label="Address redacted in source document">[redacted in source]</span>.' : ""}</p>${clause.items ? `<ol class="subclauses${clause.itemStyle === "parenthesis" ? " parenthesis" : ""}" type="a">${clause.items.map((item) => `<li>${h(item)}</li>`).join("")}</ol>` : ""}${clause.after ? `<p>${h(clause.after)}</p>` : ""}</div></div></li>`;
+  `<li><div class="constitution-clause"><span class="clause-number" aria-hidden="true">${index + 1})</span><div><p>${clause.label ? `<strong>${h(clause.label)}</strong> ` : ""}${h(clause.text)}${clause.redacted ? ' <span class="redaction">[redacted in source]</span>.' : ""}</p>${clause.items ? `<ol class="subclauses${clause.itemStyle === "parenthesis" ? " parenthesis" : ""}" type="a">${clause.items.map((item) => `<li>${h(item)}</li>`).join("")}</ol>` : ""}${clause.after ? `<p>${h(clause.after)}</p>` : ""}</div></div></li>`;
 const constitutionPage =
   pageHero(
     "Governing document",
@@ -187,7 +184,7 @@ const contact =
     "A direct line to the county party.",
     "Questions about meetings, the committee, or local party activities? Start here.",
   ) +
-  `<section class="wrap section contact-layout"><div><p class="eyebrow">Email</p><h2>Let’s connect.</h2><a class="email-link" href="mailto:${content.email}">${content.email} ${arrow}</a><p class="body-copy">For information about the Gage County Republican Party, send an email or join us at the next meeting.</p><div class="link-list"><a href="${content.facebook}">Facebook group ${arrow}</a><a href="${content.instagram}">Instagram ${arrow}</a>${meetingLink("", 'Add this meeting to your calendar <span aria-hidden="true">→</span>')}${allMeetingsLink("")}<p class="calendar-note">${h(meetingSchedule)} Calendar imports are snapshots; <a href="./updates.html">sign up separately for important notices</a>.</p></div></div><div class="contact-aside"><p class="eyebrow">Ways to participate</p><h3>Bring your interests and experience.</h3><ul><li>Plan meetings, social events, and fundraisers.</li><li>Help with communications and social media.</li><li>Converse with representatives and candidates.</li><li>Learn about the county committee.</li></ul><a class="text-link" href="./committees.html">Explore ways to get involved ${arrow}</a><hr><h3>Important meeting notices</h3><p>Add or update your contact details for occasional, important county party notices.</p><a class="text-link" href="./updates.html">Stay informed ${arrow}</a><hr><h3>Contribution questions</h3><p>Contact the party for contribution information.</p></div></section>`;
+  `<section class="wrap section contact-layout"><div><p class="eyebrow">Email</p><h2>Let’s connect.</h2><a class="email-link" href="mailto:${content.email}">${content.email} ${arrow}</a><p class="body-copy">For information about the Gage County Republican Party, send an email or join us at the next meeting.</p><div class="link-list"><a href="${content.facebook}">Facebook group ${arrow}</a><a href="${content.instagram}">Instagram ${arrow}</a>${meetingLink("", 'Add this meeting to your calendar <span aria-hidden="true">→</span>')}${allMeetingsLink("")}<p class="calendar-note">${h(meetingSchedule)} Calendar imports are snapshots; <a href="./updates.html">sign up separately for important notices</a>.</p></div></div><div class="contact-aside"><p class="eyebrow">Ways to participate</p><h3>Bring your interests and experience.</h3><ul><li>Plan meetings, social events, and fundraisers.</li><li>Help with communications and social media.</li><li>Converse with representatives and candidates.</li><li>Learn about the county committee.</li></ul><a class="text-link" href="./committees.html">Explore ways to get involved ${arrow}</a><hr><h3>Important meeting notices</h3><p>Add or update your contact details for occasional, important county party notices.</p><a class="text-link" href="./updates.html#add" ${contactTrigger("add", "", h)}>Stay informed ${arrow}</a><hr><h3>Contribution questions</h3><p>Contact the party for contribution information.</p></div></section>`;
 const endorsements =
   pageHero(
     "Party information",
@@ -220,7 +217,7 @@ for (const entry of assets) {
     path.join(out, entry.legacyWebPath),
   );
 }
-for (const name of ["style.css", "site.js", "meeting.mjs", "favicon.svg"])
+for (const name of ["style.css", "site.js", "meeting.mjs", "contact-form.js", "favicon.svg"])
   fs.copyFileSync(path.join(root, "src", name), path.join(out, name));
 for (const [file, title, body] of [
   ["index.html", "Home", home],
@@ -234,8 +231,10 @@ for (const [file, title, body] of [
   ["contact.html", "Contact", contact],
   ["updates.html", "Meeting updates", renderUpdatesPage(intake, { h, pageHero, email: content.email })],
   ["endorsements.html", "Endorsements", endorsements],
+  ["privacy.html", policies.privacy.title, renderPolicyPage(policies.privacy, { policies, pageHero, email: content.email, h })],
+  ["accessibility.html", policies.accessibility.title, renderPolicyPage(policies.accessibility, { policies, pageHero, email: content.email, h })],
 ])
-  fs.writeFileSync(path.join(out, file), layout(file, title, body, file === "government.html" ? "A guide to District 30 representation, Gage County supervisors, elected offices, and county services, with official contact links." : undefined));
+  fs.writeFileSync(path.join(out, file), layout(file, title, body, file === "government.html" ? "A guide to District 30 representation, Gage County supervisors, elected offices, and county services, with official contact links." : policies[file.replace(/\.html$/, "")]?.intro));
 fs.writeFileSync(
   path.join(out, "404.html"),
   layout(
@@ -287,5 +286,5 @@ sw = sw.replace(
 );
 fs.writeFileSync(swFile, sw);
 console.log(
-  "Built 11 website pages and voter card in dist/; source archive retained in repository.",
+  "Built 13 website pages and voter card in dist/; source archive retained in repository.",
 );

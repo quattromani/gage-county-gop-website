@@ -60,3 +60,13 @@ Client JavaScript advances the current event at Central midnight and when a tab 
 Keep the Get involved opportunities separate from Party organization in Resources. When changing the Google form, regenerate public task/interest links in its Pre-fill form UI and update the observed field key; verify task, notice preference, and team text on the signed-out form before publishing site links.
 
 Public Google Form links open in a separate tab/window according to browser settings. The site explains the handoff before the committee links and on the Updates page; the form keeps the selected task/team and notice preference. Normal internal site links keep their existing behavior.
+
+## Current on-site intake, November 21, 2026
+
+The website now uses a custom on-site dialog; Google Forms URLs and prefill field IDs have been removed from public site configuration. src/contact-intake.json contains the public Apps Script endpoint and notice wording version. The earlier Google Form setup above is retained as transition history.
+
+New submissions enter Incoming requests. Contacts remains the reviewed authority; old Form Responses 1 submissions are preserved separately. A marked fictional QA inquiry verifies the new path and must not be added to Contacts. Monitor legacy submissions while their old public link may remain in use. Legacy Form notification emails do not notify about the new custom inbox; current custom inbox review is manual.
+
+Incoming notice codes are email, text, both, or reply (direct reply only). Record consent version, request ID and received timestamp as source evidence during review. Stop requests suppress the selected channel after staff review. No record is overwritten automatically. Native Instructions has the current workflow.
+
+The owner explicitly approved the new script's broad Google Sheets scope and anonymous append-only endpoint on November 21, 2026. See services/contact-intake/README.md for deployment identity, validation, quotas, schema, UUID retries and recovery. Actual browser saving was verified before enabling the public endpoint configuration. No opaque/no-cors reply is accepted as success.

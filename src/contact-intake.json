@@ -2,18 +2,12 @@
   "title": "Stay informed",
   "description": "Receive occasional, important Gage County GOP notices, including meeting changes and cancellations. Add your contact details or update the information we already have.",
   "privacy": "Your details are used by the Gage County GOP executive team or an appointed committee member for county party notices and direct replies. We do not sell or pass along your contact information.",
-  "formUrl": "https://docs.google.com/forms/d/e/1FAIpQLSetYJ-UAO8eVX6kRhUV3wUT-P2ZouvF5YoPNo2jaOZdbk4PGg/viewform?usp=header",
-  "taskLinks": {
-    "add": "https://docs.google.com/forms/d/e/1FAIpQLSetYJ-UAO8eVX6kRhUV3wUT-P2ZouvF5YoPNo2jaOZdbk4PGg/viewform?usp=pp_url&entry.228986653=Add+my+details",
-    "update": "https://docs.google.com/forms/d/e/1FAIpQLSetYJ-UAO8eVX6kRhUV3wUT-P2ZouvF5YoPNo2jaOZdbk4PGg/viewform?usp=pp_url&entry.228986653=Update+my+details",
-    "stop": "https://docs.google.com/forms/d/e/1FAIpQLSetYJ-UAO8eVX6kRhUV3wUT-P2ZouvF5YoPNo2jaOZdbk4PGg/viewform?usp=pp_url&entry.228986653=Stop+notices",
-    "interest": "https://docs.google.com/forms/d/e/1FAIpQLSetYJ-UAO8eVX6kRhUV3wUT-P2ZouvF5YoPNo2jaOZdbk4PGg/viewform?usp=pp_url&entry.228986653=Add+my+details&entry.263848134=Reply+to+this+request+only+(no+ongoing+notices)"
-  },
   "status": "ready",
   "reviewPolicy": "Requests are reviewed by a team member. Updating your details does not automatically overwrite an existing contact record.",
   "channels": [
     "Email notices",
     "Text notices"
   ],
-  "interestField": "entry.1425857589"
+  "endpoint": "https://script.google.com/macros/s/AKfycbxFLSCmhZzN2NAakBGDceKohnOKi1hrwF_ylqsB5LjDdNdB-cBFakc0iErw0OM6v3iUzA/exec",
+  "consentVersion": "contact-notices-v1"
 }

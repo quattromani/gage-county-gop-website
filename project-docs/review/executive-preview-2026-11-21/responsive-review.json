@@ -1,0 +1,452 @@
+[
+  {
+    "documentWidth": 320,
+    "footerLinks": [
+      {
+        "height": 44,
+        "text": "Local government",
+        "width": 95.390625
+      },
+      {
+        "height": 44,
+        "text": "Contact",
+        "width": 41.359375
+      },
+      {
+        "height": 44,
+        "text": "Privacy",
+        "width": 42.703125
+      },
+      {
+        "height": 44,
+        "text": "Accessibility",
+        "width": 65.3515625
+      }
+    ],
+    "height": 740,
+    "mainVisible": false,
+    "overflow": false,
+    "page": "/privacy.html",
+    "width": 320
+  },
+  {
+    "documentWidth": 320,
+    "footerLinks": [
+      {
+        "height": 44,
+        "text": "Local government",
+        "width": 95.390625
+      },
+      {
+        "height": 44,
+        "text": "Contact",
+        "width": 41.359375
+      },
+      {
+        "height": 44,
+        "text": "Privacy",
+        "width": 39.34375
+      },
+      {
+        "height": 44,
+        "text": "Accessibility",
+        "width": 73.375
+      }
+    ],
+    "height": 740,
+    "mainVisible": false,
+    "overflow": false,
+    "page": "/accessibility.html",
+    "width": 320
+  },
+  {
+    "documentWidth": 320,
+    "footerLinks": [
+      {
+        "height": 44,
+        "text": "Local government",
+        "width": 95.390625
+      },
+      {
+        "height": 44,
+        "text": "Contact",
+        "width": 41.359375
+      },
+      {
+        "height": 44,
+        "text": "Privacy",
+        "width": 39.34375
+      },
+      {
+        "height": 44,
+        "text": "Accessibility",
+        "width": 65.3515625
+      }
+    ],
+    "height": 740,
+    "mainVisible": false,
+    "overflow": false,
+    "page": "/index.html",
+    "width": 320
+  },
+  {
+    "documentWidth": 390,
+    "footerLinks": [
+      {
+        "height": 44,
+        "text": "Local government",
+        "width": 95.390625
+      },
+      {
+        "height": 44,
+        "text": "Contact",
+        "width": 41.359375
+      },
+      {
+        "height": 44,
+        "text": "Privacy",
+        "width": 42.703125
+      },
+      {
+        "height": 44,
+        "text": "Accessibility",
+        "width": 65.3515625
+      }
+    ],
+    "height": 844,
+    "mainVisible": false,
+    "overflow": false,
+    "page": "/privacy.html",
+    "width": 390
+  },
+  {
+    "documentWidth": 390,
+    "footerLinks": [
+      {
+        "height": 44,
+        "text": "Local government",
+        "width": 95.390625
+      },
+      {
+        "height": 44,
+        "text": "Contact",
+        "width": 41.359375
+      },
+      {
+        "height": 44,
+        "text": "Privacy",
+        "width": 39.34375
+      },
+      {
+        "height": 44,
+        "text": "Accessibility",
+        "width": 73.375
+      }
+    ],
+    "height": 844,
+    "mainVisible": false,
+    "overflow": false,
+    "page": "/accessibility.html",
+    "width": 390
+  },
+  {
+    "documentWidth": 390,
+    "footerLinks": [
+      {
+        "height": 44,
+        "text": "Local government",
+        "width": 95.390625
+      },
+      {
+        "height": 44,
+        "text": "Contact",
+        "width": 41.359375
+      },
+      {
+        "height": 44,
+        "text": "Privacy",
+        "width": 39.34375
+      },
+      {
+        "height": 44,
+        "text": "Accessibility",
+        "width": 65.3515625
+      }
+    ],
+    "height": 844,
+    "mainVisible": false,
+    "overflow": false,
+    "page": "/index.html",
+    "width": 390
+  },
+  {
+    "documentWidth": 768,
+    "footerLinks": [
+      {
+        "height": 44,
+        "text": "Local government",
+        "width": 95.390625
+      },
+      {
+        "height": 44,
+        "text": "Contact",
+        "width": 41.359375
+      },
+      {
+        "height": 44,
+        "text": "Privacy",
+        "width": 42.703125
+      },
+      {
+        "height": 44,
+        "text": "Accessibility",
+        "width": 65.3515625
+      }
+    ],
+    "height": 1024,
+    "mainVisible": false,
+    "overflow": false,
+    "page": "/privacy.html",
+    "width": 768
+  },
+  {
+    "documentWidth": 768,
+    "footerLinks": [
+      {
+        "height": 44,
+        "text": "Local government",
+        "width": 95.390625
+      },
+      {
+        "height": 44,
+        "text": "Contact",
+        "width": 41.359375
+      },
+      {
+        "height": 44,
+        "text": "Privacy",
+        "width": 39.34375
+      },
+      {
+        "height": 44,
+        "text": "Accessibility",
+        "width": 73.375
+      }
+    ],
+    "height": 1024,
+    "mainVisible": false,
+    "overflow": false,
+    "page": "/accessibility.html",
+    "width": 768
+  },
+  {
+    "documentWidth": 768,
+    "footerLinks": [
+      {
+        "height": 44,
+        "text": "Local government",
+        "width": 95.390625
+      },
+      {
+        "height": 44,
+        "text": "Contact",
+        "width": 41.359375
+      },
+      {
+        "height": 44,
+        "text": "Privacy",
+        "width": 39.34375
+      },
+      {
+        "height": 44,
+        "text": "Accessibility",
+        "width": 65.3515625
+      }
+    ],
+    "height": 1024,
+    "mainVisible": false,
+    "overflow": false,
+    "page": "/index.html",
+    "width": 768
+  },
+  {
+    "documentWidth": 1024,
+    "footerLinks": [
+      {
+        "height": 44,
+        "text": "Local government",
+        "width": 95.390625
+      },
+      {
+        "height": 44,
+        "text": "Contact",
+        "width": 41.359375
+      },
+      {
+        "height": 44,
+        "text": "Privacy",
+        "width": 42.703125
+      },
+      {
+        "height": 44,
+        "text": "Accessibility",
+        "width": 65.3515625
+      }
+    ],
+    "height": 768,
+    "mainVisible": false,
+    "overflow": false,
+    "page": "/privacy.html",
+    "width": 1024
+  },
+  {
+    "documentWidth": 1024,
+    "footerLinks": [
+      {
+        "height": 44,
+        "text": "Local government",
+        "width": 95.390625
+      },
+      {
+        "height": 44,
+        "text": "Contact",
+        "width": 41.359375
+      },
+      {
+        "height": 44,
+        "text": "Privacy",
+        "width": 39.34375
+      },
+      {
+        "height": 44,
+        "text": "Accessibility",
+        "width": 73.375
+      }
+    ],
+    "height": 768,
+    "mainVisible": false,
+    "overflow": false,
+    "page": "/accessibility.html",
+    "width": 1024
+  },
+  {
+    "documentWidth": 1024,
+    "footerLinks": [
+      {
+        "height": 44,
+        "text": "Local government",
+        "width": 95.390625
+      },
+      {
+        "height": 44,
+        "text": "Contact",
+        "width": 41.359375
+      },
+      {
+        "height": 44,
+        "text": "Privacy",
+        "width": 39.34375
+      },
+      {
+        "height": 44,
+        "text": "Accessibility",
+        "width": 65.3515625
+      }
+    ],
+    "height": 768,
+    "mainVisible": false,
+    "overflow": false,
+    "page": "/index.html",
+    "width": 1024
+  },
+  {
+    "documentWidth": 1280,
+    "footerLinks": [
+      {
+        "height": 44,
+        "text": "Local government",
+        "width": 95.390625
+      },
+      {
+        "height": 44,
+        "text": "Contact",
+        "width": 41.359375
+      },
+      {
+        "height": 44,
+        "text": "Privacy",
+        "width": 42.703125
+      },
+      {
+        "height": 44,
+        "text": "Accessibility",
+        "width": 65.3515625
+      }
+    ],
+    "height": 800,
+    "mainVisible": true,
+    "overflow": false,
+    "page": "/privacy.html",
+    "width": 1280
+  },
+  {
+    "documentWidth": 1280,
+    "footerLinks": [
+      {
+        "height": 44,
+        "text": "Local government",
+        "width": 95.390625
+      },
+      {
+        "height": 44,
+        "text": "Contact",
+        "width": 41.359375
+      },
+      {
+        "height": 44,
+        "text": "Privacy",
+        "width": 39.34375
+      },
+      {
+        "height": 44,
+        "text": "Accessibility",
+        "width": 73.375
+      }
+    ],
+    "height": 800,
+    "mainVisible": true,
+    "overflow": false,
+    "page": "/accessibility.html",
+    "width": 1280
+  },
+  {
+    "documentWidth": 1280,
+    "footerLinks": [
+      {
+        "height": 44,
+        "text": "Local government",
+        "width": 95.390625
+      },
+      {
+        "height": 44,
+        "text": "Contact",
+        "width": 41.359375
+      },
+      {
+        "height": 44,
+        "text": "Privacy",
+        "width": 39.34375
+      },
+      {
+        "height": 44,
+        "text": "Accessibility",
+        "width": 65.3515625
+      }
+    ],
+    "height": 800,
+    "mainVisible": true,
+    "overflow": false,
+    "page": "/index.html",
+    "width": 1280
+  }
+]

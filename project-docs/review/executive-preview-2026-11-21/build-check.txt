@@ -1,0 +1,44 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> gage-county-gop-website@1.0.0 check
+> npm run build && node --test scripts/check.mjs scripts/contact-intake.test.mjs
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> gage-county-gop-website@1.0.0 build
+> node scripts/build.mjs
+
+Built 83 candidate listings, 5 calendar events and 22 offline assets in /Users/maxquattromani/Sites/gage-county-gop-website/vendor/voter-card/public/vote-2026
+Built 13 website pages and voter card in dist/; source archive retained in repository.
+✔ all local page links, assets, and fragment destinations resolve under a repository base path (39.943811ms)
+✔ source inventory is complete and original asset hashes remain intact (107.288399ms)
+✔ platform wording remains faithful to preserved source text (3.081621ms)
+✔ constitution transcription renders every source unit and retains the five original pages (1.597263ms)
+✔ every website page has landmarks, one h1, language, and image alternatives (1.812654ms)
+✔ voter card renders exactly the imported inclusion set and keeps judicial retention separate (1.594108ms)
+✔ card downloads and calendars retain upstream bytes and all five milestones (3.565062ms)
+✔ card offline worker handles save, offline retrieval, and scope boundaries (10.989182ms)
+✔ public build excludes source archive and migration language, with recurring meeting details (5.640811ms)
+✔ meeting actions open a portable calendar event at the confirmed Central time (1.52777ms)
+✔ second Tuesday advances after meeting day in Central time, across years and DST (26.332178ms)
+✔ Monthly import uses a local-time series with daylight saving transitions (0.954576ms)
+✔ donation links preserve the decoded destination and election band remains reusable (2.756767ms)
+✔ government guide has sourced officeholders and contact routes with homepage and footer access (3.622124ms)
+✔ supervisor geography joins current directory records and keeps scanned names out of the interaction (4.821109ms)
+✔ dated meeting changes persist through the affected day and calendars keep occurrence identity (39.42284ms)
+✔ meeting configuration rejects ambiguous overrides and resolves the actual rescheduled local hour (8.627956ms)
+✔ participation routes stay consistent and private intake administration stays out of public output (4.84171ms)
+✔ contact intake accepts common autofill formats and applies channel requirements (2.404864ms)
+✔ server validation independently rejects malformed, oversize, honeypot and missing-channel submissions (2.855244ms)
+✔ saved receipt follows persistence and duplicate retry does not append again (3.160192ms)
+✔ spreadsheet values are formula-safe and service exposes no roster through GET (1.082089ms)
+✔ service returns failure after storage error and limits repeated contact requests (3.464399ms)
+✔ client never treats opaque, failed, mismatched or malformed replies as saved (1.963452ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 478.369893
