@@ -61,17 +61,36 @@
     }
   ],
   "donation": {
-    "url": "https://www.paypal.com/qrcodes/venmocs/4568ce93-7648-49f3-b64e-2e64c7455413?created=1759887992",
-    "qrAsset": "gage-county-gop-venmo-qr",
-    "sourceUrl": "https://www.gagecountygop.org/",
-    "sourceImageAsset": "venmo-qr-code",
-    "verifiedAt": "2026-11-20",
-    "verification": "Decoded archived image; live homepage uses the identical image URL. Original destination retained exactly. Desktop redirects to venmo.com; mobile recipient not independently confirmed."
+    "url": "https://givebutter.com/gage_county_gop",
+    "qrAsset": "gage-county-gop-givebutter-supplied-qr",
+    "sourceUrl": "https://givebutter.com/gage_county_gop",
+    "approvedBy": "Kayla, confirmed by owner November 23, 2026",
+    "verifiedAt": "2026-11-23",
+    "verification": "Owner-supplied styled QR, center artwork cleaned with built-in image editing. Independent ZXing decoding returns the exact approved clean campaign URL, including at 148px desktop and 104px phone image sizes. No payment submitted.",
+    "qrSource": "src/donation-qr-givebutter-supplied.json"
   },
   "homeGovernmentLink": {
     "href": "government.html",
     "title": "Looking for local government information?",
     "description": "Find county offices, local representatives, and who to contact.",
     "action": "Explore the guide"
+  },
+  "homeElectionReferences": {
+    "year": 2026,
+    "title": "2026 election resources.",
+    "description": "Reference materials from the completed election cycle.",
+    "voterCard": {
+      "title": "2026 Gage County Voter Card",
+      "href": "vote-2026/",
+      "description": "Browse the candidate reference and download the card."
+    },
+    "partyReveal": {
+      "title": "PartyReveal.com",
+      "description": "Review candidate information, evidence, and sources."
+    }
+  },
+  "brand": {
+    "markAsset": "gage-county-gop-mark",
+    "palette": "logo-blue"
   }
 }

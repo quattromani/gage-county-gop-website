@@ -1,3 +1,15 @@
+// Keep native anchor jumps and sticky sidebars below the rendered masthead,
+// including after text enlargement or a responsive layout change.
+const siteHeader = document.querySelector('.site-header');
+if (siteHeader) {
+  const updateHeaderHeight = () => {
+    document.documentElement.style.setProperty('--header-height', `${Math.ceil(siteHeader.getBoundingClientRect().height)}px`);
+  };
+  updateHeaderHeight();
+  if ('ResizeObserver' in window) new ResizeObserver(updateHeaderHeight).observe(siteHeader);
+  else window.addEventListener('resize', updateHeaderHeight);
+}
+
 document.addEventListener("keydown", (event) => {
   const menu = document.querySelector(".mobile-nav");
   if (event.key === "Escape" && menu?.open) {

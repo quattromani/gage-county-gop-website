@@ -1,0 +1,24 @@
+{
+  "kind": "supplied-artwork",
+  "assetId": "gage-county-gop-givebutter-supplied-qr",
+  "payloadSha256": "e4edc7f1492a57963783cf9731531acfbe3acf9c11ee5f3da9a39fe4c8a41dea",
+  "sourceNote": "Owner-supplied QR design with center logo cleaned; use the preserved image rather than replacing its design with a newly rendered matrix. Prepare the 640px display derivative from the preserved full-size edited master.",
+  "verification": {
+    "decoder": "ZXing-cpp 3.1.1",
+    "decodedUrl": "https://givebutter.com/gage_county_gop",
+    "testedImageWidths": [
+      1254,
+      1024,
+      640,
+      600,
+      360,
+      240,
+      220,
+      180,
+      148,
+      128,
+      104
+    ],
+    "verifiedAt": "2026-11-23"
+  }
+}

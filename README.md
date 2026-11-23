@@ -76,3 +76,9 @@ Navigation and homepage ordering prioritize attending, helping, and keeping cont
 ## Executive preview readiness
 
 Privacy and Accessibility are linked from the secondary footer alongside Local government and Contact. Their wording reflects actual service use and known limits. See [November 21 preview readiness](project-docs/EXECUTIVE-PREVIEW-READINESS-2026-11-21.md) for the tested artifact, responsive/automated accessibility evidence, and remaining official-launch work. The review is local; it does not deploy a new Pages release or replace Squarespace.
+
+## Logo comparison and 2026 homepage references
+
+The compact homepage 2026 reference block follows Donate and uses `homeElectionReferences` in `src/content.json`. The voter card opens on the internal route; PartyReveal opens a new tab with a visible notice. After a regular build, `npm run preview:brand` creates a local-only masthead proof of revised B, a rounded R badge using the original logo’s colors. Ordinary builds remove that review overlay; the selected left-aligned partial R is applied to the website header, footer, and favicon. See [November 23 team feedback](project-docs/TEAM-FEEDBACK-2026-11-23.md).
+
+The shared theme currently uses logo blue with the prior muted red (`brand.palette: "logo-blue"`); `original` restores the previous blue. `python3 scripts/build-donation-qr.py` prepares the checked 640px QR display derivative from its preserved full-size artwork (requires Pillow). The selected artwork and campaign payload verification live in `src/donation-qr-givebutter-supplied.json` and the asset registry.

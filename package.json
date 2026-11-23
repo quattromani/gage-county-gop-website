@@ -9,6 +9,7 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "check": "npm run build && node --test scripts/check.mjs scripts/contact-intake.test.mjs",
-    "preview": "python3 -m http.server 4173 --directory dist"
+    "preview": "python3 -m http.server 4173 --directory dist",
+    "preview:brand": "node scripts/build-brand-review.mjs"
   }
 }

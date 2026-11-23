@@ -74,3 +74,19 @@ Manual form review: widths 320, 390, 768 and 1280; 16px autofill-compatible inpu
 ## Executive preview and policy pages, November 21, 2026
 
 Added structured Privacy and Accessibility pages and a secondary-only footer. All 24 build/service checks pass. axe-core 4.10.3 found zero reported violations across 13 pages, the 404 template, and open/validation dialog states after landmark and ARIA cleanup. Scanner manual contrast-review entries remain; no conformance certification is claimed. New policy pages and Home fit at five widths from 320px to 1280px; footer links measure 44px high. Mobile menu, committee preselection, footer policy routes, District 3 selection, and Treasurer question highlighting were exercised. Temporary audit/metrics tooling is excluded from the final artifact. See EXECUTIVE-PREVIEW-READINESS-2026-11-21.md and review/executive-preview-2026-11-21/ for scope, hashes, evidence, operational limits, and official-launch follow-ups. No release or domain change performed.
+
+## Shared content boundary, November 22, 2026
+
+The masthead, utility bar, meeting strip, hero, main content, quick-access grid, and footer now share a 1,280px usable desktop boundary. Full-width background bands remain. Major column gaps stop at 64px, and document/policy reading columns stop at 75ch. The hero's former above-1,600px uncapping rule was removed. Styles remain content-versioned by the build.
+
+All 24 existing build/service checks pass. Chromium measurements at Home widths 320, 390, 768, 1024, 1440, 1920, 2560, and 3440 showed no horizontal overflow. At 1440px and above, header/hero/meeting/card-grid/footer usable widths measure exactly 1280px and their outer content edges agree. At 2560px their edges are x=640 and x=1920; at 3440px, x=1080 and x=2360. Platform, Constitution, Government, Privacy, Committees, Contact, and Updates were also checked at 2560px; six reference/contact pages were checked at 320px and 768px without horizontal overflow. This is viewport/geometry coverage, not physical-device or cross-engine certification.
+
+Evidence: review/content-boundary-2026-11-22/. The separate voter card, private submission service, and official domain were not changed. This correction is local until explicitly committed/pushed.
+
+## Team feedback and cleanup, November 23, 2026
+
+All 24 repository checks pass; git diff --check passes. Final output excludes the local brand review and archival-only media. The approved logo source, display SVG and favicon are byte-identical. Superseded plain Givebutter QR artwork remains repository-only. The active QR display PNG is 640px and 256,440 bytes, reduced from the preserved 1254px, 981,054-byte edited master. ZXing-cpp 3.1.1 independently decoded the master, prepared and built derivatives, resizes at 640/220/104px, and desktop/phone browser screenshots to the clean approved campaign URL. No payment submitted.
+
+Chromium review after cleanup: no horizontal overflow at 320, 390, 768 or 1280px. QR holder/image widths are 256/220px on desktop and tablet, 128/104px on phone, with captions below. Wordmark lines remain aligned (164.430/164.438px desktop; 125.281/125.266px at 320px). Mobile menu opens within the viewport, Escape closes it and returns focus. Sticky desktop header stays at y=0, bottom=107px; Crime and Public Protection anchor settles at y=131.063px and the active sidebar at y=131px. Palette is #3A4B5F blue and #AC352C red.
+
+Evidence: review/team-feedback-2026-11-23/cleanup-final-desktop.jpg and cleanup-final-mobile.jpg. Built artifact SHA-256 (sorted relative paths, NUL separators, file bytes): 0f306d9a74344d4356b64208e14c82c94ca221b5e2d325020511ae778a1bb11b. This is Chromium viewport coverage; physical devices, other engines and complete accessibility conformance are not claimed. No private intake service or voter-card source changed. Nothing committed or deployed during cleanup.

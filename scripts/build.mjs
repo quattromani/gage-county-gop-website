@@ -1,3 +1,4 @@
+import { renderElectionReferences } from "./components/election-references.mjs";
 import { renderContactForm, contactTrigger } from "./components/contact-form.mjs";
 import { renderPolicyPage } from "./components/policy-page.mjs";
 import { renderSiteShell } from "./components/site-shell.mjs";
@@ -61,7 +62,7 @@ const allMeetingsLink = (className) => `<a class="${className}" href="./${allMee
 const paragraphs = (slug) =>
   (pages.get(slug)?.text || []).map((t) => `<p>${h(t)}</p>`).join("");
 function layout(file, title, body, description) {
-  return renderSiteShell({ file, title, body, description, content, asset, assetVersion, h, meetingStrip: renderMeetingStrip(stripMeeting, h), contactForm: renderContactForm(intake, participation, content.email, h) });
+  return renderSiteShell({ file, title, body, description, content, asset, assetVersion, brandVersion: assetsById.get(content.brand.markAsset).sourceSha256.slice(0, 12), h, meetingStrip: renderMeetingStrip(stripMeeting, h), contactForm: renderContactForm(intake, participation, content.email, h) });
 }
 const pageHero = (kicker, title, desc) =>
   `<section class="page-hero wrap"><p class="eyebrow">${kicker}</p><h1>${title}</h1><p class="lead">${desc}</p></section>`;
@@ -69,18 +70,18 @@ const meetingSchedule = `Meetings are held on the second Tuesday of each month a
 const meeting = renderMeetingCard(meetingInfo, { h, meetingLink, allMeetingsLink, schedule: meetingSchedule, retainedNotice: retainedMeetingText(meetingInfo, stripMeeting) });
 const courthouse = assetsById.get("gage-county-courthouse-memorial-day-2012");
 const donation = content.donation;
-const donationBand = `<section class="donate-band" id="donate" aria-labelledby="donate-title"><div class="wrap donate-inner"><div><p class="eyebrow">Support the county party</p><h2 id="donate-title">Donate to the Gage County GOP.</h2><p>Support the work of the Gage County Republican Party.</p><div class="actions"><a class="button light" href="${h(donation.url)}">Donate with Venmo</a></div><p class="donate-help">Scan the QR code with your phone or open Venmo using the link.</p></div><figure class="donate-qr"><a href="${h(donation.url)}" aria-label="Donate to the Gage County GOP with Venmo">${img(donation.qrAsset, "Venmo donation QR code for the Gage County GOP")}</a><figcaption>Gage County GOP<br>Scan to donate with Venmo</figcaption></figure></div></section>`;
+const donationBand = `<section class="donate-band" id="donate" aria-labelledby="donate-title"><div class="wrap donate-inner"><div><p class="eyebrow">Support the county party</p><h2 id="donate-title">Donate to the Gage County GOP.</h2><p>Support the work of the Gage County Republican Party.</p><div class="actions"><a class="button light" href="${h(donation.url)}">Donate with Givebutter</a></div><p class="donate-help">Scan the QR code or open our Givebutter campaign to choose a payment method.</p></div><figure class="donate-qr"><a href="${h(donation.url)}" aria-label="Donate to the Gage County GOP with Givebutter">${img(donation.qrAsset, "Givebutter donation QR code for the Gage County GOP")}</a><figcaption>Gage County GOP<br>Scan to donate with Givebutter</figcaption></figure></div></section>`;
 const governmentLink = content.homeGovernmentLink;
 const governmentBanner = `<section class="government-banner" aria-labelledby="government-banner-title"><a class="wrap government-banner-link" href="./${h(governmentLink.href)}"><div><h2 id="government-banner-title">${h(governmentLink.title)}</h2><p>${h(governmentLink.description)}</p></div><span class="government-banner-action">${h(governmentLink.action)}</span></a></section>`;
 const home = `<section class="hero"><div class="hero-copy"><p class="eyebrow"><span class="red-line"></span> Gage County Republican Party</p><h1>Your county.<br>Your party.<br><em>Your connection.</em></h1><p>Come to a meeting, share your ideas, and find a way to take part in the Gage County Republican Party.</p><div class="actions"><a class="button" href="./events.html#meeting">Come to the next meeting <span aria-hidden="true">→</span></a><a class="text-link" href="./committees.html">Explore ways to help ${arrow}</a></div><div class="hero-note">New here? You’re welcome. No RSVP required.</div></div><figure class="hero-image">${img("gage-county-courthouse-memorial-day-2012", "The Gage County Courthouse in Beatrice, with American flags on the lawn.", "", true)}<figcaption><span>Gage County Courthouse, Beatrice</span><span class="photo-credit">Photo: <a href="${h(courthouse.sourceUrl)}">${h(courthouse.creator)}</a> / <a href="${h(courthouse.licenseUrl)}">${h(courthouse.license)}</a></span></figcaption></figure></section>
 <section class="wrap section home-meeting" aria-labelledby="home-meeting-title"><div><p class="eyebrow">Join us</p><h2 id="home-meeting-title">Come as you are.<br>Start with a meeting.</h2><p class="body-copy">Meet the people behind the county party, hear what’s happening, and bring your questions and ideas.</p><p>Newcomers are welcome. You can attend without an invitation, RSVP, or existing membership.</p><a class="text-link" href="./events.html#meeting">Meeting details & directions ${arrow}</a></div>${meeting}</section>
-<section class="quick-strip" aria-label="Quick access">${content.homeQuickLinks.map((link, index) => `<a${index === 0 ? ' class="quick-featured"' : ""} href="./${h(link.href)}"><span class="quick-number">${String(index + 1).padStart(2, "0")}</span><span>${h(link.title)}<small>${h(link.description)}</small></span>${arrow}</a>`).join("")}</section>
+<section class="quick-strip" aria-label="Quick access"><div class="quick-strip-inner">${content.homeQuickLinks.map((link, index) => `<a${index === 0 ? ' class="quick-featured"' : ""} href="./${h(link.href)}"><span class="quick-number">${String(index + 1).padStart(2, "0")}</span><span>${h(link.title)}<small>${h(link.description)}</small></span>${arrow}</a>`).join("")}</div></section>
 <section class="wrap section home-community"><div class="section-heading"><div><p class="eyebrow">People. Places. Participation.</p><h2>A local organization.<br>A shared place to start.</h2></div><a class="text-link" href="./about.html">Meet the county party ${arrow}</a></div><p class="body-copy">From meetings to the fair booth and local parades, there are different ways to take part.</p><div class="photo-grid">${[
   ["2026-wilber-czech-festival-parade", "Gage County GOP float at the 2026 Wilber Czech Festival.", "2026 Wilber Czech Festival"],
   ["2026-county-convention-02", "People gathered at the 2026 county convention.", "2026 county convention"],
   ["2026-county-fair-booth", "Gage County GOP display at the 2026 county fair.", "2026 county fair booth"],
 ].map(([id,alt,caption]) => `<figure class="community-photo">${img(id,alt)}<figcaption>${caption}</figcaption></figure>`).join("")}</div><a class="text-link gallery-route" href="./events.html#gallery">See community photos ${arrow}</a></section>
-${renderStayInformed(intake, h)}${governmentBanner}${donationBand}<section class="contact-band wrap"><div><p class="eyebrow">Questions or ideas?</p><h2>Start a conversation.</h2></div><a class="text-link" href="./contact.html">Contact the county party ${arrow}</a></section>`;
+${renderStayInformed(intake, h)}${governmentBanner}${donationBand}${renderElectionReferences(content.homeElectionReferences, content.partyReveal, h, arrow)}<section class="contact-band wrap"><div><p class="eyebrow">Questions or ideas?</p><h2>Start a conversation.</h2></div><a class="text-link" href="./contact.html">Contact the county party ${arrow}</a></section>`;
 const leaders = content.leaders
   .map(
     (l) =>
@@ -217,8 +218,10 @@ for (const entry of assets) {
     path.join(out, entry.legacyWebPath),
   );
 }
-for (const name of ["style.css", "site.js", "meeting.mjs", "contact-form.js", "favicon.svg"])
+for (const name of ["style.css", "site.js", "meeting.mjs", "contact-form.js"])
   fs.copyFileSync(path.join(root, "src", name), path.join(out, name));
+// The browser icon and masthead share the same registered mark.
+fs.copyFileSync(path.join(root, assetsById.get(content.brand.markAsset).webPath), path.join(out, "favicon.svg"));
 for (const [file, title, body] of [
   ["index.html", "Home", home],
   ["about.html", "About the party", about],

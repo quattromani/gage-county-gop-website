@@ -395,6 +395,40 @@
       "webPath": "assets/web/places/gage-county-supervisor-map-beatrice.webp",
       "generator": "scripts/prepare-supervisor-maps.py",
       "derivation": "Monochrome map crop; Beatrice linework isolated from colour wash. Beatrice title, census table and printed legend omitted. Interactive geometry in src/supervisor-maps.json; names come exclusively from src/government.json."
+    },
+    {
+      "id": "gage-county-gop-givebutter-qr",
+      "title": "Gage County GOP Givebutter donation QR",
+      "alt": "QR code for the Gage County GOP Givebutter campaign",
+      "sourcePath": "assets/originals/generated/gage-county-gop-givebutter-qr.png",
+      "webPath": "assets/web/archive/gage-county-gop-givebutter-qr.png",
+      "sourceUrl": "https://givebutter.com/gage_county_gop",
+      "sourceType": "generated-from-approved-url",
+      "generator": "scripts/build-donation-qr.py",
+      "sourceSha256": "5a4740fdac90166b4ecc4a3ddc24b3be229dec4ab98b10072c8682f2e89dddb2"
+    },
+    {
+      "id": "gage-county-gop-mark",
+      "title": "Gage County GOP partial R mark",
+      "sourcePath": "assets/originals/generated/gage-county-gop-mark.svg",
+      "sourceSha256": "34c885b7fb37fa09b2ae3b2ac5e6f1a868d04c8939b58f590ea70ac63fc6e542",
+      "webPath": "assets/web/brand/gage-county-gop-mark.svg",
+      "sourceType": "owner-approved-vector-derivative",
+      "derivedFromAsset": "republican-letter-r-artwork",
+      "derivation": "Clean partial R silhouette from the preserved logo, simplified within 0.65 source pixels. Original blue #3A4B5F and red #F6001B. Rounded 64-unit badge with 12-unit radius and 8-unit left, top and bottom margins. Owner selected November 23, 2026."
+    },
+    {
+      "id": "gage-county-gop-givebutter-supplied-qr",
+      "title": "Supplied Givebutter QR with cleaned center logo",
+      "alt": "Givebutter donation QR code with the Gage County GOP partial R in the center",
+      "sourcePath": "assets/originals/generated/gage-county-gop-givebutter-supplied-qr.png",
+      "sourceSha256": "ea35f64b8dcea20a4711099688f403b2bbd9408dcd2f0608935fc394e47b63e1",
+      "webPath": "assets/web/brand/gage-county-gop-givebutter-supplied-qr.png",
+      "sourceType": "imagegen-edit-of-owner-supplied-qr",
+      "sourceUrl": "https://givebutter.com/gage_county_gop",
+      "derivation": "Owner reattached the styled QR November 23, 2026. Built-in image editing replaced the distressed center artwork with a clean partial R badge, retaining the supplied code design and colored finders. Independent ZXing decoding verified the approved clean campaign URL at 1254, 1024, 600, 360, 240, 180, 148, 128 and 104 pixels. No payment submitted. Display derivative capped at 640px for the site; the 1254px edited master is preserved.",
+      "generator": "scripts/build-donation-qr.py",
+      "displayMaxWidth": 640
     }
   ]
 }

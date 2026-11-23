@@ -1,6 +1,7 @@
 """Generate registered web derivatives without changing archived originals."""
 import hashlib
 import json
+import shutil
 from pathlib import Path
 from PIL import Image, ImageOps
 
@@ -16,6 +17,10 @@ for asset in registry['assets']:
         continue
     output = root / asset['webPath']
     output.parent.mkdir(parents=True, exist_ok=True)
+    if source.suffix.lower() == '.svg':
+        # Keep approved native vector artwork sharp and byte-identical.
+        shutil.copyfile(source, output)
+        continue
     with Image.open(source) as original:
         display = ImageOps.exif_transpose(original).convert('RGB')
         display.thumbnail((1800, 1800))

@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-21",
-  "updatedLabel": "November 21, 2026",
+  "updated": "2026-11-23",
+  "updatedLabel": "November 23, 2026",
   "privacy": {
     "title": "Privacy",
     "intro": "What you share with the Gage County Republican Party, how we use it, and the choices you have.",
@@ -44,7 +44,7 @@
         "id": "other-websites",
         "title": "Links and donations",
         "paragraphs": [
-          "Links to Venmo, social networks, directions, government offices, and other resources take you to services with their own privacy practices. Donations are handled by Venmo or PayPal, not by this website. We do not collect payment-card or bank-account details through the site."
+          "Links to Givebutter, social networks, directions, government offices, and other resources take you to services with their own privacy practices. Donations are handled by Givebutter and the payment service you select, which may include Venmo or PayPal. We do not collect payment-card or bank-account details through the site."
         ]
       },
       {

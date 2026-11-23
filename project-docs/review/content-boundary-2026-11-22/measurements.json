@@ -1,0 +1,417 @@
+{
+  "home": [
+    {
+      "columnGap": "28px",
+      "footer": {
+        "contentWidth": 272,
+        "left": 24,
+        "right": 296
+      },
+      "header": {
+        "contentWidth": 272,
+        "left": 24,
+        "right": 296
+      },
+      "height": 740,
+      "hero": {
+        "contentWidth": 320,
+        "left": 0,
+        "right": 320
+      },
+      "heroCopy": {
+        "contentWidth": 272,
+        "left": 24,
+        "right": 296
+      },
+      "meeting": {
+        "contentWidth": 272,
+        "left": 24,
+        "right": 296
+      },
+      "overflow": false,
+      "page": "/index.html",
+      "quickLinks": {
+        "contentWidth": 320,
+        "left": 0,
+        "right": 320
+      },
+      "width": 320
+    },
+    {
+      "columnGap": "28px",
+      "footer": {
+        "contentWidth": 342,
+        "left": 24,
+        "right": 366
+      },
+      "header": {
+        "contentWidth": 342,
+        "left": 24,
+        "right": 366
+      },
+      "height": 844,
+      "hero": {
+        "contentWidth": 390,
+        "left": 0,
+        "right": 390
+      },
+      "heroCopy": {
+        "contentWidth": 342,
+        "left": 24,
+        "right": 366
+      },
+      "meeting": {
+        "contentWidth": 342,
+        "left": 24,
+        "right": 366
+      },
+      "overflow": false,
+      "page": "/index.html",
+      "quickLinks": {
+        "contentWidth": 390,
+        "left": 0,
+        "right": 390
+      },
+      "width": 390
+    },
+    {
+      "columnGap": "28px",
+      "footer": {
+        "contentWidth": 691.2031999999999,
+        "left": 38.3984,
+        "right": 729.6016
+      },
+      "header": {
+        "contentWidth": 691.2031999999999,
+        "left": 38.3984,
+        "right": 729.6016
+      },
+      "height": 1024,
+      "hero": {
+        "contentWidth": 768,
+        "left": 0,
+        "right": 768
+      },
+      "heroCopy": {
+        "contentWidth": 691.2,
+        "left": 38.4,
+        "right": 729.6
+      },
+      "meeting": {
+        "contentWidth": 691.2,
+        "left": 38.4,
+        "right": 729.6
+      },
+      "overflow": false,
+      "page": "/index.html",
+      "quickLinks": {
+        "contentWidth": 768,
+        "left": 0,
+        "right": 768
+      },
+      "width": 768
+    },
+    {
+      "columnGap": "51.2px",
+      "footer": {
+        "contentWidth": 921.6094,
+        "left": 51.1953,
+        "right": 972.8047
+      },
+      "header": {
+        "contentWidth": 921.6094,
+        "left": 51.1953,
+        "right": 972.8047
+      },
+      "height": 768,
+      "hero": {
+        "contentWidth": 921.6,
+        "left": 51.2,
+        "right": 972.8
+      },
+      "heroCopy": {
+        "contentWidth": 420.8046875,
+        "left": 51.1953125,
+        "right": 472
+      },
+      "meeting": {
+        "contentWidth": 921.6,
+        "left": 51.2,
+        "right": 972.8
+      },
+      "overflow": false,
+      "page": "/index.html",
+      "quickLinks": {
+        "contentWidth": 1024,
+        "left": 0,
+        "right": 1024
+      },
+      "width": 1024
+    },
+    {
+      "columnGap": "64px",
+      "footer": {
+        "contentWidth": 1280,
+        "left": 80,
+        "right": 1360
+      },
+      "header": {
+        "contentWidth": 1280,
+        "left": 80,
+        "right": 1360
+      },
+      "height": 900,
+      "hero": {
+        "contentWidth": 1280,
+        "left": 80,
+        "right": 1360
+      },
+      "heroCopy": {
+        "contentWidth": 600,
+        "left": 80,
+        "right": 680
+      },
+      "meeting": {
+        "contentWidth": 1280,
+        "left": 80,
+        "right": 1360
+      },
+      "overflow": false,
+      "page": "/index.html",
+      "quickLinks": {
+        "contentWidth": 1280,
+        "left": 80,
+        "right": 1360
+      },
+      "width": 1440
+    },
+    {
+      "columnGap": "64px",
+      "footer": {
+        "contentWidth": 1280,
+        "left": 320,
+        "right": 1600
+      },
+      "header": {
+        "contentWidth": 1280,
+        "left": 320,
+        "right": 1600
+      },
+      "height": 1080,
+      "hero": {
+        "contentWidth": 1280,
+        "left": 320,
+        "right": 1600
+      },
+      "heroCopy": {
+        "contentWidth": 600,
+        "left": 320,
+        "right": 920
+      },
+      "meeting": {
+        "contentWidth": 1280,
+        "left": 320,
+        "right": 1600
+      },
+      "overflow": false,
+      "page": "/index.html",
+      "quickLinks": {
+        "contentWidth": 1280,
+        "left": 320,
+        "right": 1600
+      },
+      "width": 1920
+    },
+    {
+      "columnGap": "64px",
+      "footer": {
+        "contentWidth": 1280,
+        "left": 640,
+        "right": 1920
+      },
+      "header": {
+        "contentWidth": 1280,
+        "left": 640,
+        "right": 1920
+      },
+      "height": 1440,
+      "hero": {
+        "contentWidth": 1280,
+        "left": 640,
+        "right": 1920
+      },
+      "heroCopy": {
+        "contentWidth": 600,
+        "left": 640,
+        "right": 1240
+      },
+      "meeting": {
+        "contentWidth": 1280,
+        "left": 640,
+        "right": 1920
+      },
+      "overflow": false,
+      "page": "/index.html",
+      "quickLinks": {
+        "contentWidth": 1280,
+        "left": 640,
+        "right": 1920
+      },
+      "width": 2560
+    },
+    {
+      "columnGap": "64px",
+      "footer": {
+        "contentWidth": 1280,
+        "left": 1080,
+        "right": 2360
+      },
+      "header": {
+        "contentWidth": 1280,
+        "left": 1080,
+        "right": 2360
+      },
+      "height": 1440,
+      "hero": {
+        "contentWidth": 1280,
+        "left": 1080,
+        "right": 2360
+      },
+      "heroCopy": {
+        "contentWidth": 600,
+        "left": 1080,
+        "right": 1680
+      },
+      "meeting": {
+        "contentWidth": 1280,
+        "left": 1080,
+        "right": 2360
+      },
+      "overflow": false,
+      "page": "/index.html",
+      "quickLinks": {
+        "contentWidth": 1280,
+        "left": 1080,
+        "right": 2360
+      },
+      "width": 3440
+    }
+  ],
+  "wideTemplates": [
+    {
+      "columnGap": "64px",
+      "headingLeft": 640,
+      "overflow": false,
+      "page": "/platform.html",
+      "readingColumn": 667.3828125,
+      "width": 2560
+    },
+    {
+      "columnGap": "64px",
+      "headingLeft": 640,
+      "overflow": false,
+      "page": "/constitution.html",
+      "readingColumn": 667.3828125,
+      "width": 2560
+    },
+    {
+      "columnGap": "normal",
+      "headingLeft": 640,
+      "overflow": false,
+      "page": "/government.html",
+      "width": 2560
+    },
+    {
+      "columnGap": "normal",
+      "headingLeft": 640,
+      "overflow": false,
+      "page": "/privacy.html",
+      "readingColumn": 827.3828125,
+      "width": 2560
+    },
+    {
+      "columnGap": "normal",
+      "headingLeft": 640,
+      "overflow": false,
+      "page": "/committees.html",
+      "readingColumn": 667.3828125,
+      "width": 2560
+    },
+    {
+      "columnGap": "64px",
+      "headingLeft": 640,
+      "overflow": false,
+      "page": "/contact.html",
+      "width": 2560
+    },
+    {
+      "columnGap": "64px",
+      "headingLeft": 640,
+      "overflow": false,
+      "page": "/updates.html",
+      "width": 2560
+    }
+  ],
+  "narrowTemplates": [
+    {
+      "overflow": false,
+      "page": "/platform.html",
+      "width": 320
+    },
+    {
+      "overflow": false,
+      "page": "/constitution.html",
+      "width": 320
+    },
+    {
+      "overflow": false,
+      "page": "/government.html",
+      "width": 320
+    },
+    {
+      "overflow": false,
+      "page": "/privacy.html",
+      "width": 320
+    },
+    {
+      "overflow": false,
+      "page": "/contact.html",
+      "width": 320
+    },
+    {
+      "overflow": false,
+      "page": "/updates.html",
+      "width": 320
+    },
+    {
+      "overflow": false,
+      "page": "/platform.html",
+      "width": 768
+    },
+    {
+      "overflow": false,
+      "page": "/constitution.html",
+      "width": 768
+    },
+    {
+      "overflow": false,
+      "page": "/government.html",
+      "width": 768
+    },
+    {
+      "overflow": false,
+      "page": "/privacy.html",
+      "width": 768
+    },
+    {
+      "overflow": false,
+      "page": "/contact.html",
+      "width": 768
+    },
+    {
+      "overflow": false,
+      "page": "/updates.html",
+      "width": 768
+    }
+  ]
+}

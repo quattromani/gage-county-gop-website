@@ -84,7 +84,7 @@ test("source inventory is complete and original asset hashes remain intact", () 
     assert.match(entry.id, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
     assert.match(
       entry.webPath,
-      /^assets\/web\/(people|places|events|documents|brand|archive)\/[a-z0-9]+(?:-[a-z0-9]+)*\.(?:webp|png)$/,
+      /^assets\/web\/(people|places|events|documents|brand|archive)\/[a-z0-9]+(?:-[a-z0-9]+)*\.(?:webp|png|svg)$/,
     );
     assert.equal(
       crypto
@@ -149,7 +149,7 @@ test("every website page has landmarks, one h1, language, and image alternatives
   for (const file of htmlFiles.filter((f) => !f.includes("vote-2026"))) {
     const html = fs.readFileSync(file, "utf8");
     assert.equal((html.match(/<h1>/g) || []).length, 1);
-    assert.match(html, /<html lang="en">/);
+    assert.match(html, /<html\b[^>]*\blang="en"[^>]*>/);
     assert.match(html, /<main id="main">/);
     for (const image of html.matchAll(/<img\b[^>]+>/g))
       assert.match(image[0], /alt="[^"]*"/);
@@ -269,6 +269,7 @@ test("card offline worker handles save, offline retrieval, and scope boundaries"
 test("public build excludes source archive and migration language, with recurring meeting details", () => {
   assert.ok(!fs.existsSync(path.join(dist, "archive.html")));
   assert.ok(!fs.existsSync(path.join(dist, "source-snapshot")));
+  assert.ok(!fs.existsSync(path.join(dist, "_brand-review")));
   assert.ok(!fs.existsSync(path.join(dist, "assets/web/archive")));
   for (const file of htmlFiles) {
     const html = fs.readFileSync(file, "utf8");
@@ -363,14 +364,20 @@ test("Monthly import uses a local-time series with daylight saving transitions",
   for (const line of series.split("\r\n")) assert.ok(Buffer.byteLength(line) <= 75);
 });
 
-test("donation links preserve the decoded destination and election band remains reusable", async () => {
+test("donation and completed-election references preserve the intended destinations and tab behavior", async () => {
   const content = JSON.parse(fs.readFileSync(path.join(root, "src/content.json"), "utf8"));
-  const matrix = JSON.parse(fs.readFileSync(path.join(root, "src/donation-qr.json"), "utf8"));
-  assert.equal(crypto.createHash("sha256").update(content.donation.url).digest("hex"), matrix.payloadSha256);
+  const qrSource = JSON.parse(fs.readFileSync(path.join(root, content.donation.qrSource || "src/donation-qr.json"), "utf8"));
+  assert.equal(crypto.createHash("sha256").update(content.donation.url).digest("hex"), qrSource.payloadSha256);
   const home = read("index.html");
   assert.equal(home.split(`href="${h(content.donation.url)}"`).length - 1, 2);
   assert.match(home, /id="donate"/);
   assert.doesNotMatch(home, /class="election-band"/);
+  assert.ok(home.indexOf('id="election-resources"') > home.indexOf('id="donate"'));
+  const references = home.match(/<section class="election-references[\s\S]*?<\/section>/)[0];
+  assert.match(references, /Completed election cycle \/ 2026/);
+  const cardLink = references.match(/<a href="\.\/vote-2026\/"[^>]*>/)[0];
+  assert.doesNotMatch(cardLink, /target=/);
+  assert.match(references, /href="https:\/\/partyreveal\.com\/" target="_blank" rel="noopener noreferrer"/);
   for (const file of htmlFiles.filter((f) => !f.includes("vote-2026"))) {
     const html = fs.readFileSync(file, "utf8");
     const headerNav = html.match(/<nav class="desktop-nav"[^>]*>(.*?)<\/nav>/)[1];
