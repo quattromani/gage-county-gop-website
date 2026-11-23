@@ -1780,10 +1780,8 @@ button:focus-visible { outline: 3px solid var(--red); outline-offset: 4px; }
   .community-photo:nth-child(n+2) { display: none; }
   .community-photo img { height: 190px; }
   .stay-informed-inner { padding-block: 36px; }
-  .donate-inner { grid-template-columns: 1fr auto; gap: 24px; padding-block: 32px; }
-  .donate-qr { width: 128px; }
-  .donate-qr a { padding: 12px; }
-  .donate-qr figcaption { font-size: 12px; }
+  .donate-inner { grid-template-columns: 1fr; padding-block: 32px; }
+  .donate-qr { display: none; }
   .donate-inner > div > p:not(.eyebrow) { font-size: 14px; }
   .donate-inner h2 { font-size: 32px; }
   .involvement-grid { grid-template-columns: 1fr; gap: 0; }
@@ -1794,8 +1792,6 @@ button:focus-visible { outline: 3px solid var(--red); outline-offset: 4px; }
   .footer-bottom nav { gap: 6px 20px; }
 }
 @media (max-width: 480px) {
-  .donate-inner { grid-template-columns: 1fr; }
-  .donate-qr { margin: 0; }
   .intake-choice .button { width: 100%; justify-content: center; }
 }
 @media print { .meeting-strip, .updates-utility, .breadcrumbs, .page-return { display: none; } .topic-disclosure > summary { display: none; } }
