@@ -1892,14 +1892,15 @@ button.text-link { background: none; color: var(--ink); border: 0; border-bottom
 .election-references-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: var(--column-gap); align-items: start; padding-block: 40px; }
 .election-references h2 { font-size: clamp(28px, 3vw, 36px); margin-bottom: 14px; }
 .election-references p { font-size: 14px; margin-bottom: 0; }
-.election-reference-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
-.election-reference-links > a { display: block; border-top: 2px solid var(--ink); padding-top: 16px; text-decoration: none; }
-.election-reference-links h3 { font-size: 23px; margin-bottom: 12px; }
-.election-reference-links h3 span { white-space: nowrap; }
-.election-reference-links a:hover h3 { text-decoration: underline; text-underline-offset: 5px; }
-.election-reference-links small { display: block; color: var(--muted); margin-top: 10px; }
+.election-reference-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.election-reference-links > a { display: block; padding: 24px; background: var(--red); color: var(--white); border: 1px solid var(--red); text-decoration: none; }
+.election-reference-links h3 { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: 16px; font: 700 18px/1.35 var(--sans); margin: 0; }
+.election-reference-links h3 .link-arrow { font-size: 20px; margin-top: 2px; }
+.election-reference-links p { margin: 12px 0 0; font-size: 14px; line-height: 1.6; }
+.election-reference-links > a:hover { background: #8d2a23; border-color: #8d2a23; }
+.election-reference-links > a:focus-visible { outline-color: var(--ink); outline-offset: 4px; }
 @media (max-width: 900px) { .election-references-inner { grid-template-columns: 1fr; gap: 28px; } }
-@media (max-width: 600px) { .election-reference-links { grid-template-columns: 1fr; gap: 28px; } }
+@media (max-width: 600px) { .election-reference-links { grid-template-columns: 1fr; } }
 
 /* Keep both lines of the party wordmark aligned at every proportional size. */
 .brand-county, .brand-party-text { display: inline-block; white-space: nowrap; }

@@ -108,3 +108,9 @@ Guest-speaker card follow-up: added the matching full-width horizontal divider b
 Replaced authored directional link/button characters with shared inline SVG geometry to avoid iOS emoji substitution. Header/footer, committee actions, form submission, calendar/meeting links, 2026 references, map annotations and the dynamic supervisor details link use inherited link colors and decorative non-focusable SVGs. All 25 checks pass, including an assertion against Unicode link arrows in authored page output.
 
 Chromium phone review at 390px confirms ordinary vector arrows and no horizontal overflow; the Candidate Survey dialog opens and closes normally with a vector on Send request. Government District 3 selection creates the vector details link; zooming updates root maps without enlarging the nested icon as an independent map. Screenshot: review/vector-link-icons-2026-11-23/committees-mobile.jpg. A physical iOS/Safari recheck remains unverified; using SVG removes the font/emoji substitution path. Changes are local and uncommitted.
+
+## Homepage resource action cards, November 24, 2026
+
+Replaced the two open editorial links below Donate with muted-red cards. Titles use the established bold sans-serif treatment at 18px; supporting copy remains 14px, and SVG arrows align at the upper right. Cards sit side by side above 600px and stack on phones. Removed the visible new-tab note while preserving the internal voter-card destination and PartyReveal target/rel.
+
+All 25 checks and git diff --check pass. Chromium reviewed at 320, 390, 768 and 1280px with no horizontal overflow or clipped card contents. Keyboard focus has a contrasting 3px ink outline with a 4px offset. Evidence: review/resource-action-cards-2026-11-24/. No physical iOS review or public deployment performed.
