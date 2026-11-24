@@ -94,3 +94,17 @@ Evidence: review/team-feedback-2026-11-23/cleanup-final-desktop.jpg and cleanup-
 ### Mobile donation follow-up
 
 The owner requested removing the QR figure from mobile. At 700px and below, the full figure and caption are hidden and the text/button use one column. Helper copy now directs visitors to the campaign without mentioning a hidden QR. Chromium verified 390px and 700px with the QR hidden, and 768px and 1280px with it visible. The button remains visible and there is no horizontal overflow at these widths. All 24 checks and git diff --check pass. Screenshot: review/team-feedback-2026-11-23/donation-mobile-no-qr.jpg. This follow-up is local and uncommitted.
+
+## December guest speaker, November 23, 2026
+
+Added the owner-confirmed December 8 appearance of Nebraska Attorney General Mike Hilgers as a dated optional speaker record. Home and Events use the shared upper-right card treatment; all authored pages receive the matching announcement strip. Native calendars include the speaker only in the dated occurrence. No speaker label appears for an unannounced meeting.
+
+All 25 build/service checks pass, including speaker rollover at Central midnight, absent-speaker rendering, rescheduling, cancellation, configuration validation and calendar recurrence isolation. Chromium review confirms the speaker and strip at phone/tablet/desktop widths 320, 390, 768 and 1280 with no horizontal overflow or clipped speaker/card headings; Home and Events were visually reviewed. Proofs: review/guest-speaker-2026-11-23/. Checks cover the local artifact; no commit, push or deployed update performed for this change.
+
+Guest-speaker card follow-up: added the matching full-width horizontal divider below the card heading. Desktop and 390px phone review confirmed the upper and lower rules both compute to 1px solid #D6D8CE; no phone overflow. All 25 checks pass. Evidence: review/guest-speaker-2026-11-23/meeting-card-dividers-desktop.jpg and meeting-card-dividers-mobile.jpg.
+
+## Vector link arrows, November 23, 2026
+
+Replaced authored directional link/button characters with shared inline SVG geometry to avoid iOS emoji substitution. Header/footer, committee actions, form submission, calendar/meeting links, 2026 references, map annotations and the dynamic supervisor details link use inherited link colors and decorative non-focusable SVGs. All 25 checks pass, including an assertion against Unicode link arrows in authored page output.
+
+Chromium phone review at 390px confirms ordinary vector arrows and no horizontal overflow; the Candidate Survey dialog opens and closes normally with a vector on Send request. Government District 3 selection creates the vector details link; zooming updates root maps without enlarging the nested icon as an independent map. Screenshot: review/vector-link-icons-2026-11-23/committees-mobile.jpg. A physical iOS/Safari recheck remains unverified; using SVG removes the font/emoji substitution path. Changes are local and uncommitted.

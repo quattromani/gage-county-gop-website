@@ -24,7 +24,7 @@ document.querySelectorAll(".mobile-nav nav a").forEach((link) => {
 
 const meetingConfig = JSON.parse(document.body.dataset.meetingConfig);
 if (document.querySelector("[data-meeting-strip]")) {
-  import(`./meeting.mjs?v=${document.body.dataset.meetingScriptVersion}`).then(({ nextMeeting, meetingNotice, meetingCalendar, meetingStatusLabel, retainedMeetingText }) => {
+  import(`./meeting.mjs?v=${document.body.dataset.meetingScriptVersion}`).then(({ nextMeeting, meetingNotice, meetingCalendar, meetingStatusLabel, retainedMeetingText, guestSpeakerLabel }) => {
     let activeState;
     let calendarUrl;
     function refreshMeeting() {
@@ -43,6 +43,10 @@ if (document.querySelector("[data-meeting-strip]")) {
         time.textContent = `${meeting.dateLabel} at ${meeting.time}`;
         card.querySelector("[data-meeting-location]").textContent = meeting.venue;
         card.querySelector("[data-meeting-city]").textContent = meeting.city;
+        const speaker = card.querySelector("[data-meeting-speaker]");
+        speaker.hidden = !meeting.guestSpeaker;
+        speaker.querySelector("[data-speaker-name]").textContent = meeting.guestSpeaker?.name || "";
+        speaker.querySelector("[data-speaker-title]").textContent = meeting.guestSpeaker?.title || "";
         const change = card.querySelector("[data-meeting-change]");
         change.textContent = meeting.message;
         change.hidden = !meeting.message;
@@ -53,6 +57,8 @@ if (document.querySelector("[data-meeting-strip]")) {
       document.querySelectorAll("[data-meeting-strip]").forEach((strip) => {
         strip.classList.toggle("has-meeting-change", notice.status !== "scheduled");
         strip.querySelector("[data-meeting-strip-status]").textContent = meetingStatusLabel(notice);
+        strip.querySelector("[data-meeting-strip-speaker]").hidden = !notice.guestSpeaker;
+        strip.querySelector("[data-meeting-strip-speaker-name]").textContent = guestSpeakerLabel(notice);
         strip.querySelector("[data-meeting-strip-summary]").textContent = `${notice.shortDateLabel} · ${notice.time} · ${notice.venue}`;
       });
       document.querySelectorAll("[data-meeting-calendar]").forEach((link) => {
@@ -149,7 +155,8 @@ if (supervisorExplorer) {
     selection.replaceChildren(...[...card.children].map((child) => child.cloneNode(true)));
     const details = document.createElement("a");
     details.href = `#${card.id}`;
-    details.textContent = "View supervisor details ↓";
+    details.textContent = "View supervisor details ";
+    details.append(supervisorExplorer.querySelector("[data-supervisor-details-icon]").content.cloneNode(true));
     selection.append(details);
   }
 
@@ -180,7 +187,7 @@ if (supervisorExplorer) {
   const mapScale = supervisorExplorer.querySelector("[data-map-scale]");
   function setZoom(value) {
     zoom = value;
-    supervisorExplorer.querySelectorAll(".district-map svg").forEach((svg) => { svg.style.width = `${value * 100}%`; });
+    supervisorExplorer.querySelectorAll(".district-map-viewport > svg").forEach((svg) => { svg.style.width = `${value * 100}%`; });
     supervisorExplorer.querySelectorAll(".district-map-viewport").forEach((viewport) => { viewport.scrollTop = 0; viewport.scrollLeft = 0; });
     mapScale.textContent = `${value * 100}%`;
     zoomOut.disabled = value === 1;

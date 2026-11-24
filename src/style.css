@@ -267,6 +267,8 @@ a:focus-visible {
   border-bottom: 1px solid currentColor;
   padding-bottom: 6px;
 }
+.link-arrow { display: inline-block; width: 1em; height: 1em; flex: none; vertical-align: -.12em; line-height: 1; }
+.link-arrow > svg { display: block; width: 100%; height: 100%; }
 .hero-note {
   margin-top: auto;
   padding-top: 42px;
@@ -427,10 +429,23 @@ a:focus-visible {
   grid-template-columns: auto 1fr;
   column-gap: 25px;
 }
-.meeting-card > .eyebrow {
+.meeting-card-heading {
   grid-column: 1/-1;
-  margin-bottom: 26px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 22px;
 }
+.meeting-card-heading > .eyebrow { margin: 0; }
+.meeting-speaker { flex: 0 1 62%; max-width: 240px; padding-right: 12px; border-right: 3px solid var(--red); text-align: right; }
+.meeting-speaker-label { display: block; color: var(--red); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; }
+.meeting-speaker strong { display: block; font: 24px/1.2 var(--serif); margin-block: 4px; }
+.meeting-speaker [data-speaker-title] { display: block; font-size: 12px; line-height: 1.4; color: var(--muted); }
+.meeting-strip-speaker { display: block; font-size: 14px; line-height: 1.5; margin-top: 4px; }
+.meeting-speaker[hidden], .meeting-strip-speaker[hidden] { display: none; }
 .meeting-date {
   border-top: 3px solid var(--red);
   padding: 10px 14px;
@@ -1590,7 +1605,7 @@ a:focus-visible {
 .district-map-switch button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
 .district-map { margin: 0; border: 1px solid var(--line); background: #fff; }
 .district-map figcaption { font-weight: 700; padding: 12px; }
-.district-map svg { display: block; width: 100%; height: auto; }
+.district-map-viewport > svg { display: block; width: 100%; height: auto; }
 .district-map image { pointer-events: none; }
 .district-region { fill: var(--soft); fill-opacity: 0.2; stroke: var(--ink); stroke-opacity: 0.65; stroke-width: 1; vector-effect: non-scaling-stroke; transition: fill-opacity 160ms, fill 160ms; }
 .district-map a { cursor: pointer; }
@@ -1632,7 +1647,7 @@ a:focus-visible {
 .district-zoom button { width: 44px; height: 44px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); font: 24px var(--sans); cursor: pointer; }
 .district-zoom button:disabled { opacity: 0.4; cursor: default; }
 .district-zoom output { width: 44px; text-align: center; }
-@media print { .district-zoom { display: none; } .district-map-viewport { overflow: visible; } .district-map-viewport svg { width: 100% !important; } }
+@media print { .district-zoom { display: none; } .district-map-viewport { overflow: visible; } .district-map-viewport > svg { width: 100% !important; } }
 /* Region outlines supply keyboard focus without an unrelated bounding box. */
 .district-map a:focus { outline: none; }
 .district-map a:focus-visible .district-marker circle { stroke: var(--red); stroke-width: 3; }

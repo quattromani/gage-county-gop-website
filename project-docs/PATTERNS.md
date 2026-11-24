@@ -120,3 +120,15 @@ brand.palette in src/content.json selects the website theme. The current logo-bl
 The desktop/tablet donation holder is 256px square, containing a 220px QR image. Its white background and padding belong to the image link; the figure caption sits below on the donation band. At 700px and below the entire QR figure and caption are hidden, and the donation text and button occupy one full-width column. Helper copy supports the direct campaign link without referring to a hidden QR.
 
 scripts/build-donation-qr.py prepares the selected verified artwork using its registered source hash and payload record. The full-size 1254px edited master is retained in assets/originals; the 640px lossless PNG display derivative reduces transfer size. Decode the prepared image and a browser screenshot after changing its artwork or dimensions. Superseded plain QR artwork remains archived and excluded from public output.
+
+## Dated guest speakers
+
+Optional meeting.guestSpeakers records in src/content.json carry a nominal monthly date, name, title, confirmedBy and updatedAt. Match the scheduled occurrence date even when the meeting is rescheduled. Do not put a speaker on the recurring schedule itself. The shared meeting-card component renders the speaker in the upper right and a matching line in the sitewide notice strip; both are hidden without a speaker. The regular refresh updates and clears all speaker fields along with the next meeting. Canceled meetings suppress speaker promotion. User confirmation is the authority for an announced appearance; do not infer a topic, duration or RSVP requirement.
+
+The single-event calendar includes the guest in its description. The monthly calendar uses one dated recurrence exception, combined with any schedule override for that occurrence, so the speaker is never repeated as a guest at future meetings. Source wording and provenance stay in the record rather than being repeated in page templates.
+
+Meeting cards use matching 1px line-token dividers below the status/speaker heading and above the calendar actions, separating the header, meeting details, and actions into three sections.
+
+## Vector link arrows
+
+Use scripts/components/link-icons.mjs for decorative directional arrows. Its small inline SVG paths use currentColor, fixed geometry, aria-hidden and focusable=false; the link's text supplies its accessible name. arrowIcon provides the inline wrapper; arrowSvg supports SVG map annotations. Do not use Unicode arrow characters for authored link affordances because mobile platforms can substitute emoji artwork. The government map clones the shared rendered icon template for its dynamic details link, with map layout/zoom/print selectors scoped to the root SVG. Imported voter-card source remains unchanged; its website integration navigation uses the shared vectors.

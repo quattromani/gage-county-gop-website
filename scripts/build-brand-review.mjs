@@ -1,3 +1,4 @@
+import { arrowIcon } from "./components/link-icons.mjs";
 // Local identity review only; ordinary builds remove this overlay.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -25,6 +26,6 @@ fs.writeFileSync(path.join(out, 'index.html'), `<!doctype html>
 ${header}
 <div class="wrap review-intro"><p class="eyebrow">At different sizes</p><div class="review-scales">${[16,32,64,128].map(size=>`<figure><img src="./${mark}" width="${size}" height="${size}" style="width:${size}px;height:${size}px" alt="Rounded partial R badge at ${size} pixels"><figcaption>${size}px</figcaption></figure>`).join('')}</div>
 <div class="review-comparison"><figure><img src="./original-r.png" width="128" height="133" alt="Original red R with scratched blue-gray background"><figcaption>Existing artwork</figcaption></figure><figure><img src="./${mark}" width="128" height="128" alt="Proposed partial red R on a rounded blue badge"><figcaption>Partial R / rounded badge</figcaption></figure></div>
-<p class="review-colors">Blue #3A4B5F · Red #F6001B</p><p>This is a comparison preview. The left-aligned partial R is now applied to the main website’s header, footer, and favicon for team review.</p><a href="../index.html#election-resources">Return to the homepage →</a></div>
+<p class="review-colors">Blue #3A4B5F · Red #F6001B</p><p>This is a comparison preview. The left-aligned partial R is now applied to the main website’s header, footer, and favicon for team review.</p><a href="../index.html#election-resources">Return to the homepage ${arrowIcon("right")}</a></div>
 </main></body></html>`);
 console.log('Local logo proof: dist/_brand-review/ (excluded from ordinary builds).');

@@ -22,6 +22,14 @@ export function validateMeetingConfig(config) {
   if (firstDay !== secondTuesday(firstYear, firstMonth)) throw Error("Meeting firstDate must be the second Tuesday");
   if (!Number.isInteger(config.startHour) || config.startHour < 0 || config.startHour > 23) throw Error("Meeting startHour must be an integer from 0 to 23");
   if (!config.time?.trim() || !config.confirmedBy?.trim() || !Number.isFinite(Date.parse(config.calendarUpdatedAt))) throw Error("Meeting schedule needs a display time, confirmedBy and calendarUpdatedAt");
+  const speakerDates = new Set();
+  for (const speaker of config.guestSpeakers || []) {
+    if (!validDate(speaker.date) || speakerDates.has(speaker.date) || speaker.date < config.firstDate) throw Error("Guest speakers require unique scheduled dates");
+    const [year, month, day] = speaker.date.split("-").map(Number);
+    if (day !== secondTuesday(year, month)) throw Error("Guest speaker date must identify a scheduled monthly occurrence");
+    if (!speaker.name?.trim() || !speaker.title?.trim() || !speaker.confirmedBy?.trim() || !Number.isFinite(Date.parse(speaker.updatedAt))) throw Error("Guest speakers need a name, title, confirmedBy and updatedAt");
+    speakerDates.add(speaker.date);
+  }
   const seen = new Set();
   for (const entry of config.overrides || []) {
     if (!validDate(entry.date) || seen.has(entry.date)) throw Error("Meeting overrides require unique, real dates");
@@ -51,16 +59,20 @@ function occurrence(config, nominalDate, override) {
   if (!Number.isFinite(offsetHours)) throw Error("Unsupported time zone offset");
   const offset = `${offsetHours < 0 ? "-" : "+"}${String(Math.abs(offsetHours)).padStart(2, "0")}:00`;
   const venue = override?.venue || config.venue, city = override?.city || config.city;
+  const guestSpeaker = override?.status === "canceled" ? null : (config.guestSpeakers || []).find((speaker) => speaker.date === nominalDate) || null;
+  const updatedAt = [override?.updatedAt || config.calendarUpdatedAt, guestSpeaker?.updatedAt].filter(Boolean).sort((a, b) => Date.parse(b) - Date.parse(a))[0];
   return {
+    guestSpeaker,
     date, nominalDate, dateLabel: fullDate.format(day), shortDateLabel: shortDate.format(day),
     monthLabel: months.format(day).toUpperCase(), dayLabel: String(number),
     dateTime: `${date}T${String(hour).padStart(2, "0")}:00:00${offset}`, time: override?.time || config.time,
     venue, city, location: `${venue}, ${city}`, status: override?.status || "scheduled",
-    message: override?.message || "", updatedAt: override?.updatedAt || config.calendarUpdatedAt,
+    message: override?.message || "", updatedAt,
     confirmedBy: override?.confirmedBy || config.confirmedBy,
     originalDateLabel: fullDate.format(new Date(`${nominalDate}T12:00:00Z`)),
   };
 }
+export const guestSpeakerLabel = (meeting) => meeting.guestSpeaker ? `${meeting.guestSpeaker.title} ${meeting.guestSpeaker.name}` : "";
 export const meetingStatusLabel = (meeting) => ({ scheduled: "Next meeting", canceled: "Meeting canceled", changed: "Meeting update", rescheduled: "Meeting rescheduled" })[meeting.status];
 export function retainedMeetingText(meeting, notice) {
   return notice.nominalDate !== meeting.nominalDate ? `The ${notice.originalDateLabel} meeting has been rescheduled to ${notice.dateLabel}. ${notice.message}` : "";
@@ -106,7 +118,7 @@ function eventLines(meeting, uid, updatedAt, recurrenceId) {
     `DTSTART:${stamp(meeting.dateTime)}`, `STATUS:${meeting.status === "canceled" ? "CANCELLED" : "CONFIRMED"}`,
     `SUMMARY:${meeting.status === "canceled" ? "CANCELED: " : ""}Gage County GOP meeting`,
     `LOCATION:${escapeText(meeting.location)}`,
-    `DESCRIPTION:${escapeText(`${meeting.message ? `${meeting.message} ` : ""}Gage County GOP meeting at ${meeting.venue}, ${meeting.city}. Starts at ${meeting.time} Central Time. Check the party website for changes; calendar imports do not subscribe you to alerts.`)}`,
+    `DESCRIPTION:${escapeText(`${meeting.message ? `${meeting.message} ` : ""}${meeting.guestSpeaker ? `Guest speaker: ${guestSpeakerLabel(meeting)}. ` : ""}Gage County GOP meeting at ${meeting.venue}, ${meeting.city}. Starts at ${meeting.time} Central Time. Check the party website for changes; calendar imports do not subscribe you to alerts.`)}`,
     "URL:https://www.gagecountygop.org/", "END:VEVENT"];
 }
 export function meetingCalendar(meeting, updatedAt) {
@@ -124,9 +136,13 @@ export function meetingSeriesCalendar(config) {
     "RRULE:FREQ=MONTHLY;BYDAY=2TU", "SUMMARY:Gage County GOP meeting", `LOCATION:${escapeText(first.location)}`,
     `DESCRIPTION:${escapeText(`Gage County GOP meeting at ${first.venue}, ${first.city}. Starts at ${first.time} Central Time. Check the party website for schedule updates. Calendar imports do not subscribe you to alerts.`)}`,
     "URL:https://www.gagecountygop.org/", "END:VEVENT"];
-  for (const entry of config.overrides || []) {
-    const original = occurrence(config, entry.date);
-    lines.push(...eventLines(occurrence(config, entry.date, entry), seriesUid, entry.updatedAt, original.dateTime));
+  // Speaker announcements are dated exceptions, never part of the recurring master.
+  const exceptions = new Map((config.guestSpeakers || []).map((speaker) => [speaker.date, null]));
+  for (const entry of config.overrides || []) exceptions.set(entry.date, entry);
+  for (const [date, entry] of exceptions) {
+    const original = occurrence(config, date);
+    const meeting = occurrence(config, date, entry);
+    lines.push(...eventLines(meeting, seriesUid, meeting.updatedAt, original.dateTime));
   }
   lines.push("END:VCALENDAR");
   return lines.map(fold).join("\r\n") + "\r\n";

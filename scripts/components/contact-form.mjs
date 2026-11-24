@@ -1,3 +1,4 @@
+import { arrowIcon } from "./link-icons.mjs";
 export function contactTrigger(task, team = "", h) {
   return `data-contact-open="${h(task)}"${team ? ` data-contact-team="${h(team)}"` : ""} aria-haspopup="dialog"`;
 }
@@ -23,7 +24,7 @@ export function renderContactForm(intake, participation, email, h) {
       <div class="contact-honeypot" aria-hidden="true"><label for="contact-website">Leave this field empty</label><input id="contact-website" name="website" tabindex="-1" autocomplete="off"></div>
     </div>
     <div class="contact-privacy-note"><p>${h(intake.privacy)}</p><p data-contact-consent>Your chosen channels apply to ongoing notices. “Reply to this request only” does not sign you up for notices. You can update your details or stop notices here.</p><p>${h(intake.reviewPolicy)}</p><p><a href="./privacy.html" target="_blank" rel="noopener noreferrer">Read the privacy notice (opens in a new tab)</a></p></div>
-    <div class="contact-submit-row"><button class="button" type="submit" data-contact-submit>Send request <span aria-hidden="true">→</span></button><span class="contact-progress" role="status" data-contact-progress></span></div>
+    <div class="contact-submit-row"><button class="button" type="submit" data-contact-submit>Send request ${arrowIcon("right")}</button><span class="contact-progress" role="status" data-contact-progress></span></div>
     <p class="contact-field-help">This is separate from voter registration and committee appointments. For help, <a href="mailto:${h(email)}">email the county party</a>.</p>
   </form></div>
   <section class="contact-receipt" data-contact-receipt hidden><p class="eyebrow">Saved for review</p><h3 tabindex="-1" data-contact-receipt-title>Request received.</h3><p>Your request has been saved for the Gage County GOP team to review. Existing contact details and notice preferences are updated after review.</p><p>For a question about your request, <a href="mailto:${h(email)}">email the county party</a>. Check the website for current meeting information.</p><button type="button" class="button" data-contact-close>Done</button></section>

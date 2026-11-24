@@ -4,6 +4,7 @@ import fs from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
 import vm from "node:vm";
+import { renderMeetingCard, renderMeetingStrip } from "./components/meeting-card.mjs";
 import { nextMeeting, meetingNotice, retainedMeetingText, meetingCalendar, meetingSeriesCalendar, validateMeetingConfig } from "../src/meeting.mjs";
 const root = path.resolve(import.meta.dirname, ".."),
   dist = path.join(root, "dist");
@@ -151,6 +152,11 @@ test("every website page has landmarks, one h1, language, and image alternatives
     assert.equal((html.match(/<h1>/g) || []).length, 1);
     assert.match(html, /<html\b[^>]*\blang="en"[^>]*>/);
     assert.match(html, /<main id="main">/);
+    assert.doesNotMatch(html, /[↗→↓↑←]/, "Use vector link icons, not platform-dependent arrow characters");
+    for (const icon of html.matchAll(/<svg\b[^>]*aria-hidden="true"[^>]*>/g)) {
+      assert.match(icon[0], /focusable="false"/);
+      assert.match(icon[0], /stroke="currentColor"/);
+    }
     for (const image of html.matchAll(/<img\b[^>]+>/g))
       assert.match(image[0], /alt="[^"]*"/);
 
@@ -354,7 +360,8 @@ test("Monthly import uses a local-time series with daylight saving transitions",
     assert.match(read(file), /Add monthly meetings/);
     assert.ok(read(file).includes(`href="${link}" type="text/calendar" download="gage-county-gop-meetings.ics"`));
   }
-  const series = read(link.slice(2));
+  const config = JSON.parse(fs.readFileSync(path.join(root, "src/content.json"))).meeting;
+  const series = meetingSeriesCalendar({ ...config, guestSpeakers: [] });
   assert.equal((series.match(/BEGIN:VEVENT/g) || []).length, 1);
   assert.match(series, /DTSTART;TZID=America\/Chicago:20261208T190000\r\n/);
   assert.match(series, /RRULE:FREQ=MONTHLY;BYDAY=2TU\r\n/);
@@ -498,7 +505,7 @@ test("dated meeting changes persist through the affected day and calendars keep 
 });
 
 test("meeting configuration rejects ambiguous overrides and resolves the actual rescheduled local hour", () => {
-  const base = JSON.parse(fs.readFileSync(path.join(root, "src/content.json"))).meeting;
+  const base = { ...JSON.parse(fs.readFileSync(path.join(root, "src/content.json"))).meeting, guestSpeakers: [] };
   const override = { date: "2027-03-09", status: "rescheduled", newDate: "2027-03-14", startHour: 1, time: "1 a.m.", message: "Test only", confirmedBy: "Test fixture", updatedAt: "2027-03-01T12:00:00Z" };
   assert.equal(nextMeeting({ ...base, overrides: [override] }, new Date("2027-03-10T12:00:00Z")).dateTime, "2027-03-14T01:00:00-06:00");
   assert.throws(() => nextMeeting({ ...base, overrides: [{ ...override, startHour: 2 }] }, new Date("2027-03-10T12:00:00Z")), /does not exist/);
@@ -537,4 +544,37 @@ test("participation routes stay consistent and private intake administration sta
   assert.doesNotMatch(read("updates.html"), /docs\.google\.com\/forms/);
   assert.match(read("updates.html"), /separate from voter registration/);
   assert.ok(read("government.html").indexOf("Start with your question.") < read("government.html").indexOf("Different responsibilities."));
+});
+
+
+test("guest speakers belong to one meeting and follow reschedules without leaking into the recurring series", () => {
+  const config = JSON.parse(fs.readFileSync(path.join(root, "src/content.json"))).meeting;
+  const now = new Date("2026-12-01T12:00:00Z");
+  const december = nextMeeting(config, now);
+  assert.equal(december.guestSpeaker.name, "Mike Hilgers");
+  assert.equal(nextMeeting(config, new Date("2026-12-09T06:00:00Z")).guestSpeaker, null);
+  const noSpeaker = nextMeeting({ ...config, guestSpeakers: [] }, now);
+  const options = { h, meetingLink: () => "", allMeetingsLink: () => "", schedule: "" };
+  assert.match(renderMeetingCard(noSpeaker, options), /data-meeting-speaker hidden/);
+  assert.match(renderMeetingStrip(noSpeaker, h), /data-meeting-strip-speaker hidden/);
+  assert.doesNotMatch(renderMeetingCard(noSpeaker, options), /Mike Hilgers/);
+  for (const file of ["index.html", "events.html", "contact.html"]) {
+    if (file !== "contact.html") assert.match(read(file), /data-speaker-name>Mike Hilgers/);
+    assert.match(read(file), /data-meeting-strip-speaker-name>Nebraska Attorney General Mike Hilgers/);
+  }
+  const change = { date: "2026-12-08", status: "rescheduled", newDate: "2026-12-10", message: "Test reschedule", confirmedBy: "Test", updatedAt: "2026-12-01T12:00:00Z" };
+  assert.equal(nextMeeting({ ...config, overrides: [change] }, now).guestSpeaker.name, "Mike Hilgers");
+  const canceled = { ...config, overrides: [{ ...change, status: "canceled", newDate: undefined }] };
+  assert.equal(nextMeeting(canceled, now).guestSpeaker, null);
+  assert.doesNotMatch(meetingSeriesCalendar(canceled), /Mike Hilgers/);
+  assert.match(meetingCalendar(december).replaceAll("\r\n ", ""), /Guest speaker: Nebraska Attorney General Mike Hilgers/);
+  const events = read("calendar/gage-county-gop-meetings.ics").replaceAll("\r\n ", "").split("BEGIN:VEVENT").slice(1);
+  assert.equal(events.length, 2);
+  assert.doesNotMatch(events[0], /Guest speaker|Mike Hilgers/);
+  assert.match(events[1], /RECURRENCE-ID:20261209T010000Z/);
+  assert.match(events[1], /Guest speaker: Nebraska Attorney General Mike Hilgers/);
+  const speaker = config.guestSpeakers[0];
+  for (const guestSpeakers of [[speaker, speaker], [{ ...speaker, date: "2026-12-09" }], [{ ...speaker, name: "" }]]) {
+    assert.throws(() => validateMeetingConfig({ ...config, guestSpeakers }));
+  }
 });
