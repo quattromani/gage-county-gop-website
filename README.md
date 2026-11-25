@@ -11,17 +11,19 @@ A standalone review revision of the county party's Squarespace website, with its
 Use Node 22 or later. The site has no runtime or build package dependencies.
 
 ```sh
-npm run check
+SITE_BASE_PATH=/ npm run check
 python3 -m http.server 4187 --directory dist
 ```
 
-Open http://localhost:4187/. The build produces static HTML in dist/. GitHub Actions runs the same checks and publishes that directory through Pages. Configure Settings → Pages → Source → GitHub Actions. No custom domain is assigned.
+Open http://localhost:4187/. The build produces static HTML in dist/. The command-local `SITE_BASE_PATH=/` assignment gives the missing-page template a root URL base for this local server; it does not change saved production configuration. Inspect that template directly at http://localhost:4187/404.html. Python's basic server does not reproduce Pages' custom missing-page routing.
+
+For the Pages build, use plain `npm run check`. It derives the missing-page URL base from `publicBaseUrl` in src/content.json. GitHub Actions uses that command and publishes dist/ through Pages. Configure Settings → Pages → Source → GitHub Actions. No custom domain is assigned. Ordinary pages retain relative URLs in both modes.
 
 ## Source ownership
 
 | Location | Responsibility |
 | --- | --- |
-| src/content.json | Shared public contact, leadership, homepage links, and meeting schedule/overrides |
+| src/content.json | Preview publicBaseUrl, selected branding/palette and donation route, shared public contact, leadership, homepage links, and meeting schedule/overrides |
 | src/participation.json | Owner-supplied committee teams and general descriptions |
 | src/policies.json | Privacy/accessibility wording, links, and review date |
 | src/contact-intake.json | Public submission endpoint and notice wording version; no private contact records |
@@ -47,9 +49,9 @@ The platform at `platform.html` renders the captured public wording from `source
 
 ## Voter-card import
 
-The imported source was captured from the current local gage-county-gop working tree on October 26, 2026, including uncommitted changes. VOTER-CARD-IMPORT.json records the parent commit and exact imported hashes. Its output includes 83 candidate listings, judicial retention questions, five calendar events, PDF/image downloads, a sticker, and offline saving.
+The imported source was captured from the local gage-county-gop working tree on October 26, 2026, including uncommitted changes. VOTER-CARD-IMPORT.json records the parent commit and exact imported hashes. This completed-2026 reference includes 83 candidate listings, judicial retention questions, five calendar events, PDF/image downloads, and a sticker.
 
-The only publication-source adaptation is its preview base URL. The website build adds a return link and Party Reveal navigation, noindex metadata, and a new cache fingerprint to the generated card. The original publication project and deployment are untouched. Only /vote-2026/ has an offline worker.
+The only publication-source adaptation is its preview base URL. The website build adds a return link and Party Reveal navigation, noindex metadata, and a new cache fingerprint to the generated card. The original publication project and deployment are untouched. Only /vote-2026/ has an offline worker. PDFs can be saved directly for offline use. The worker can serve previously cached public copies, but the current card offers no new-save controls and does not provide a first-visit offline copy. Contact requests are never part of that cache.
 
 To refresh, first complete and validate candidate/artifact changes in the original project. Copy the required src/ tree, build-gop-web-card.mjs, relevant output/pdf downloads, and provenance into vendor/voter-card. Record upstream status and file hashes, then retain the preview publicBaseUrl in publication.json. Run npm run check and inspect the published card. Avoid maintaining candidate corrections in this copy.
 
@@ -75,7 +77,7 @@ Navigation and homepage ordering prioritize attending, helping, and keeping cont
 
 ## Executive preview readiness
 
-Privacy and Accessibility are linked from the secondary footer alongside Local government and Contact. Their wording reflects actual service use and known limits. See [November 21 preview readiness](project-docs/EXECUTIVE-PREVIEW-READINESS-2026-11-21.md) for the tested artifact, responsive/automated accessibility evidence, and remaining official-launch work. The review is local; it does not deploy a new Pages release or replace Squarespace.
+Privacy and Accessibility are linked from the secondary footer alongside Local government and Contact. Their wording reflects actual service use and known limits. See [current validation status](project-docs/VALIDATION.md#current-status-november-24-2026) for the audited artifact, verification evidence, and unresolved launch work. The review records public preview e4225ca and the subsequent scoped 404 repair; check the [Pages workflow](https://github.com/quattromani/gage-county-gop-website/actions/workflows/pages.yml) for release status. The [November 21 preview readiness report](project-docs/EXECUTIVE-PREVIEW-READINESS-2026-11-21.md) remains a historical record of that earlier review. Neither review replaces Squarespace or provides blanket official-launch clearance.
 
 ## Logo comparison and 2026 homepage references
 

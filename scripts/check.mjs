@@ -9,7 +9,9 @@ import { nextMeeting, meetingNotice, retainedMeetingText, meetingCalendar, meeti
 const root = path.resolve(import.meta.dirname, ".."),
   dist = path.join(root, "dist");
 const read = (file) => fs.readFileSync(path.join(dist, file), "utf8");
-const currentMeeting = nextMeeting(JSON.parse(fs.readFileSync(path.join(root, "src/content.json"))).meeting);
+const content = JSON.parse(fs.readFileSync(path.join(root, "src/content.json")));
+const currentMeeting = nextMeeting(content.meeting);
+const notFoundBasePath = process.env.SITE_BASE_PATH ?? new URL(content.publicBaseUrl).pathname;
 function files(dir) {
   return fs
     .readdirSync(dir, { withFileTypes: true })
@@ -32,11 +34,12 @@ test("all local page links, assets, and fragment destinations resolve under a re
     for (const m of html.matchAll(/(?:href|src)="([^"<>]+)"/g)) {
       const url = m[1];
       if (/^(https?:|mailto:|tel:|webcal:|data:)/.test(url)) continue;
-      assert.ok(
-        !url.startsWith("/"),
-        "root-relative path breaks Pages: " + url,
-      );
-      const [relative, fragment] = url.split("#");
+      let [relative, fragment] = url.split("#");
+      if (url.startsWith("/")) {
+        assert.equal(path.relative(dist, file), "404.html", "ordinary pages must retain relative paths: " + url);
+        assert.ok(relative.startsWith(notFoundBasePath), "404 URL escapes the deployment base: " + url);
+        relative = relative.slice(notFoundBasePath.length);
+      }
       let dest = path.resolve(
         path.dirname(file),
         decodeURIComponent(relative.split("?")[0] || path.basename(file)),
@@ -51,6 +54,36 @@ test("all local page links, assets, and fragment destinations resolve under a re
             .includes(`id="${decodeURIComponent(fragment)}"`),
           `${dest} lacks ${fragment}`,
         );
+    }
+  }
+});
+test("404 assets, navigation, and fragments resolve from shallow and nested missing URLs", () => {
+  const html = read("404.html");
+  const origin = "https://example.test";
+  const urls = [...html.matchAll(/(?:href|src)="([^"<>]+)"/g)].map(match => match[1]);
+  for (const missing of ["missing.html", "missing/deep/page.html", "missing/deep/"]) {
+    const requested = new URL(notFoundBasePath + missing, origin);
+    const declaredBase = html.match(/<base\b[^>]*href="([^"<>]+)"/);
+    const effectiveBase = declaredBase ? new URL(declaredBase[1], requested) : requested;
+    const resolved = urls.filter(url => !/^(https?:|mailto:|tel:|webcal:|data:)/.test(url)).map(url => {
+      const actual = new URL(url, effectiveBase);
+      assert.equal(actual.origin, origin);
+      if (url.startsWith("#")) {
+        assert.equal(actual.pathname, requested.pathname, "fragment must remain on the displayed missing page");
+        assert.ok(html.includes(`id="${actual.hash.slice(1)}"`));
+      } else {
+        assert.ok(actual.pathname.startsWith(notFoundBasePath));
+        const relative = decodeURIComponent(actual.pathname.slice(notFoundBasePath.length));
+        const destination = path.resolve(dist, relative);
+        assert.ok(fs.existsSync(destination), `${missing}: ${url} resolves to missing ${relative}`);
+        if (actual.hash && destination.endsWith(".html")) {
+          assert.ok(fs.readFileSync(destination, "utf8").includes(`id="${actual.hash.slice(1)}"`));
+        }
+      }
+      return actual;
+    });
+    for (const required of ["index.html", "style.css", "site.js", "contact-form.js", "favicon.svg"]) {
+      assert.ok(resolved.some(url => url.pathname === notFoundBasePath + required), `${missing}: missing working ${required}`);
     }
   }
 });
@@ -388,7 +421,8 @@ test("donation and completed-election references preserve the intended destinati
   for (const file of htmlFiles.filter((f) => !f.includes("vote-2026"))) {
     const html = fs.readFileSync(file, "utf8");
     const headerNav = html.match(/<nav class="desktop-nav"[^>]*>(.*?)<\/nav>/)[1];
-    assert.match(headerNav, /href="\.\/index\.html#donate">Donate<\/a>$/);
+    const prefix = path.basename(file) === "404.html" ? notFoundBasePath : "./";
+    assert.ok(headerNav.endsWith(`href="${prefix}index.html#donate">Donate</a>`));
   }
   const { renderElectionBand } = await import("./components/election-band.mjs");
   assert.match(renderElectionBand(content, ""), /Keep your voter card close/);
@@ -416,7 +450,9 @@ test("government guide has sourced officeholders and contact routes with homepag
     const html = fs.readFileSync(file, "utf8");
     const header = html.match(/<header class="site-header">(.*?)<\/header>/)[1];
     assert.doesNotMatch(header, /government\.html/);
-    assert.match(html, /<a href="\.\/government\.html"(?: aria-current="page")?>Local government<\/a>/);
+    const prefix = path.basename(file) === "404.html" ? notFoundBasePath : "./";
+    const governmentLink = html.match(/<a href="([^"]+)"(?: aria-current="page")?>Local government<\/a>/);
+    assert.equal(governmentLink?.[1], `${prefix}government.html`);
   }
   const home = read("index.html");
   const meetingPosition = home.indexOf('class="meeting-card"');
@@ -531,7 +567,8 @@ test("participation routes stay consistent and private intake administration sta
     const nav = html.match(/<nav class="desktop-nav"[^>]*>(.*?)<\/nav>/)[1];
     assert.deepEqual([...nav.matchAll(/>([^<]+)<\/a>/g)].map((m) => m[1]), ["Meetings &amp; events", "Get involved", "About", "Resources", "Donate"]);
     assert.match(html, /data-meeting-strip/);
-    assert.match(html, /href="\.\/updates\.html"/);
+    const prefix = path.basename(file) === "404.html" ? notFoundBasePath : "./";
+    assert.ok(html.includes(`href="${prefix}updates.html"`));
   }
   const home = read("index.html");
   const order = ['class="hero"', 'class="wrap section home-meeting"', 'class="quick-strip"', 'class="wrap section home-community"', 'class="stay-informed soft-section"', 'class="government-banner"', 'class="donate-band"'];

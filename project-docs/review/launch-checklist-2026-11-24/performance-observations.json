@@ -1,0 +1,247 @@
+{
+  "conditions": "One observation per viewport on actual HTTPS delivery, empty browser cache, 150ms simulated latency, 1.6Mbps download and 4x CPU slowdown. Laboratory observations only; no field INP or percentile claims.",
+  "field_measurements": false,
+  "observations": [
+    {
+      "sample": 1,
+      "width": 390,
+      "lcp": {
+        "ms": 2624,
+        "size": 40560,
+        "tag": "IMG",
+        "url": "https://quattromani.github.io/gage-county-gop-website/assets/web/places/gage-county-courthouse-memorial-day-2012.webp"
+      },
+      "cls": 0,
+      "resources": [
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/style.css?v=5595c24fe94d",
+          "bytes": 12138,
+          "ms": 363.30000001192093
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/site.js?v=b365ac87f5d5",
+          "bytes": 3518,
+          "ms": 265.5
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/assets/web/brand/gage-county-gop-mark.svg?v=34c885b7fb37",
+          "bytes": 775,
+          "ms": 216.20000004768372
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/contact-form.js?v=5c3484ea85a1",
+          "bytes": 3889,
+          "ms": 268.7000000476837
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/assets/web/brand/united-states-flag.png",
+          "bytes": 2376,
+          "ms": 252.5
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/assets/web/places/gage-county-courthouse-memorial-day-2012.webp",
+          "bytes": 386882,
+          "ms": 2256.300000011921
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/meeting.mjs?v=4978daa68aa8",
+          "bytes": 4037,
+          "ms": 195.39999997615814
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/favicon.svg?v=34c885b7fb37",
+          "bytes": 775,
+          "ms": 165.89999997615814
+        }
+      ]
+    },
+    {
+      "sample": 1,
+      "width": 1280,
+      "lcp": {
+        "ms": 6160,
+        "size": 276264,
+        "tag": "IMG",
+        "url": "https://quattromani.github.io/gage-county-gop-website/assets/web/places/gage-county-courthouse-memorial-day-2012.webp"
+      },
+      "cls": 0,
+      "resources": [
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/style.css?v=5595c24fe94d",
+          "bytes": 12138,
+          "ms": 362.5
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/site.js?v=b365ac87f5d5",
+          "bytes": 3518,
+          "ms": 272
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/contact-form.js?v=5c3484ea85a1",
+          "bytes": 3889,
+          "ms": 242.60000002384186
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/assets/web/brand/gage-county-gop-mark.svg?v=34c885b7fb37",
+          "bytes": 775,
+          "ms": 203.80000001192093
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/assets/web/brand/united-states-flag.png",
+          "bytes": 2376,
+          "ms": 248.5999999642372
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/assets/web/places/gage-county-courthouse-memorial-day-2012.webp",
+          "bytes": 386882,
+          "ms": 5808.100000023842
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/assets/web/events/2026-wilber-czech-festival-parade.webp",
+          "bytes": 831950,
+          "ms": 8167.5
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/assets/web/events/2026-county-convention-02.webp",
+          "bytes": 71972,
+          "ms": 1613.9000000357628
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/assets/web/events/2026-county-fair-booth.webp",
+          "bytes": 372846,
+          "ms": 5871.699999988079
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/meeting.mjs?v=4978daa68aa8",
+          "bytes": 4037,
+          "ms": 262
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/favicon.svg?v=34c885b7fb37",
+          "bytes": 775,
+          "ms": 161.69999998807907
+        }
+      ]
+    },
+    {
+      "sample": 2,
+      "width": 390,
+      "lcp": {
+        "ms": 2632,
+        "url": "https://quattromani.github.io/gage-county-gop-website/assets/web/places/gage-county-courthouse-memorial-day-2012.webp",
+        "tag": "IMG"
+      },
+      "cls": 0,
+      "resources": [
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/style.css?v=5595c24fe94d",
+          "bytes": 12138,
+          "ms": 344.4000000357628
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/site.js?v=b365ac87f5d5",
+          "bytes": 3518,
+          "ms": 247.5999999642372
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/assets/web/brand/gage-county-gop-mark.svg?v=34c885b7fb37",
+          "bytes": 775,
+          "ms": 210.69999998807907
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/contact-form.js?v=5c3484ea85a1",
+          "bytes": 3889,
+          "ms": 260.19999998807907
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/assets/web/brand/united-states-flag.png",
+          "bytes": 2376,
+          "ms": 254.80000001192093
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/assets/web/places/gage-county-courthouse-memorial-day-2012.webp",
+          "bytes": 386882,
+          "ms": 2247.2000000476837
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/meeting.mjs?v=4978daa68aa8",
+          "bytes": 4037,
+          "ms": 196.69999998807907
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/favicon.svg?v=34c885b7fb37",
+          "bytes": 775,
+          "ms": 163.69999998807907
+        }
+      ]
+    },
+    {
+      "sample": 2,
+      "width": 1280,
+      "lcp": {
+        "ms": 6184,
+        "url": "https://quattromani.github.io/gage-county-gop-website/assets/web/places/gage-county-courthouse-memorial-day-2012.webp",
+        "tag": "IMG"
+      },
+      "cls": 0,
+      "resources": [
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/style.css?v=5595c24fe94d",
+          "bytes": 12138,
+          "ms": 363.60000002384186
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/site.js?v=b365ac87f5d5",
+          "bytes": 3518,
+          "ms": 255.89999997615814
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/contact-form.js?v=5c3484ea85a1",
+          "bytes": 3889,
+          "ms": 263.60000002384186
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/assets/web/brand/gage-county-gop-mark.svg?v=34c885b7fb37",
+          "bytes": 775,
+          "ms": 203.30000001192093
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/assets/web/brand/united-states-flag.png",
+          "bytes": 2376,
+          "ms": 249.80000001192093
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/assets/web/places/gage-county-courthouse-memorial-day-2012.webp",
+          "bytes": 386882,
+          "ms": 5829.5
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/assets/web/events/2026-wilber-czech-festival-parade.webp",
+          "bytes": 831950,
+          "ms": 8174
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/assets/web/events/2026-county-convention-02.webp",
+          "bytes": 71972,
+          "ms": 1604.9000000357628
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/assets/web/events/2026-county-fair-booth.webp",
+          "bytes": 372846,
+          "ms": 5872
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/meeting.mjs?v=4978daa68aa8",
+          "bytes": 4037,
+          "ms": 258.19999998807907
+        },
+        {
+          "url": "https://quattromani.github.io/gage-county-gop-website/favicon.svg?v=34c885b7fb37",
+          "bytes": 775,
+          "ms": 172.69999998807907
+        }
+      ]
+    }
+  ],
+  "implementation_scope": "Image changes deferred; these unchanged homepage bytes were measured before the404repair."
+}

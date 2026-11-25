@@ -1,0 +1,520 @@
+{
+  "scope": "Read-only public-preview review before the approved404repair; normal page bytes are unchanged by the repair.",
+  "base_commit": "e4225ca080d948604c8d519ac7af5e23587a80f2",
+  "observed_at": "2026-11-25T02:11:24.975Z",
+  "browser": "158.0.8127.38",
+  "routes": [
+    {
+      "file": "404.html",
+      "status": 200,
+      "matched_build": true,
+      "axe_version": "4.10.3",
+      "axe_violations": [],
+      "manual_checks": []
+    },
+    {
+      "file": "about.html",
+      "status": 200,
+      "matched_build": true,
+      "axe_version": "4.10.3",
+      "axe_violations": [],
+      "manual_checks": []
+    },
+    {
+      "file": "accessibility.html",
+      "status": 200,
+      "matched_build": true,
+      "axe_version": "4.10.3",
+      "axe_violations": [],
+      "manual_checks": []
+    },
+    {
+      "file": "committees.html",
+      "status": 200,
+      "matched_build": true,
+      "axe_version": "4.10.3",
+      "axe_violations": [],
+      "manual_checks": []
+    },
+    {
+      "file": "constitution.html",
+      "status": 200,
+      "matched_build": true,
+      "axe_version": "4.10.3",
+      "axe_violations": [],
+      "manual_checks": []
+    },
+    {
+      "file": "contact.html",
+      "status": 200,
+      "matched_build": true,
+      "axe_version": "4.10.3",
+      "axe_violations": [],
+      "manual_checks": []
+    },
+    {
+      "file": "endorsements.html",
+      "status": 200,
+      "matched_build": true,
+      "axe_version": "4.10.3",
+      "axe_violations": [],
+      "manual_checks": []
+    },
+    {
+      "file": "events.html",
+      "status": 200,
+      "matched_build": true,
+      "axe_version": "4.10.3",
+      "axe_violations": [],
+      "manual_checks": []
+    },
+    {
+      "file": "government.html",
+      "status": 200,
+      "matched_build": true,
+      "axe_version": "4.10.3",
+      "axe_violations": [],
+      "manual_checks": [
+        {
+          "id": "color-contrast",
+          "nodes": 6
+        }
+      ]
+    },
+    {
+      "file": "index.html",
+      "status": 200,
+      "matched_build": true,
+      "axe_version": "4.10.3",
+      "axe_violations": [],
+      "manual_checks": [
+        {
+          "id": "color-contrast",
+          "nodes": 4
+        }
+      ]
+    },
+    {
+      "file": "platform.html",
+      "status": 200,
+      "matched_build": true,
+      "axe_version": "4.10.3",
+      "axe_violations": [],
+      "manual_checks": []
+    },
+    {
+      "file": "privacy.html",
+      "status": 200,
+      "matched_build": true,
+      "axe_version": "4.10.3",
+      "axe_violations": [],
+      "manual_checks": []
+    },
+    {
+      "file": "resources.html",
+      "status": 200,
+      "matched_build": true,
+      "axe_version": "4.10.3",
+      "axe_violations": [],
+      "manual_checks": []
+    },
+    {
+      "file": "updates.html",
+      "status": 200,
+      "matched_build": true,
+      "axe_version": "4.10.3",
+      "axe_violations": [],
+      "manual_checks": []
+    },
+    {
+      "file": "vote-2026/",
+      "status": 200,
+      "matched_build": true,
+      "axe_version": "4.10.3",
+      "axe_violations": [
+        {
+          "id": "region",
+          "impact": "moderate",
+          "description": "Ensure all page content is contained by landmarks",
+          "nodes": [
+            {
+              "target": [
+                "a[href$=\"#candidates\"]"
+              ],
+              "summary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+            }
+          ]
+        }
+      ],
+      "manual_checks": []
+    }
+  ],
+  "responsive": [
+    {
+      "width": 320,
+      "file": "index.html",
+      "overflow": false,
+      "scrollWidth": 320,
+      "viewport": 320,
+      "images_not_loaded_at_initial_viewport": 4
+    },
+    {
+      "width": 320,
+      "file": "events.html",
+      "overflow": false,
+      "scrollWidth": 320,
+      "viewport": 320,
+      "images_not_loaded_at_initial_viewport": 14
+    },
+    {
+      "width": 320,
+      "file": "committees.html",
+      "overflow": false,
+      "scrollWidth": 320,
+      "viewport": 320,
+      "images_not_loaded_at_initial_viewport": 0
+    },
+    {
+      "width": 320,
+      "file": "constitution.html",
+      "overflow": false,
+      "scrollWidth": 320,
+      "viewport": 320,
+      "images_not_loaded_at_initial_viewport": 5
+    },
+    {
+      "width": 320,
+      "file": "government.html",
+      "overflow": false,
+      "scrollWidth": 320,
+      "viewport": 320,
+      "images_not_loaded_at_initial_viewport": 0
+    },
+    {
+      "width": 320,
+      "file": "privacy.html",
+      "overflow": false,
+      "scrollWidth": 320,
+      "viewport": 320,
+      "images_not_loaded_at_initial_viewport": 0
+    },
+    {
+      "width": 320,
+      "file": "updates.html",
+      "overflow": false,
+      "scrollWidth": 320,
+      "viewport": 320,
+      "images_not_loaded_at_initial_viewport": 0
+    },
+    {
+      "width": 390,
+      "file": "index.html",
+      "overflow": false,
+      "scrollWidth": 390,
+      "viewport": 390,
+      "images_not_loaded_at_initial_viewport": 4
+    },
+    {
+      "width": 390,
+      "file": "events.html",
+      "overflow": false,
+      "scrollWidth": 390,
+      "viewport": 390,
+      "images_not_loaded_at_initial_viewport": 14
+    },
+    {
+      "width": 390,
+      "file": "committees.html",
+      "overflow": false,
+      "scrollWidth": 390,
+      "viewport": 390,
+      "images_not_loaded_at_initial_viewport": 0
+    },
+    {
+      "width": 390,
+      "file": "constitution.html",
+      "overflow": false,
+      "scrollWidth": 390,
+      "viewport": 390,
+      "images_not_loaded_at_initial_viewport": 5
+    },
+    {
+      "width": 390,
+      "file": "government.html",
+      "overflow": false,
+      "scrollWidth": 390,
+      "viewport": 390,
+      "images_not_loaded_at_initial_viewport": 0
+    },
+    {
+      "width": 390,
+      "file": "privacy.html",
+      "overflow": false,
+      "scrollWidth": 390,
+      "viewport": 390,
+      "images_not_loaded_at_initial_viewport": 0
+    },
+    {
+      "width": 390,
+      "file": "updates.html",
+      "overflow": false,
+      "scrollWidth": 390,
+      "viewport": 390,
+      "images_not_loaded_at_initial_viewport": 0
+    },
+    {
+      "width": 768,
+      "file": "index.html",
+      "overflow": false,
+      "scrollWidth": 768,
+      "viewport": 768,
+      "images_not_loaded_at_initial_viewport": 4
+    },
+    {
+      "width": 768,
+      "file": "events.html",
+      "overflow": false,
+      "scrollWidth": 768,
+      "viewport": 768,
+      "images_not_loaded_at_initial_viewport": 10
+    },
+    {
+      "width": 768,
+      "file": "committees.html",
+      "overflow": false,
+      "scrollWidth": 768,
+      "viewport": 768,
+      "images_not_loaded_at_initial_viewport": 0
+    },
+    {
+      "width": 768,
+      "file": "constitution.html",
+      "overflow": false,
+      "scrollWidth": 768,
+      "viewport": 768,
+      "images_not_loaded_at_initial_viewport": 5
+    },
+    {
+      "width": 768,
+      "file": "government.html",
+      "overflow": false,
+      "scrollWidth": 768,
+      "viewport": 768,
+      "images_not_loaded_at_initial_viewport": 0
+    },
+    {
+      "width": 768,
+      "file": "privacy.html",
+      "overflow": false,
+      "scrollWidth": 768,
+      "viewport": 768,
+      "images_not_loaded_at_initial_viewport": 0
+    },
+    {
+      "width": 768,
+      "file": "updates.html",
+      "overflow": false,
+      "scrollWidth": 768,
+      "viewport": 768,
+      "images_not_loaded_at_initial_viewport": 0
+    },
+    {
+      "width": 1280,
+      "file": "index.html",
+      "overflow": false,
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "images_not_loaded_at_initial_viewport": 1
+    },
+    {
+      "width": 1280,
+      "file": "events.html",
+      "overflow": false,
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "images_not_loaded_at_initial_viewport": 7
+    },
+    {
+      "width": 1280,
+      "file": "committees.html",
+      "overflow": false,
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "images_not_loaded_at_initial_viewport": 0
+    },
+    {
+      "width": 1280,
+      "file": "constitution.html",
+      "overflow": false,
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "images_not_loaded_at_initial_viewport": 5
+    },
+    {
+      "width": 1280,
+      "file": "government.html",
+      "overflow": false,
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "images_not_loaded_at_initial_viewport": 0
+    },
+    {
+      "width": 1280,
+      "file": "privacy.html",
+      "overflow": false,
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "images_not_loaded_at_initial_viewport": 0
+    },
+    {
+      "width": 1280,
+      "file": "updates.html",
+      "overflow": false,
+      "scrollWidth": 1280,
+      "viewport": 1280,
+      "images_not_loaded_at_initial_viewport": 0
+    }
+  ],
+  "visible_images_loaded_after_scrolling": true,
+  "interaction_results": {
+    "mobileMenu": {
+      "closed": true,
+      "focusReturned": true
+    },
+    "dialogInitialFocus": "contact-title",
+    "emptyValidation": {
+      "visible": true,
+      "summaryFocused": true,
+      "invalidCount": 3,
+      "submissions": 0
+    },
+    "mockSuccess": {
+      "receiptVisible": true,
+      "focused": true,
+      "reusedId": true,
+      "realSubmissions": 0
+    },
+    "dialogEscape": {
+      "closed": true,
+      "active": "add"
+    },
+    "teamPrefill": {
+      "purpose": "interest",
+      "team": "Candidate Survey Team",
+      "choice": "reply"
+    },
+    "stopForm": {
+      "open": true,
+      "task": "stop",
+      "replyHidden": true
+    },
+    "governmentMap": {
+      "highlighted": true,
+      "status": "Selected District 3: Erich Tiemann."
+    }
+  },
+  "simulated_failure_retained_input": true,
+  "real_contact_submissions": 0,
+  "outbound_links_checked": 36,
+  "outbound_links_non_success": [],
+  "contact_service_metadata": {
+    "service": "Gage County GOP contact intake",
+    "version": "contact-notices-v1"
+  },
+  "secret_pattern_review": {
+    "files": 60,
+    "high_signal_patterns": [
+      "private-key-header",
+      "aws-access-key",
+      "github-token",
+      "stripe-secret-key",
+      "google-oauth-secret"
+    ],
+    "matches": [],
+    "recent_history_commits_limit": 100,
+    "history_matches": [],
+    "limit": "Pattern scan only; not a complete credential or incident audit."
+  },
+  "initial_missing_page_results": [
+    {
+      "path": "missing-page-review.html",
+      "status": 404,
+      "title": "Page not found | Gage County GOP",
+      "heading": "That page isn\u2019t here.",
+      "stylesheet": [
+        {
+          "href": "https://quattromani.github.io/gage-county-gop-website/style.css?v=5595c24fe94d",
+          "loaded": true
+        }
+      ],
+      "homeLink": "https://quattromani.github.io/gage-county-gop-website/index.html",
+      "missingImages": []
+    },
+    {
+      "path": "missing/deep/page.html",
+      "status": 404,
+      "title": "Page not found | Gage County GOP",
+      "heading": "That page isn\u2019t here.",
+      "stylesheet": [
+        {
+          "href": "https://quattromani.github.io/gage-county-gop-website/missing/deep/style.css?v=5595c24fe94d",
+          "loaded": true
+        }
+      ],
+      "homeLink": "https://quattromani.github.io/gage-county-gop-website/missing/deep/index.html",
+      "missingImages": [
+        "https://quattromani.github.io/gage-county-gop-website/missing/deep/assets/web/brand/gage-county-gop-mark.svg?v=34c885b7fb37",
+        "https://quattromani.github.io/gage-county-gop-website/missing/deep/assets/web/brand/united-states-flag.png",
+        "https://quattromani.github.io/gage-county-gop-website/missing/deep/assets/web/brand/gage-county-gop-mark.svg?v=34c885b7fb37"
+      ]
+    }
+  ],
+  "voter_card_skip_link_manual_review": {
+    "text": "Skip to candidates",
+    "hiddenByPosition": true,
+    "targetExists": true,
+    "targetInsideMain": true,
+    "focused": true,
+    "hash": "#candidates"
+  },
+  "voter_card_fresh_visitor_offline": {
+    "scope": "https://quattromani.github.io/gage-county-gop-website/vote-2026/",
+    "cacheKeys": [],
+    "saveControls": [],
+    "freshVisitorStatus": 503,
+    "freshVisitorText": "This file is not saved offline. Reconnect to view it, or open a PDF you previously downloaded."
+  },
+  "no_javascript_fallbacks": [
+    {
+      "file": "updates.html",
+      "status": 200,
+      "emailLinks": 2,
+      "text": [
+        "email/text preferences",
+        "email notices, text notices, or both",
+        "email the county party with your request"
+      ]
+    },
+    {
+      "file": "contact.html",
+      "status": 200,
+      "emailLinks": 1,
+      "text": [
+        "EMAIL\n\nLet\u2019s connect",
+        "email or join us at the next meeting"
+      ]
+    },
+    {
+      "file": "government.html",
+      "status": 200,
+      "emailLinks": 15,
+      "text": []
+    }
+  ],
+  "limits": [
+    "Mocked interface outcomes do not establish live persistence.",
+    "Automated accessibility is not conformance certification.",
+    "Successful destination responses do not verify all remote content.",
+    "Source pattern scanning is not a full security or history audit."
+  ]
+}

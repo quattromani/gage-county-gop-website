@@ -7,7 +7,7 @@ The authoritative patterns are the generators in scripts/build.mjs and styles in
 - **Organization disclosure:** a native details/summary element containing a brief organization overview; procedural details defer to the constitution. Resources demonstrates keyboard-operable closed/open states. Historical source records stay in the repository, outside the public site.
 - **Meeting notice:** Home and Events render the next second Tuesday from src/content.json. The first date is December 8, 2026. The browser advances it after the meeting day ends in America/Chicago. A generated date follows the confirmed recurrence rule; changes and exceptions must be recorded in source data.
 - **Party document:** The platform and constitution are HTML reading pages with a document title and topic or article navigation. The constitution links its original scans after the complete text; platform provenance stays in the repository without a public source block. The constitution's numbered clauses and nested lettered items follow the five scans in order. Its transcription is maintained in src/constitution.json, with the registered address marked as redacted. The platform text comes from the captured source inventory. Presentation may change; source wording may not be silently revised.
-- **Photo story:** local image and explicit caption link to the related archive. Event-date claims require supporting source context.
+- **Photo story:** local image and an explicit caption. Link only to a relevant published destination; the repository archive is not part of the published site and must not be a caption destination. Event-date claims require supporting source context.
 - **Mobile menu:** native details/summary remains functional without scripts. Escape closes it and restores focus to summary when scripts are available.
 - **Voter card:** imported as a separate path with its own existing styles and offline scope. Do not apply global site styles to its candidate presentation.
 
@@ -17,7 +17,7 @@ The shared stylesheet and script include content-hash query versions. A changed 
 
 Meeting actions on Home, Events, and Contact offer the next occurrence and an Add monthly meetings recurring series. A shared module calculates the date and calendar data from src/content.json. The one-event file has an explicit UTC start; the series has a local 7 p.m. start, monthly second-Tuesday rule, and America/Chicago daylight-saving definition. No end time or attendees are invented. The browser generates future single-event downloads; the build includes an initial .ics fallback. File encoding, escaping, and folding follow [RFC 5545](https://www.rfc-editor.org/rfc/rfc5545#section-3.6.1). Importing either file is a visitor action. Imported files are snapshots, not a live subscription, so later cancellations or changes require an updated calendar import.
 
-The homepage Constitution quick link uses the featured red treatment: the shared var(--red) token, white title and arrow, warm-white supporting text, a narrow warm highlight, and a restrained shadow. Its grid position, size rules, and link destination stay shared with the quick-access strip; hover darkens the background without moving the tile.
+The homepage Get involved quick link uses the featured red treatment: the shared var(--red) token, white title and arrow, warm-white supporting text, a narrow warm highlight, and a restrained shadow. Its grid position, size rules, and link destination stay shared with the quick-access strip; hover darkens the background without moving the tile.
 
 The About page mission statement uses a semantic blockquote with unchanged party wording, larger serif text, a red leading rule, and the shared soft background. Its inset spacing and type scale adapt to narrow screens. Keep it distinct from ordinary body paragraphs without adding promotional wording.
 
@@ -35,7 +35,13 @@ Meeting actions on Home, Events and Contact download descriptively named .ics fi
 
 A browser may still display the download origin as GitHub while hosting remains there. The event's visible website and venue are party-facing; domain configuration is separate.
 
-Homepage quick-access labels, descriptions, and destinations are maintained in src/content.json. The third card opens the separate committee opportunities page; the Resources organization disclosures remain the procedural overview.
+Homepage quick-access labels, descriptions, and destinations are maintained in src/content.json. Their current order is Get involved, Platform, and Constitution. The first card opens the separate committee opportunities page; the Resources organization disclosures remain the procedural overview.
+
+## Missing-page recovery
+
+404.html uses the ordinary site template, typography, navigation, and accessible structure, with a short explanation and a homepage link. For this page only, the generator resolves `href` and `src` values beginning with `./` against the deployment pathname from `publicBaseUrl` in src/content.json, or the command-local `SITE_BASE_PATH` override. Same-document fragments such as `#main` and `#top` remain on the current document. Ordinary pages keep relative URLs; no HTML `base` element changes their behavior.
+
+This exception keeps assets and recovery links usable when Pages serves the template at an unknown nested URL. Verify the real HTTP 404 response, stylesheet and brand assets, and navigation at both root and nested missing paths. The root override supports direct local template inspection; use the commands and server limitation in [Work locally](../README.md#work-locally). Default and CI builds retain the configured Pages pathname.
 
 ## Current sidebar section
 

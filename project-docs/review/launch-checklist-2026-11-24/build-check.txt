@@ -1,0 +1,34 @@
+✔ all local page links, assets, and fragment destinations resolve under a repository base path (27.639443ms)
+✔ 404 assets, navigation, and fragments resolve from shallow and nested missing URLs (1.81854ms)
+✔ source inventory is complete and original asset hashes remain intact (97.311678ms)
+✔ platform wording remains faithful to preserved source text (7.05285ms)
+✔ constitution transcription renders every source unit and retains the five original pages (1.417068ms)
+✔ every website page has landmarks, one h1, language, and image alternatives (3.569361ms)
+✔ voter card renders exactly the imported inclusion set and keeps judicial retention separate (1.793658ms)
+✔ card downloads and calendars retain upstream bytes and all five milestones (4.331189ms)
+✔ card offline worker handles save, offline retrieval, and scope boundaries (30.376131ms)
+✔ public build excludes source archive and migration language, with recurring meeting details (3.992139ms)
+✔ meeting actions open a portable calendar event at the confirmed Central time (0.815375ms)
+✔ second Tuesday advances after meeting day in Central time, across years and DST (20.189944ms)
+✔ Monthly import uses a local-time series with daylight saving transitions (5.695342ms)
+✔ donation and completed-election references preserve the intended destinations and tab behavior (2.027928ms)
+✔ government guide has sourced officeholders and contact routes with homepage and footer access (2.876175ms)
+✔ supervisor geography joins current directory records and keeps scanned names out of the interaction (5.503691ms)
+✔ dated meeting changes persist through the affected day and calendars keep occurrence identity (29.869631ms)
+✔ meeting configuration rejects ambiguous overrides and resolves the actual rescheduled local hour (12.454591ms)
+✔ participation routes stay consistent and private intake administration stays out of public output (4.05995ms)
+✔ guest speakers belong to one meeting and follow reschedules without leaking into the recurring series (14.159663ms)
+✔ contact intake accepts common autofill formats and applies channel requirements (2.99203ms)
+✔ server validation independently rejects malformed, oversize, honeypot and missing-channel submissions (2.2976ms)
+✔ saved receipt follows persistence and duplicate retry does not append again (2.117416ms)
+✔ spreadsheet values are formula-safe and service exposes no roster through GET (1.002852ms)
+✔ service returns failure after storage error and limits repeated contact requests (1.949825ms)
+✔ client never treats opaque, failed, mismatched or malformed replies as saved (0.891907ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 435.081962

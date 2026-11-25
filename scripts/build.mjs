@@ -24,6 +24,12 @@ const data = JSON.parse(
 const content = JSON.parse(
   fs.readFileSync(path.join(root, "src/content.json")),
 );
+// GitHub serves 404.html at the missing URL, which may be several levels deep.
+// Only that template needs paths rooted at the configured deployment directory.
+const notFoundBasePath = process.env.SITE_BASE_PATH ?? new URL(content.publicBaseUrl).pathname;
+if (!/^\/(?:[A-Za-z0-9_-]+\/)*$/.test(notFoundBasePath)) {
+  throw new Error("SITE_BASE_PATH must be / or a slash-delimited site path ending in /.");
+}
 const supervisorMaps = JSON.parse(fs.readFileSync(path.join(root, "src/supervisor-maps.json")));
 const governmentSource = JSON.parse(fs.readFileSync(path.join(root, "src/government.json")));
 const constitutionSource = JSON.parse(
@@ -63,7 +69,10 @@ const allMeetingsLink = (className) => `<a class="${className}" href="./${allMee
 const paragraphs = (slug) =>
   (pages.get(slug)?.text || []).map((t) => `<p>${h(t)}</p>`).join("");
 function layout(file, title, body, description) {
-  return renderSiteShell({ file, title, body, description, content, asset, assetVersion, brandVersion: assetsById.get(content.brand.markAsset).sourceSha256.slice(0, 12), h, meetingStrip: renderMeetingStrip(stripMeeting, h), contactForm: renderContactForm(intake, participation, content.email, h) });
+  const html = renderSiteShell({ file, title, body, description, content, asset, assetVersion, brandVersion: assetsById.get(content.brand.markAsset).sourceSha256.slice(0, 12), h, meetingStrip: renderMeetingStrip(stripMeeting, h), contactForm: renderContactForm(intake, participation, content.email, h) });
+  return file === "404.html"
+    ? html.replace(/\b(href|src)="\.\/([^"<>]*)"/g, (_, attribute, relative) => `${attribute}="${notFoundBasePath}${relative}"`)
+    : html;
 }
 const pageHero = (kicker, title, desc) =>
   `<section class="page-hero wrap"><p class="eyebrow">${kicker}</p><h1>${title}</h1><p class="lead">${desc}</p></section>`;

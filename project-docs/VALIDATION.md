@@ -1,8 +1,45 @@
 # Preview verification
 
+## Current status, November 24, 2026
+
+**The approved 404 repair passed local verification. The evidence below records the working tree before commit and deployment; production verification belongs to the release follow-up. This is not an official-launch clearance.**
+
+The preceding read-only review checked the public Pages preview at source commit `e4225ca080d948604c8d519ac7af5e23587a80f2`. All 15 checked HTML routes matched a fresh build, including the 404 template and imported voter card. That public release returned HTTP 404 for missing URLs, but a nested missing URL broke the template's assets and recovery links. The approved maintenance scope is the 404 URL repair, its regression check, and current-state documentation. Image optimization and page-description changes remain separate follow-up work.
+
+The repair roots only the missing-page template's local asset and navigation URLs at the deployment directory. `src/content.json` owns the public preview base URL; `SITE_BASE_PATH=/` selects the localhost-root variant for local checking. Fragment links remain on the displayed missing page. Ordinary pages retain their relative URLs. Artifact comparison confirms that only `dist/404.html` changed; existing page copy, assets, voter-card output, and public contact-service configuration are byte-identical.
+
+Both the default Pages build and the isolated localhost-root build passed all 26 repository checks using Node v24.22.3. The new regression test rejects the original broken 404 artifact. Chromium 158 verified 12 rendered missing-page cases: two deployment bases, three missing-path shapes, and phone/desktop widths. It also checked each base without JavaScript. All returned HTTP 404 with working styles, images, fragments, and homepage recovery. The 12 scripted page scans reported no axe-core 4.10.3 violations or script/resource failures. This fixture reproduces Pages fallback behavior; the repaired artifact still needs verification after an authorized deployment.
+
+Evidence: [404 browser checks](review/launch-checklist-2026-11-24/404-browser-verification.json), [default build checks](review/launch-checklist-2026-11-24/build-check.txt), [root-preview checks](review/launch-checklist-2026-11-24/root-preview-check.txt), and [artifact manifest](review/launch-checklist-2026-11-24/artifact-manifest.json). The [preceding preview review](review/launch-checklist-2026-11-24/preview-review.json) records unaffected-page observations. Phone and desktop 404 screenshots are retained in that same directory. Evidence and diagnostic tooling are excluded from the public build.
+
+### Revised launch-checklist coverage
+
+Pass applies only to the stated checks. Not checked identifies missing evidence or an unresolved decision; it does not establish a defect or permission to expand this batch.
+
+| Area | Verified checks and remaining limits |
+| --- | --- |
+| 1. Purpose, content, authority | Pass: structured sources, source fidelity, confirmed meeting configuration, and current navigation. Not checked: renewed owner review of every current fact and media permission. Givebutter uses the existing owner-approved destination. |
+| 2. Journeys and states | Pass: tested menus, dialogs, committee prefill, stop requests, validation, simulated failure/retry/success, and repaired local 404 recovery. The 36 checked public destinations/service endpoints returned successful responses. This does not verify every remote page's content. |
+| 3. Responsive/browser support | Pass: seven representative public pages at 320, 390, 768, and 1280px without horizontal overflow, plus the repaired 404 checks above. Not checked: physical devices and other browser engines. |
+| 4. Accessibility | Pass: automated scans of 14 root templates, selected keyboard/focus interactions, and the repaired 404 cases. The voter-card skip link works despite one landmark best-practice advisory; no imported-card change was made. Not checked: full screen-reader, document, image-overlay, and SVG contrast evaluation. |
+| 5. Build and artifact | Pass: 26 checks in each build mode, preserved captured-source/media hashes and publication bytes, archive exclusion, and the retained artifact manifest. A limited current-source/recent-history pattern review found no matching secret patterns; this is not a complete credential audit. |
+| 6. Security and boundaries | Pass: observed preview HTTPS, server-validation and basic rate-limit source tests, and public/private output checks. Not checked: current deployed enforcement beyond read-only service metadata, a full application-security review, and final security-header policy. |
+| 7. Privacy and services | Pass: documented host logs and Google intake, explicit notice choices, direct-email alternatives, and no observed tracking cookies or normal-page third-party requests. Not checked: current staff access, retention decisions, and operational fulfillment. No analytics or cookie interface was added. |
+| 8. Performance | Pass: zero observed layout shift in the recorded cold-load samples. Follow-up: two samples per width measured courthouse-image LCP around 2.6s at 390px and 6.2s at 1280px under 1.6Mbps download, 150ms latency, and 4x CPU slowdown. These are laboratory observations, not field Core Web Vitals or percentile results. Image delivery remains deferred. |
+| 9. Hosting/routing/caching | Pass: existing preview delivery and the repaired template in the local Pages-shaped fixture. Not checked: the deployed repair, old-tab/new-release compatibility, and recovery across a real release transition. Official-domain migration remains outside this batch. |
+| 10. Discovery/sharing | Pass for preview scope: intentional noindex, existing titles, share image, and site icon. Page-specific descriptions remain optional follow-up. Public indexing and sitemap decisions belong to the official-launch scope. |
+| 11. Identity/forms/transactions | Pass: client validation and mocked receipt/retry behavior; source tests cover server validation, honeypot, duplicate protection, and configured limits. Live metadata responds with the expected version. No real request was submitted today; the last retained persistence evidence is November 21. Accounts are not implemented; donations use external Givebutter. |
+| 12. Offline/alternate outputs | Pass: calendar behavior, preserved download bytes, and scoped worker checks. The fresh-visitor browser observation found no offline-save control or populated cache; saved PDFs remain the available offline route. Not checked: complete assistive-technology access to downloadable materials and native calendar/share handoffs. |
+| 13. Operations/recovery | Source recovery is documented. Not checked: assigned inbox-review coverage, private-sheet backup/restore, alert routing, and operational recovery exercises. These need owner decisions and evidence rather than automatic implementation. |
+| 14. Release/follow-up | Not checked at review time: production verification of this batch. No deployment or release action occurred during the recorded review. Remaining browser, accessibility, performance, policy, and operational work requires its appropriate scope. |
+
+The [performance observations](review/launch-checklist-2026-11-24/performance-observations.json) retain conditions and both samples. The current brief and README identify this section as the current status; the dated records below preserve their original findings. The shared guidance checkpoint found no unresolved material conflict. The 404 exception is documented as a project pattern.
+
+## Initial preview, October 26, 2026
+
 Target: public GitHub Pages design preview, repository quattromani/gage-county-gop-website. Reviewed October 26, 2026. This is a review revision, not a replacement of the production Squarespace site.
 
-## Passed before release
+### Passed before release
 
 - Node build and eight behavioral/integrity tests: all local links and anchors, source inventory and all 36 asset hashes, full platform and archive text preservation, document landmarks/alternatives, exact voter-card candidate inclusion, original download bytes and five calendar milestones, offline retrieval and scope boundaries, and archive filtering/direct-link behavior.
 - Browser inspection of homepage and all substantive templates in the in-app Chromium browser. Phone-width checks at 390 CSS pixels found no horizontal overflow on homepage, about, events, resources, platform, contact, archive, or voter card. Desktop checks covered all pages. No broken images appeared in those page observations.
@@ -11,7 +48,7 @@ Target: public GitHub Pages design preview, repository quattromani/gage-county-g
 - Public source pages, original assets, capture provenance, imported-publication hashes, local design decisions, and maintenance directions are in the repository. No remote font, analytics, payment widget, or form backend was added.
 - Shared guidance and front-end launch checkpoint: no material divergence requiring a global guidance change. Uncertainty is modeled rather than silently resolved. Candidate corrections remain upstream.
 
-## Limits and follow-up
+### Limits and follow-up
 
 - No full WCAG conformance claim: screen readers, real iOS/Android devices, other browser engines, automated axe coverage, and 200% text enlargement have not been fully exercised. Native controls, semantic HTML, focus styles, and narrow-screen reflow have targeted coverage.
 - Constitution remains five source images, without a verified accessible transcription. Original event dates, meeting year, governance contradictions, contribution destination, current roster confirmation, and asset rights need owner review before official replacement.
@@ -22,7 +59,7 @@ Target: public GitHub Pages design preview, repository quattromani/gage-county-g
 
 Public pages carry noindex metadata for review. This reduces unintended indexing; it does not make the preview private. No custom domain, DNS, original publication, or Squarespace changes are part of this release.
 
-## Production verification
+### Production verification
 
 Deployment results and live-path checks are reported in the delivery conversation. The workflow runs these same eight checks before publishing dist/. Reverting source and pushing triggers a checked recovery release.
 
